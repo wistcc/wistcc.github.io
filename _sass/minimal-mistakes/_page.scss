@@ -22,14 +22,9 @@
 
 .page {
   @include breakpoint($large) {
-    float: right;
-    width: calc(100% - #{$right-sidebar-width-narrow});
-    padding-right: $right-sidebar-width-narrow;
-  }
-
-  @include breakpoint($x-large) {
-    width: calc(100% - #{$right-sidebar-width});
-    padding-right: $right-sidebar-width;
+    width: 100%;
+    padding-left: 100px;
+    padding-right: 100px;
   }
 
   .page__inner-wrap {
@@ -473,12 +468,9 @@
   border-top: 1px solid $border-color;
 
   @include breakpoint($large) {
-    float: right;
-    width: calc(100% - #{$right-sidebar-width-narrow});
-  }
-
-  @include breakpoint($x-large) {
-    width: calc(100% - #{$right-sidebar-width});
+    width: 100%;
+    padding-left: 100px;
+    padding-right: 100px;
   }
 
   a {
