@@ -23,7 +23,7 @@ description              : "I'm a software engineer willing to learn more every 
 url                      : "https://wistcc.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : "wistcc/wistcc.github.io"
-teaser                   : "/assets/images/apple-black-and-white-computer-34579.jpg"
+teaser                   : 
 # breadcrumbs            : false # true, false (default)
 words_per_minute         : 200
 comments:
