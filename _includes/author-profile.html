@@ -32,7 +32,7 @@
     {% else %}
       <h3 class="author__name" itemprop="name">{{ author.name }}</h3>
     {% endif %}
-    {% if author.bio %}
+    {% if author.bio and page.author_bio %}
       <p class="author__bio" itemprop="description">
         {{ author.bio }}
       </p>

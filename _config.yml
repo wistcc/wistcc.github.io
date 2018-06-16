@@ -19,10 +19,10 @@ locale                   : "en-US"
 title                    : "Winner Crespo"
 title_separator          : "-"
 name                     : "Winner Crespo"
-description              : "An amazing website."
+description              : "I'm a software engineer willing to learn more every day. Let's keep in touch so I can share with you my knowlege and I can learn from you as well."
 url                      : "https://wistcc.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
-repository               : "wistcc/minimal-mistakes"
+repository               : "wistcc/wistcc.github.io"
 teaser                   : "/assets/images/apple-black-and-white-computer-34579.jpg"
 # breadcrumbs            : false # true, false (default)
 words_per_minute         : 200
@@ -96,10 +96,10 @@ analytics:
 author:
   name             : "Winner Crespo"
   avatar           : "/assets/images/photo_2018-01-12_15-26-37.jpg"
-  bio              : "I am an amazing person."
-  location         : "Somewhere"
-  email            :
-  uri              :  "winnercrespo.com"
+  bio              : "I'm a software engineer willing to learn more every day. Let's keep in touch so I can share with you my knowlege and I can learn from you as well."
+  location         : 
+  email            : "wistcc@gmail.com"
+  uri              : 
   home             : # null (default), "absolute or relative url to link to author home"
   bitbucket        :
   codepen          :
@@ -107,19 +107,19 @@ author:
   flickr           :
   facebook         :
   foursquare       :
-  github           :
+  github           : "wistcc"
   gitlab           :
   google_plus      :
   keybase          :
   instagram        :
   lastfm           :
-  linkedin         : # "john-doe-12345678" (the last part of your profile url, e.g. https://www.linkedin.com/in/john-doe-12345678)
+  linkedin         : "winnercrespo"
   pinterest        :
   soundcloud       :
-  stackoverflow    : # "123456/username" (the last part of your profile url, e.g. https://stackoverflow.com/users/123456/username)
+  stackoverflow    : "2560997/winner-crespo"
   steam            : # "steamId" (the last part of your profile url, e.g. https://steamcommunity.com/id/steamId/)
   tumblr           :
-  twitter          :
+  twitter          : "WinnerCrespo"
   vine             :
   weibo            :
   xing             :
