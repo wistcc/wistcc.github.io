@@ -4,3 +4,5 @@ main:
     url: /blog
   - title: "Resume"
     url: /assets/Winner Crespo - Resume.pdf
+  - title: "About"
+    url: /about
