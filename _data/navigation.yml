@@ -2,3 +2,5 @@
 main:
   - title: "Blog"
     url: /blog
+  - title: "Resume"
+    url: /assets/Winner Crespo - Resume.pdf
