@@ -20,6 +20,16 @@
   }
 }
 
+.image-header {
+  width: 100%;
+}
+
+.image-header-description {
+  text-align: center;
+  font-size: 0.5em;
+  margin-top: 10px;
+}
+
 .page {
   @include breakpoint($large) {
     width: 100%;

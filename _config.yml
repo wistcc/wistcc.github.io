@@ -75,7 +75,7 @@ facebook:
   username               :
   app_id                 :
   publisher              :
-og_image                 : "/assets/images/photo_2018-01-12_15-26-37.jpg"
+og_image                 : "/assets/images/avatar.jpg"
 # For specifying social profiles
 # - https://developers.google.com/structured-data/customize/social-profiles
 social:
@@ -83,6 +83,8 @@ social:
   name                   : # If the user or organization name differs from the site's name
   links: 
     - "https://twitter.com/winnercrespo"
+    - "https://www.linkedin.com/in/winnercrespo"
+    - "https://github.com/wistcc"
 
 # Analytics
 analytics:
@@ -95,7 +97,7 @@ analytics:
 # Site Author
 author:
   name             : "Winner Crespo"
-  avatar           : "/assets/images/photo_2018-01-12_15-26-37.jpg"
+  avatar           : "/assets/images/avatar.jpg"
   bio              : "I'm a software engineer willing to learn more every day. Let's keep in touch so I can share with you my knowlege and I can learn from you as well."
   location         : 
   email            : "wistcc@gmail.com"
