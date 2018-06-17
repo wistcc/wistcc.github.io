@@ -72,13 +72,58 @@
     width: 50%;
     margin: auto;
 
-    .author__avatar > img {
-      max-width: 150px;
+    .author__avatar {
+      display: block;
+      width: auto;
+      height: auto;
+
+      > img {
+        max-width: 150px;
+      }
     }
 
-    .author__urls {
-      margin: auto;
-      width: 25%;
+    .author__content {
+      display: block;
+      width: 100%;
+      padding-left: 0;
+      padding-right: 0;
+
+      .author__name {
+        margin-top: 10px;
+      }
+      
+      .author__bio {
+        margin-top: 10px;
+        margin-bottom: 20px;
+      }
+    }
+
+    .author__urls-wrapper {
+      display: block;
+
+      > button {
+        display: none;
+      }
+
+      .author__urls {
+        display: block;
+        margin: auto;
+        padding: 10px;
+        position: relative;
+        border: 0;
+        background: transparent;
+        box-shadow: none;
+
+        &:before,
+        &:after {
+          display: none;
+        }
+
+
+        @include breakpoint($large) {
+          width: 25%;
+        }
+      }
     }
   }
 }
