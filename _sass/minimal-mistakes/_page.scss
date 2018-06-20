@@ -33,8 +33,8 @@
 .page {
   @include breakpoint($large) {
     width: 100%;
-    padding-left: 100px;
-    padding-right: 100px;
+    padding-left: 250px;
+    padding-right: 250px;
   }
 
   .page__inner-wrap {
@@ -80,7 +80,7 @@
   p,
   li,
   dl {
-    font-size: 1em;
+    font-size: 0.9em;
   }
 
   /* paragraph indents */
