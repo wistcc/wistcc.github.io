@@ -7,13 +7,13 @@ header:
 last_modified_at: 2018-6-19
 ---
 
-After using Vue for while, I have encountered some issues that after investigating them, I learned that those are actually things Vue warned us in the documentation.
+After using Vue for a while, I have found some issues that later I learned are actually things they warned us in the documentation.
 
 I made a list of these issues so you can know them as well. Let's describe each and see the options we have to solve them.
 
 ## Array Changes
 
-Let's say we have the next object:
+Let's say we have this:
 
 ```javascript
 const vm = new Vue({
@@ -24,16 +24,16 @@ const vm = new Vue({
 ```
 
 We can get two different issues while trying to do changes to `titles`:
-- Setting an item using the index: `vm.titles[index] = newTitle`.
-- Modifying the length: `vm.titles.length = length`.
+- Setting an item using the index: `vm.titles[index] = newTitle`
+- Modifying the length: `vm.titles.length = length`
 
-Instead, to set an item using the index you can use `Vue.set`:
+Instead of setting an item using the index directly you can use `Vue.set`:
 
 ```javascript
 Vue.set(vm.titles, index, newTitle)
 ```
 
-or using`splice`:
+Another alternative is using `splice`:
 
 ```javascript
 vm.titles.splice(index, 1, newTitle)
@@ -47,7 +47,7 @@ vm.titles.splice(length)
 
 ## Adding properties to an object
 
-Having the next object:
+Having the fowlloing object:
 
 ```javascript
 const vm = new Vue({
@@ -65,7 +65,7 @@ We could be tempted to add a new property doing the next:
 vm.bestShow = 'Breaking Bad'
 ```
 
-but then `bestShow` won't be reactive because Vue adds the reactive functionality at the initialization process. That means that the property must be in the `data` object in order to be reactive.
+but then `bestShow` won't be reactive because Vue adds the reactive functionality at the moment of the initialization. Which means that the property must be in the `data` object in order to be reactive.
 
 We can use `Vue.set` again to accomplish this:
 
@@ -81,7 +81,7 @@ vm.top = Object.assign({}, vm.top, { bestShow: 'Breaking Bad', bestBook: 'Ready 
 
 ## Using `$refs` before the component is mounted
 
-Let's say that we want to focus an input on our component. We could use the `ref` attribute for that:
+Let's say we want to focus an input on our component. We could use the `ref` attribute for that:
 
 ```javascript
 <input ref="input" />
@@ -97,7 +97,7 @@ methods: {
 }
 ```
 
-¿What if we want to focus it as soon as the component is created? You would say that we could use the `created` hook:
+What if we want to focus it as soon as the component is created? You would say that we could use the `created` hook:
 
 ```javascript
 created() {
@@ -105,7 +105,7 @@ created() {
 }
 ```
 
-but that actually produces an error because `$refs` is populated after the component has been mounted. So, we could use the `mounted` hook instead since it will be already populated:
+but actually this produces an error because `$refs` is populated after the component has been mounted. So, we should use the `mounted` hook instead since it will be already populated:
 
 ```javascript
 mounted() {
@@ -137,4 +137,4 @@ To solve this we just need to add a key to each of them so Vue knows they are di
 
 Now we can see that the element is replaced every time we click the button.
 
-¿Have you noticed other things that won't work on Vue? Please share in the comments.
+Have you noticed other things that won't work on Vue? Please share in the comments.
