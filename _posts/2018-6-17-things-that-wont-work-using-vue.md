@@ -4,7 +4,7 @@ header:
   teaser: /assets/images/2018-6-21-things-that-wont-work-using-vue.jpeg
   author: Goh Rhy Yan
   src: https://unsplash.com/photos/FFgcWvplwsc
-last_modified_at: 2018-6-19
+last_modified_at: 2018-6-20
 ---
 
 After using Vue for a while, I have found some issues that later I learned are actually things they warned us in the documentation.
@@ -62,7 +62,7 @@ const vm = new Vue({
 We could be tempted to add a new property doing the next:
 
 ```javascript
-vm.bestShow = 'Breaking Bad'
+vm.top.bestShow = 'Breaking Bad'
 ```
 
 but then `bestShow` won't be reactive because Vue adds the reactive functionality at the moment of the initialization. Which means that the property must be in the `data` object in order to be reactive.
