@@ -4,7 +4,7 @@ header:
   teaser: /assets/images/2018-6-21-things-that-wont-work-using-vue.jpeg
   author: Goh Rhy Yan
   src: https://unsplash.com/photos/FFgcWvplwsc
-last_modified_at: 2018-6-20
+last_modified_at: 2018-6-27
 ---
 
 After using Vue for a while, I have found some issues that later I learned are actually things they warned us in the documentation.
@@ -119,7 +119,7 @@ Vue sometimes will reuse elements that have the same tag name when using `v-if` 
 
 To notice this you can write something in the input and then press the button (the value won't change) or you can use the dev tools and see that the element is not replaced:
 
-<script async src="//jsfiddle.net/wistcc/egod2nb5/2/embed/js,html,result/"></script>
+<script async src="//jsfiddle.net/wistcc/egod2nb5/2/embed/result,js,html/"></script>
 
 <div style="text-align: center; margin-top: 10px;">
   <img src="{{'/assets/images/2018-6-21-things-that-wont-work-using-vue-1.gif'}}" />
@@ -128,7 +128,7 @@ To notice this you can write something in the input and then press the button (t
 
 To solve this we just need to add a key to each of them so Vue knows they are distinct elements:
 
-<script async src="//jsfiddle.net/wistcc/gpLwdkj3/1/embed/js,html,result/"></script>
+<script async src="//jsfiddle.net/wistcc/gpLwdkj3/1/embed/result,js,html/"></script>
 
 <div style="text-align: center; margin-top: 10px;">
   <img src="{{'/assets/images/2018-6-21-things-that-wont-work-using-vue-2.gif'}}" />
