@@ -4,11 +4,11 @@ header:
   teaser: /assets/images/2018-6-27-learning-the-position-css-property-for-good.jpeg
   author: Caspar Rubin
   src: https://unsplash.com/photos/fPkvU7RDmCo
-last_modified_at: 2018-6-27
+last_modified_at: 2018-6-28
 ---
 When I create a layout from scratch, I find myself adding different values to the `position` CSS property and to the DPP (direction position properties, I just made that acronym up) top, right, bottom and left properties, hoping that magically they will look as I expect. Maybe you do too.
 
-Probably would be better to learn what they do for good, so we know how to use them.
+It would probably be better to learn what they do for good, so we know how to use them.
 
 First of all, a positioned element is one that has a different value than `position: static`, which is the default. In other words, an element that has `position` set as `relative`, `absolute`, `fixed` or `sticky`.
 
