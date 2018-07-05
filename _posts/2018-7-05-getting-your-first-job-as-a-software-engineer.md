@@ -10,18 +10,18 @@ In every professional area, there’s the chicken and egg problem: I don’t hav
 Fortunately, as a software engineer, we have several options to get experience without a job like creating a project from scratch, open source collaborations, getting an internship, meetups, and hackathons.
 
 ## Creating a project from scratch
-If you can create something new, very innovative, that solves a problem for many people, that would be great. If not, don’t lose time waiting for that million dollar idea and start working on a simple application. Working on a simple and well-defined project has the advantage that you won’t expend time thinking about the requirements instead of working on the code. Even another todo app will do the trick.
+If you can create something new, very innovative, that solves a problem for many people, that would be great. If not, don’t lose time waiting for that million dollar idea and start working on a simple application. Working on a simple and well-defined project has the advantage that you won’t expend time thinking about the requirements instead of working on the code. Even another to-do app will do the trick.
 
 Starting a project from an idea and getting it to the finish line will probably help you to:
 - Learn about the life cycle of a software project.
-- Interact with languages, tools, good practices, architectures and more of both sides of the application (front and back end).
+- Interact with languages, tools, good practices, design patterns and more of both sides of the application (front and back end).
 - Get experience with databases.
 - Work with a web server.
 - Acquire knowledge of a version control system (I suggest you to use `git`).
 
 You can work on this project alone or with some friends. Having more people will help to get the experience of how to work on a team which is a very important skill to have.
 
-When you finish this first project, don't stop. Start working on a new idea, use new tools, architectures so you can keep learning and increasing your experience.
+When you finish this first project, don't stop. Start working on a new idea, use new tools, design patterns so you can keep learning and increasing your experience.
 
 After this, you are able to use these projects as a portfolio to show your experience to future employers.
 
