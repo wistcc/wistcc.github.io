@@ -27,6 +27,6 @@ Of course, this depends on everyone personality. When you do this two things cou
 
 So, just say thank you every now and then, be very honest while doing it and you will perceive how the company's culture keeps getting better every day.
 
-Let us know anything I missed to mention here and also share with us in the comments any anecdotes you could have after experiencing this yourself.
+Let me know anything I didn't mention here, and also if you have any experience yourself in the topic share it in the comments.
 
 Cheers!
