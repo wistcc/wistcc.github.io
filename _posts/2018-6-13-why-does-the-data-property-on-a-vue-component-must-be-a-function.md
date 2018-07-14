@@ -1,4 +1,5 @@
 ---
+title: Why does the data property on a Vue component must be a function?
 header:
   teaser: /assets/images/2018-6-13-why-does-the-data-property-on-a-vue-component-must-be-a-function.jpeg
   author: rawpixel
