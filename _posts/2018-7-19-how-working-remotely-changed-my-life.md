@@ -48,4 +48,4 @@ Working from home has made me happier and a lot more productive. Although, not e
 
 As everything in life, working remotely doesn't work for everyone. I encourage you to try it out if you haven't so you can feel the differences by yourself and then you have the needed experience to know what is best for you.
 
-If you want to learn more about this, I would recommend you to read this book [Remote: Office Not Required](https://www.amazon.com/Remote-Office-Required-Jason-Fried/dp/0804137501) by David Heinemeier Hansson aka [DHH](https://twitter.com/dhh). Please leave in the comments how working remotely has changed your life positively or negatively, I would love to read your story.
+If you want to learn more about this, I would recommend you to read this book [Remote: Office Not Required](https://amzn.to/2LhGzmK){:target="_blank"} by David Heinemeier Hansson aka [DHH](https://twitter.com/dhh){:target="_blank"}. Please leave in the comments how working remotely has changed your life positively or negatively, I would love to read your story.
