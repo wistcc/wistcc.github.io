@@ -7,7 +7,7 @@ header:
 last_modified_at: 2018-7-24
 ---
 
-To be honest, I haven't been a reader person my entire life. Sure, I've read tons of blog post, short stories, and a lot of twits, but just the idea of start reading a book scared me. For some reason, I always found it a very boring activity.
+Let’s be honest, I haven't been a reader person my entire life. Sure, I've read tons of blog post, short stories, and a lot of tweets, but just the idea of start reading a book scared me. For some reason, I always found it a very boring activity.
 
 However, I know the great benefits this could bring to me. This year I decided to make this a habit in my life. Today I want to share with you the books I read this first semester of the year.
 
