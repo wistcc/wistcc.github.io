@@ -5,15 +5,15 @@ header:
 last_modified_at: 2019-8-30
 ---
 
-A friend shared [this](https://github.com/timqian/chart.xkcd) great library the other day and I fell in love it automatically. It's very beautiful the way these charts look like they were hand-drawn.
+A friend shared [this](https://github.com/timqian/chart.xkcd) great library the other day and I fell in love with it automatically. It's very beautiful the way these charts look like they were hand-drawn.
 
-It is also very easy to use, you only need to include the script on your page and have a `svg` element where the chart will be rendered. Ler more about it in the [documentation](https://timqian.com/chart.xkcd/).
+It is also very easy to use, you only need to include the script tag on your page and add a `svg` element where the chart will be rendered. Learn more about it on the [documentation](https://timqian.com/chart.xkcd/).
 
 I thought it would be cool to have a wrapper to use it very easy on my Vue projects but there were none at that moment so I decided to create my own [chart.xkcd-vue-wrapper](https://github.com/wistcc/chart.xkcd-vue-wrapper).
 
-It's also pretty easy to use, you need to install it `yarn add chart.xkcd-vue-wrapper` or `npm i chart.xkcd-vue-wrapper` and then use the components like this:
+It's also pretty easy to use, you just need to install it `yarn add chart.xkcd-vue-wrapper` or `npm i chart.xkcd-vue-wrapper` and then use the components like this:
 
-```
+```javascript
 <template>
   <div id="app">
     <ChartLine :config="line" />
@@ -73,6 +73,6 @@ export default {
 </script>
 ```
 
-I hope that you like using beautiful and funny charts on your projects and that the wrapper is useful for you.
+I hope that you like using beautiful and funny charts on your projects and that this wrapper is useful for you.
 
 Happy coding!
