@@ -15,10 +15,12 @@ layout: default
 {% endif %}
 
 {% if page.header.teaser %}
-  <img class="image-header" src="{{page.header.teaser}}" />
-  {% if page.header.src and page.header.author %}
-    <div class="image-header-description">Photo by <a href="{{page.header.src}}">{{page.header.author}}</a></div>
-  {% endif %}
+  <div class="image-header">
+    <img src="{{page.header.teaser}}" />
+    {% if page.header.src and page.header.author %}
+      <div class="image-description">Photo by <a href="{{page.header.src}}">{{page.header.author}}</a></div>
+    {% endif %}
+  </div>
 {% endif %}
 
 <div id="main" role="main">

@@ -21,14 +21,21 @@
 }
 
 .image-header {
-  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  img {
+    width: 50%;
+  }
+
+  .image-description {
+    font-size: 0.5em;
+    margin-top: 10px;
+  }
 }
 
-.image-header-description {
-  text-align: center;
-  font-size: 0.5em;
-  margin-top: 10px;
-}
+
 
 .page {
   @include breakpoint($large) {
