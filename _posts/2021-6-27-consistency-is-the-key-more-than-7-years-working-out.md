@@ -1,7 +1,7 @@
 ---
 title: "Consistency when working out is the key - More than 7 years working out"
 header:
-  teaser: /assets/images/2021-6-27-consistency-is-the-key-more-than-7-years-working-out.jpg
+  teaser: /assets/images/2021-6-27-consistency-is-the-key-more-than-7-years-working-out.jpeg
 last_modified_at: 2021-6-27
 ---
 
