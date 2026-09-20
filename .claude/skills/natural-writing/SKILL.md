@@ -41,6 +41,16 @@ Primero escribe para claridad y para la voz real del autor. Después revisa y qu
 11. **Pequeñas irregularidades:** repetir una palabra, una frase corta después de una larga, empezar con "Y" o "Pero". No sobreeditar.
 12. **Detalles específicos antes que generalidades:** nombres, situaciones, números, decisiones, cosas que salieron mal. Vale más que cualquier "tono casual".
 
+## Todo en español e inglés, siempre
+
+Regla permanente de Winner: **todo contenido nuevo se publica en los dos idiomas** (español y inglés), sin que tenga que pedirlo cada vez.
+
+- **Post nuevo:** dos archivos en `_posts/`, uno con `lang: es` y otro con `lang: en`, con slugs distintos y `alt_url` apuntando cada uno al otro (genera el `hreflang`). Los enlaces internos apuntan a la versión del mismo idioma (`/challenge/` vs `/en/challenge/`).
+- **Páginas y textos del sitio:** cada texto visible con `{ es, en }` (`_data/i18n.yml`, `_data/challenge.yml`, `_data/bets.yml`). Páginas nuevas: versión en `/en/...` con `alt_url` cruzado.
+- **Reel nuevo del reto:** entrada en `days` de `challenge.yml` con título y resumen en `es` y `en`.
+- Escribe el original primero y traduce después fielmente. Ninguna versión debe sonar más "escrita" que la otra.
+- Antes de dar algo por terminado, revisa que no quede nada en un solo idioma.
+
 ## Nunca inventes hechos
 
 Cifras, clientes, fechas, anécdotas, citas o resultados solo si vienen del autor, de `_data/challenge.yml` o de sus publicaciones. Si falta un dato concreto, pregúntalo o déjalo fuera. No rellenes con una anécdota inventada para dar "vida" al texto.
