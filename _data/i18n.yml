@@ -27,7 +27,7 @@ ui:
   building:      { es: "Lo que estoy construyendo", en: "What I'm building" }
   writing:       { es: "Escritura", en: "Writing" }
   resume:        { es: "Currículum", en: "Resume" }
-  writing_note:  { es: "Artículos técnicos, en inglés", en: "Technical articles" }
+  writing_note:  { es: "Artículos en español y en inglés", en: "Articles in Spanish and English" }
   view_all:      { es: "Ver todo", en: "View all" }
   day:           { es: "Día", en: "Day" }
   language:      { es: "Idioma", en: "Language" }
@@ -136,3 +136,14 @@ ch:
     other:           { es: "Otros", en: "Other" }
   empty:         { es: "No hay episodios en esta categoría todavía.", en: "No episodes in this category yet." }
   none_yet:      { es: "Todavía no hay episodios.", en: "No episodes yet." }
+
+# Textos de los posts (layout wc-post). Un post en español usa `lang: es` en su front matter.
+post:
+  min_read:  { es: "min de lectura", en: "min read" }
+  updated:   { es: "Actualizado", en: "Updated" }
+  photo_by:  { es: "Foto de", en: "Photo by" }
+  share:     { es: "Compartir:", en: "Share:" }
+  previous:  { es: "← Anterior", en: "← Previous" }
+  next:      { es: "Siguiente →", en: "Next →" }
+  more:      { es: "También te puede interesar", en: "You may also enjoy" }
+  comments:  { es: "Comentarios", en: "Comments" }

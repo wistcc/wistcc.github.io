@@ -20,7 +20,7 @@ description: "Artículos técnicos de Winner Crespo sobre desarrollo de software
       {%- for post in paginator.posts -%}
       <a class="wc-item" href="{{ post.url }}">
         <div class="wc-item__top">
-          <span class="wc-item__title">{{ post.title }}</span>
+          <span class="wc-item__title">{{ post.title }} <span class="wc-tag">{{ post.lang | default: "en" | upcase }}</span></span>
           <time class="wc-post__date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y-%m-%d" }}</time>
         </div>
         <p class="wc-item__excerpt">{{ post.excerpt | strip_html | strip_newlines | truncate: 160 }}</p>
