@@ -1,4 +1,4 @@
-{%- comment -%} Localized short date (no plugin). Usage: {% include wc/date.html d=cfg.start_date lang=L %} -> "31 ago 2026" | "Aug 31, 2026" {%- endcomment -%}
+{%- comment -%} Localized short date (no plugin). Usage: {% include wc/date.html d=cfg.start_date lang=L %} -> "1 sep 2026" | "Sep 1, 2026" {%- endcomment -%}
 {%- assign _i = include.d | date: "%-m" | minus: 1 -%}
 {%- assign _mon = site.data.i18n.months_short[include.lang][_i] -%}
 {%- if include.lang == "en" -%}{{ _mon }} {{ include.d | date: "%-d, %Y" }}{%- else -%}{{ include.d | date: "%-d" }} {{ _mon }} {{ include.d | date: "%Y" }}{%- endif -%}

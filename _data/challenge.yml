@@ -7,9 +7,8 @@
 #  Los textos fijos de la interfaz están en _data/i18n.yml (bloque `ch`).
 #  Instagram y foto: _data/profile.yml.
 #
-#  Numeración: los "Día N" son los que dices en cada Reel. El reto empieza el
-#  1 sep (Día 1). El Reel del 31 ago fue el anuncio (day: 0, se muestra como
-#  "Anuncio" / "Announcement").
+#  Numeración: los "Día N" son los que dices en cada Reel. El primer Reel
+#  (1 sep 2026) es el Día 1.
 #  No se muestran fechas de publicación, solo "Día N".
 # ============================================================================
 
@@ -95,7 +94,7 @@ milestones:
     metric: ""
     instagram_url: "https://www.instagram.com/reel/Dc6_AL3AR8-/"
     featured: true
-  - day: 0
+  - day: 1
     title: { es: "Comienza el reto", en: "The challenge begins" }
     description:
       es: "Una hora (mínimo) al día para construir hasta reemplazar mi sueldo."
@@ -319,7 +318,7 @@ days:
     milestone: false
     thumbnail: ""
     instagram_url: "https://www.instagram.com/reel/DczQs-flxvW/"
-  - day: 0
+  - day: 1
     type: "build-in-public"
     title: { es: "¿Qué construirías si solo tuvieras una hora al día?", en: "What would you build if you only had one hour a day?" }
     summary:
