@@ -28,7 +28,7 @@
 
     <div class="ch-journey" id="ch-journey">
       {%- for d in days %}
-      <article class="ch-jday{% if d.milestone %} is-milestone{% endif %}" data-type="{{ d.type }}" data-milestone="{{ d.milestone }}">
+      <article class="ch-jday{% if d.milestone %} is-milestone{% endif %}{% if d.thumbnail and d.thumbnail != "" %} has-thumb{% endif %}" data-type="{{ d.type }}" data-milestone="{{ d.milestone }}">
         <div class="ch-jday__left">
           <div class="ch-jday__num">{% include wc/day.html n=d.day lang=L %}</div>
           {%- if d.type and d.type != "" %}<span class="ch-jday__type">{{ c.filters[d.type][L] | default: d.type }}</span>{% endif %}
@@ -46,6 +46,9 @@
             {%- endif %}
           </div>
         </div>
+        {%- if d.thumbnail and d.thumbnail != "" and d.instagram_url and d.instagram_url != "" %}
+        <a class="ch-jday__thumb" href="{{ d.instagram_url }}" target="_blank" rel="noopener" data-track="journey_day_click" data-label="dia-{{ d.day }}" aria-label="{{ c.watch[L] }}: {{ d.title[L] }}"><img src="{{ d.thumbnail }}" alt="" width="80" height="142" loading="lazy"></a>
+        {%- endif %}
       </article>
       {%- endfor %}
     </div>
