@@ -5,7 +5,7 @@ alt_url: /llevo-20-dias-intentando-reemplazar-mi-sueldo/
 description: "How the first 20 days of the challenge are going: where I'm coming from, what's happening with KASSO and how much the challenge has generated so far (still zero)."
 ---
 
-On August 31 I posted a video with one question: what would you build if you only had one hour a day? That's the challenge. One hour a day, minimum, until I replace my salary.
+On September 1 I posted a video with one question: what would you build if you only had one hour a day? That's the challenge. One hour a day, minimum, until I replace my salary.
 
 I have a full-time job, a wife, a son and a life I don't want to sacrifice. I don't want to stop working. I want to get to a point where working is my decision and not a necessity. For years my goal was to keep growing professionally, until one day I asked myself: growing toward what?
 

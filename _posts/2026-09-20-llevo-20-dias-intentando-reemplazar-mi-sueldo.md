@@ -5,7 +5,7 @@ alt_url: /20-days-trying-to-replace-my-salary/
 description: "Cómo van los primeros 20 días del reto: de dónde vengo, qué pasa con KASSO y cuánto ha generado el reto hasta ahora (todavía cero)."
 ---
 
-El 31 de agosto publiqué un video con una pregunta: ¿qué construirías tú si solo tuvieras una hora al día? Ese es el reto. Una hora mínimo cada día, hasta reemplazar mi sueldo.
+El 1 de septiembre publiqué un video con una pregunta: ¿qué construirías tú si solo tuvieras una hora al día? Ese es el reto. Una hora mínimo cada día, hasta reemplazar mi sueldo.
 
 Tengo un trabajo full-time, esposa, un hijo y una vida que no quiero sacrificar. No quiero dejar de trabajar. Quiero llegar a un punto donde trabajar sea una decisión mía y no una necesidad. Durante años mi meta fue seguir creciendo profesionalmente, hasta que un día me pregunté: ¿crecer hacia dónde?
 

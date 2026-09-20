@@ -118,7 +118,6 @@ ch:
   cta_text:
     es: "Estoy compartiendo todo en tiempo real en Instagram: avances, errores, números y aprendizajes."
     en: "I'm sharing everything in real time on Instagram: progress, mistakes, numbers and lessons."
-  kickoff:       { es: "Anuncio", en: "Announcement" }
   watch:         { es: "Ver en Instagram", en: "Watch on Instagram" }
   journey_h1:    { es: "El journey completo", en: "The full journey" }
   journey_lead_a: { es: "Desde el inicio hasta el día", en: "From the start to day" }
