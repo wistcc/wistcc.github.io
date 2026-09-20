@@ -214,3 +214,5 @@ a.wc-bet:hover { border-color: var(--wc-line-strong); background: var(--wc-surfa
 .highlight .o, .highlight .ow { color: #89ddff; }
 .highlight .p { color: #c1c8d2; }
 .highlight .err { color: #f07178; }
+
+.wc-tag { display: inline-block; vertical-align: middle; margin-left: .4em; padding: .1em .5em; border: 1px solid var(--wc-line-strong); border-radius: 999px; color: var(--wc-muted); font-size: .68rem; font-weight: 700; letter-spacing: .05em; }
