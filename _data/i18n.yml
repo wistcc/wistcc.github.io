@@ -19,13 +19,14 @@ nav:
     url:   { es: "/blog/", en: "/blog/" }
   - id: about
     label: { es: "Sobre mí", en: "About" }
-    url:   { es: "/about/", en: "/about/" }
+    url:   { es: "/about/", en: "/en/about/" }
 
 ui:
   follow_ig:     { es: "Sígueme en Instagram", en: "Follow me on Instagram" }
   see_challenge: { es: "Ver el reto", en: "See the challenge" }
   building:      { es: "Lo que estoy construyendo", en: "What I'm building" }
   writing:       { es: "Escritura", en: "Writing" }
+  resume:        { es: "Currículum", en: "Resume" }
   writing_note:  { es: "Artículos técnicos, en inglés", en: "Technical articles" }
   view_all:      { es: "Ver todo", en: "View all" }
   day:           { es: "Día", en: "Day" }

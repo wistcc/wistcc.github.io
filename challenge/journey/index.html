@@ -1,7 +1,11 @@
 ---
-layout: challenge
+layout: wc
+lang: es
+nav_id: challenge
+extra_css: /assets/css/challenge.css
+track_view: challenge_page_view
 permalink: /challenge/journey/
-title: "El journey completo — El reto de Winner Crespo"
+title: "El journey completo del reto"
 description: "Todos los días del reto: decisiones, experimentos, errores y aprendizajes construyendo ingresos que no dependan directamente de mi tiempo."
 header:
   og_image: /assets/images/challenge/portrait.jpg
@@ -48,7 +52,7 @@ header:
             {% if d.metric and d.metric != "" %}<span class="ch-jday__metric">{{ d.metric }}</span>{% endif %}
             {% if d.instagram_url and d.instagram_url != "" %}
             <a class="ch-btn ch-btn--ghost ch-btn--sm" href="{{ d.instagram_url }}" target="_blank" rel="noopener"
-               data-ch-event="journey_day_click" data-ch-label="dia-{{ d.day }}">
+               data-track="journey_day_click" data-label="dia-{{ d.day }}">
               {% include challenge/ig-icon.html %} Ver en Instagram
             </a>
             {% endif %}

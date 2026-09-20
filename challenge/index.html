@@ -1,7 +1,11 @@
 ---
-layout: challenge
+layout: wc
+lang: es
+nav_id: challenge
+extra_css: /assets/css/challenge.css
+track_view: challenge_page_view
 permalink: /challenge/
-title: "Intentando reemplazar mi sueldo — Winner Crespo"
+title: "Intentando reemplazar mi sueldo"
 description: "Estoy documentando mi intento de construir ingresos que no dependan directamente de mi tiempo, una hora a la vez."
 header:
   og_image: /assets/images/challenge/portrait.jpg
@@ -18,14 +22,14 @@ header:
         <h1 class="ch-hero__title">Día {{ cfg.current_day }} intentando reemplazar mi sueldo, una hora a la vez.</h1>
         <p class="ch-hero__sub">No quiero dejar de trabajar.<br>Quiero dejar de <em>tener que trabajar</em>.</p>
         <p class="ch-hero__lead">Estoy documentando públicamente mi intento de construir ingresos que no dependan directamente de mi tiempo mientras mantengo mi trabajo full-time y mi vida normal.</p>
-        <a href="{{ cfg.instagram_url }}" target="_blank" rel="noopener"
+        <a href="{{ site.data.profile.instagram_url }}" target="_blank" rel="noopener"
            class="ch-btn ch-btn--primary"
-           data-ch-event="instagram_cta_click" data-ch-label="hero">
+           data-track="instagram_cta_click" data-label="hero">
           {% include challenge/ig-icon.html %} Sígueme en Instagram
         </a>
       </div>
       <div class="ch-hero__media">
-        <img class="ch-hero__photo" src="{{ cfg.portrait }}" alt="{{ site.name }}" width="420" height="525">
+        <img class="ch-hero__photo" src="{{ site.data.profile.portrait }}" alt="{{ site.name }}" width="420" height="525">
         <p class="ch-hero__note">Mismo trabajo. Más opciones.</p>
       </div>
     </div>
@@ -117,7 +121,7 @@ header:
           {% if p.why %}<p class="ch-proj__why">{{ p.why }}</p>{% endif %}
           {% if p.link and p.link != "" %}
           <a href="{{ p.link }}" target="_blank" rel="noopener" class="ch-btn ch-btn--ghost ch-btn--sm"
-             data-ch-event="project_click" data-ch-label="{{ p.name }}">Conocer más sobre {{ p.name }} →</a>
+             data-track="project_click" data-label="{{ p.name }}">Conocer más sobre {{ p.name }} →</a>
           {% endif %}
         </div>
         {% endfor %}
@@ -215,7 +219,7 @@ header:
       {% assign href = d.instagram_url | default: "/challenge/journey/" %}
       {% if d.instagram_url and d.instagram_url != "" %}{% assign ext = true %}{% else %}{% assign ext = false %}{% endif %}
       <a class="ch-ep" href="{{ href }}" {% if ext %}target="_blank" rel="noopener"{% endif %}
-         data-ch-event="journey_day_click" data-ch-label="dia-{{ d.day }}">
+         data-track="journey_day_click" data-label="dia-{{ d.day }}">
         {% if d.thumbnail and d.thumbnail != "" %}
           <img class="ch-ep__thumb" src="{{ d.thumbnail }}" alt="Día {{ d.day }}">
         {% else %}
@@ -254,7 +258,7 @@ header:
           <div class="ch-mile">
             {% if m.instagram_url and m.instagram_url != "" %}
             <a href="{{ m.instagram_url }}" target="_blank" rel="noopener"
-               data-ch-event="milestone_click" data-ch-label="dia-{{ m.day }}">
+               data-track="milestone_click" data-label="dia-{{ m.day }}">
             {% endif %}
               <div class="ch-mile__meta">Día {{ m.day }} · {{ m.date | date: "%-d %b, %Y" }}</div>
               <div class="ch-mile__title">{{ m.title }}</div>
@@ -287,9 +291,9 @@ header:
         <h2>Acompáñame en el proceso</h2>
         <p>Estoy compartiendo todo en tiempo real en Instagram: avances, errores, números y aprendizajes.</p>
       </div>
-      <a href="{{ cfg.instagram_url }}" target="_blank" rel="noopener"
+      <a href="{{ site.data.profile.instagram_url }}" target="_blank" rel="noopener"
          class="ch-btn ch-btn--primary"
-         data-ch-event="instagram_cta_click" data-ch-label="footer-cta">
+         data-track="instagram_cta_click" data-label="footer-cta">
         {% include challenge/ig-icon.html %} Sígueme en Instagram
       </a>
     </div>
