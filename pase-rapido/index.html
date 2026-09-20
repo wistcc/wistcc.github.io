@@ -548,6 +548,7 @@
   var LANG="es", DURATION=15*60, left=DURATION, active=false, codeTimer=null, smsPhone="", phoneView="res";
   var CIRC=2*Math.PI*26;
   var IG="winnercrespo"; // ?ig= can override
+  var ADDRESSES=["Villa Coralina 7","Los Flamboyanes 3","Sendero Palmar 12","Residencia Marena 5","Los Almendros 8","Cocotal Bloque B 4"], currentAddr=ADDRESSES[0];
 
   function tt(path){ var o=T[LANG]; path.split(".").forEach(function(k){ o=o&&o[k]; }); return o; }
   function fmt(s){var m=Math.floor(s/60),ss=s%60;return m+":"+(ss<10?"0":"")+ss;}
@@ -564,7 +565,7 @@
       '<div class="ring"><svg width="58" height="58" viewBox="0 0 62 62"><circle class="track" cx="31" cy="31" r="26" fill="none" stroke-width="6"/><circle class="prog" data-prog cx="31" cy="31" r="26" fill="none" stroke-width="6" transform="rotate(-90 31 31)" stroke-dasharray="'+CIRC+'" stroke-dashoffset="0"/></svg>'+
       '<div><div class="ptime" data-time>15:00</div><small>'+p.expires+'</small></div>'+
       '<div class="seccode"><b data-code>•••-•••</b><small>'+p.code+'</small></div></div>'+
-      '<div class="pmeta"><div><span>'+p.mProp+'</span><b>Los Laureles 9</b></div><div><span>'+p.mType+'</span><b>'+p.typeVal+'</b></div>'+
+      '<div class="pmeta"><div><span>'+p.mProp+'</span><b>'+currentAddr+'</b></div><div><span>'+p.mType+'</span><b>'+p.typeVal+'</b></div>'+
       '<div><span>'+p.mAcc+'</span><b>'+p.accVal+'</b></div><div><span>'+p.mVal+'</span><b>'+p.valVal+'</b></div></div>'+
       '<div class="swipehint">'+p.swipe+'</div></div>';
   }
@@ -591,6 +592,7 @@
   function deactivate(){endState('dead');}
   function activate(){
     var pe=document.getElementById('cphone');smsPhone=pe&&pe.value.trim()?pe.value.trim():"";
+    currentAddr=ADDRESSES[Math.floor(Math.random()*ADDRESSES.length)];
     active=true;left=DURATION;renderLive();renderConsole();
     document.querySelectorAll('[data-clock]').forEach(function(e){e.textContent=nowStr();});
     if(codeTimer)clearInterval(codeTimer);
@@ -605,7 +607,7 @@
   }
   function renderConsole(){
     var el=document.getElementById('g-console');if(!el)return;var g=tt("phone.gua");
-    if(active){el.innerHTML='<div class="order"><span class="ic">🛵</span><div><b>Los Laureles 9</b><span>'+g.consoleType+'</span></div><span class="pill">● '+g.live+' · <span data-time>'+fmt(left)+'</span></span></div>';}
+    if(active){el.innerHTML='<div class="order"><span class="ic">🛵</span><div><b>'+currentAddr+'</b><span>'+g.consoleType+'</span></div><span class="pill">● '+g.live+' · <span data-time>'+fmt(left)+'</span></span></div>';}
     else{el.innerHTML='<div class="pnote" style="text-align:center">'+g.empty+'</div>';}
   }
 
@@ -666,8 +668,13 @@
 })();
 </script>
 
-<!-- Analytics: GoatCounter (gratis, sin cookies). Crea una cuenta en https://www.goatcounter.com/
-     y reemplaza YOURCODE por tu subdominio. Hasta entonces no cuenta nada (es inofensivo). -->
-<script data-goatcounter="https://YOURCODE.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<!-- Analytics (opcional). El sitio usa Universal Analytics (UA-120919401-1), que Google apagó en 2023,
+     y esta página es standalone (no hereda el GA del layout de Jekyll). Para medirla: crea/usa una
+     propiedad GA4, pon su ID (G-XXXXXXXXXX) en ambas líneas de abajo y descomenta este bloque. -->
+<!--
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script>
+-->
+
 </body>
 </html>
