@@ -7,14 +7,15 @@
 #  Los textos fijos de la interfaz están en _data/i18n.yml (bloque `ch`).
 #  Instagram y foto: _data/profile.yml.
 #
-#  Numeración: los "Día N" son los que dices en cada Reel. El anuncio del
-#  31 ago es el inicio (day: 0, se muestra como "Inicio" / "Kickoff").
+#  Numeración: los "Día N" son los que dices en cada Reel. El reto empieza el
+#  1 sep (Día 1). El Reel del 31 ago fue el anuncio (day: 0, se muestra como
+#  "Anuncio" / "Announcement").
 #  No se muestran fechas de publicación, solo "Día N".
 # ============================================================================
 
 config:
   current_day: 20                 # Día actual del reto (actualízalo a diario)
-  start_date: 2026-08-31          # Fecha de inicio (se muestra en el marcador)
+  start_date: 2026-09-01          # Fecha de inicio = Día 1 (se muestra en el marcador)
 
   currency: "RD$"
   total_generated: 0              # Todo lo generado fuera del trabajo durante el reto
@@ -33,7 +34,7 @@ config:
 #  Ej: - { day: 30, monthly_income: 1500 }
 # ----------------------------------------------------------------------------
 income_history:
-  - { day: 0,  monthly_income: 0 }
+  - { day: 1,  monthly_income: 0 }
   - { day: 20, monthly_income: 0 }
 
 # ----------------------------------------------------------------------------
