@@ -1,0 +1,66 @@
+<!doctype html>
+{%- comment -%}
+  Shared layout for the redesigned site (dark / premium, bilingual ES/EN).
+  Front matter it understands:
+    lang:        es | en            (default es)   -> <html lang>, UI strings
+    alt_url:     URL of the translated counterpart  -> hreflang + language switch
+    nav_id:      home | challenge | writing | about -> highlights the nav item
+    lang_detect: true               -> first-visit redirect by browser language
+                                       (only set on the Spanish home; skips bots)
+    wide:        true               -> wider content column
+  It does NOT load the old Minimal Mistakes stylesheet.
+{%- endcomment -%}
+{%- assign L = page.lang | default: "es" -%}
+<html lang="{{ L }}">
+  <head>
+    <meta charset="utf-8">
+    {%- if page.lang_detect %}
+    <script>
+      /* First-visit language detection for the Spanish home only.
+         - Never runs for crawlers/previews (keeps Spanish canonical indexable).
+         - A saved choice (from the ES/EN switch) always wins. */
+      (function () {
+        try {
+          if (/bot|crawl|spider|slurp|bingpreview|facebookexternalhit|embedly|pinterest|whatsapp|telegram|linkedin|twitter|discord|lighthouse|headless|preview/i.test(navigator.userAgent) || navigator.webdriver) return;
+          var saved = localStorage.getItem('wc_lang');
+          if (saved) { if (saved === 'en') location.replace('/en/'); return; }
+          var l = (navigator.languages && navigator.languages[0]) || navigator.language || 'es';
+          if (/^en/i.test(l)) location.replace('/en/');
+        } catch (e) {}
+      })();
+    </script>
+    {%- endif %}
+    {% include wc/seo.html %}
+    <link rel="alternate" type="application/atom+xml" title="{{ site.title }} Feed" href="/feed.xml">
+    <link rel="icon" href="/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ '/assets/css/wc.css' | relative_url }}">
+    {%- if page.extra_css %}<link rel="stylesheet" href="{{ page.extra_css | relative_url }}">{% endif %}
+  </head>
+
+  <body class="wc layout--wc">
+    {% include wc/nav.html %}
+
+    <main id="main">
+      {{ content }}
+    </main>
+
+    {% include wc/footer.html %}
+
+    {% include analytics.html %}
+    <script>
+      (function () {
+        function track(name, params) { if (typeof gtag === 'function') { gtag('event', name, params || {}); } }
+        document.addEventListener('click', function (e) {
+          var lang = e.target.closest('[data-wc-lang]');
+          if (lang) { try { localStorage.setItem('wc_lang', lang.getAttribute('data-wc-lang')); } catch (err) {} }
+          var el = e.target.closest('[data-track]');
+          if (el) track(el.getAttribute('data-track'), { event_label: el.getAttribute('data-label') || undefined });
+        });
+      })();
+    </script>
+  </body>
+</html>

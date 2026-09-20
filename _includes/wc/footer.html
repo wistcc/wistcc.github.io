@@ -1,0 +1,15 @@
+{%- assign L = page.lang | default: "es" -%}
+{%- assign t = site.data.i18n -%}
+{%- assign p = site.data.profile -%}
+<footer class="wc-footer">
+  <div class="wc-wrap wc-wrap--wide wc-footer__inner">
+    <span>&copy; {{ site.time | date: '%Y' }} {{ p.name }}</span>
+    <span class="wc-footer__links">
+      {%- for item in t.nav -%}<a href="{{ item.url[L] }}">{{ item.label[L] }}</a>{%- endfor -%}
+      <a href="{{ p.instagram_url }}" target="_blank" rel="noopener" data-track="instagram_cta_click" data-label="footer">Instagram</a>
+      <a href="{{ p.github_url }}" target="_blank" rel="noopener">GitHub</a>
+      <a href="{{ p.linkedin_url }}" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="/feed.xml">RSS</a>
+    </span>
+  </div>
+</footer>

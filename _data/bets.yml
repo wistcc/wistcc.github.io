@@ -1,0 +1,28 @@
+# ============================================================================
+#  APUESTAS — lo que estoy construyendo / experimentos (home)
+#  Puede haber varias a la vez. Agrega una entrada para sumar otra.
+#
+#  status: active | paused | closed   (solo se muestran las que no están closed)
+#  url:    opcional. Vacío = tarjeta sin enlace.
+#  metric: opcional, texto corto por idioma. `metric_type: challenge_day`
+#          muestra "Día N" leyendo el día actual de _data/challenge.yml.
+# ============================================================================
+- id: challenge
+  name:   { es: "Reemplazar mi sueldo", en: "Replacing my salary" }
+  desc:
+    es: "Un reto público: construir ingresos que no dependan directamente de mi tiempo, una hora a la vez."
+    en: "A public challenge: building income that doesn't depend directly on my time, one hour at a time."
+  status: active
+  url: "/challenge/"
+  metric_type: challenge_day
+
+- id: kasso
+  name:   { es: "KASSO", en: "KASSO" }
+  desc:
+    es: "Inteligencia artificial para ayudar a empresas a cobrar dinero pendiente y automatizar el seguimiento de cobros."
+    en: "Artificial intelligence that helps companies collect overdue payments and automate collections follow-up."
+  status: active
+  url: ""
+  metric:
+    es: "+100 conversaciones al día"
+    en: "100+ conversations a day"
