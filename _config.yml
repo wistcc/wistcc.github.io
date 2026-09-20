@@ -259,7 +259,9 @@ defaults:
       path: ""
       type: posts
     values:
-      layout: single
+      layout: wc-post
+      lang: en
+      nav_id: writing
       read_time: true
       comments: true
       share: true
