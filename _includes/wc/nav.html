@@ -1,0 +1,28 @@
+{%- assign L = page.lang | default: "es" -%}
+{%- assign t = site.data.i18n -%}
+{%- if L == "en" -%}{%- assign other = "es" -%}{%- assign home_url = "/en/" -%}{%- assign other_home = "/" -%}
+{%- else -%}{%- assign other = "en" -%}{%- assign home_url = "/" -%}{%- assign other_home = "/en/" -%}{%- endif -%}
+{%- assign alt = page.alt_url | default: other_home -%}
+<a class="wc-skip" href="#main">{{ t.ui.skip[L] }}</a>
+<nav class="wc-nav" aria-label="Main">
+  <div class="wc-wrap wc-wrap--wide wc-nav__inner">
+    <a href="{{ home_url }}" class="wc-nav__brand">{{ site.data.profile.name }}</a>
+    <div class="wc-nav__right">
+      <div class="wc-lang" role="group" aria-label="{{ t.ui.language[L] }}">
+        {%- if L == "es" -%}
+        <a href="/" hreflang="es" lang="es" class="is-active" aria-current="true" data-wc-lang="es">ES</a>
+        <a href="{{ alt }}" hreflang="en" lang="en" data-wc-lang="en">EN</a>
+        {%- else -%}
+        <a href="{{ alt }}" hreflang="es" lang="es" data-wc-lang="es">ES</a>
+        <a href="/en/" hreflang="en" lang="en" class="is-active" aria-current="true" data-wc-lang="en">EN</a>
+        {%- endif -%}
+      </div>
+    </div>
+    <div class="wc-nav__links">
+      {%- for item in t.nav -%}
+      {%- assign item_url = item.url[L] -%}
+      <a href="{{ item_url }}"{% if page.nav_id == item.id %} class="is-active" aria-current="page"{% endif %}>{{ item.label[L] }}</a>
+      {%- endfor -%}
+    </div>
+  </div>
+</nav>

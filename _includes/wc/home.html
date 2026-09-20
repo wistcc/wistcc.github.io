@@ -1,0 +1,73 @@
+{%- assign L = page.lang | default: "es" -%}
+{%- assign t = site.data.i18n -%}
+{%- assign p = site.data.profile -%}
+{%- assign prefix = "" -%}{%- if L == "en" -%}{%- assign prefix = "/en" -%}{%- endif -%}
+
+<!-- ============================ HERO ============================ -->
+<header class="wc-hero">
+  <div class="wc-wrap">
+    <img class="wc-hero__photo" src="{{ p.portrait }}" alt="{{ p.name }}" width="84" height="84">
+    <h1 class="wc-hero__name">{{ p.name }}</h1>
+    <p class="wc-hero__title">{{ t.home.tagline[L] }}</p>
+    <p class="wc-hero__lead">{{ t.home.bio[L] }}</p>
+    <div class="wc-hero__cta">
+      <a class="wc-btn wc-btn--primary" href="{{ p.instagram_url }}" target="_blank" rel="noopener" data-track="instagram_cta_click" data-label="home-hero">
+        {% include wc/icon.html name="instagram" %} {{ t.ui.follow_ig[L] }}
+      </a>
+      <a class="wc-btn wc-btn--ghost" href="/challenge/" data-track="challenge_click" data-label="home-hero">
+        {{ t.ui.see_challenge[L] }} {% include wc/icon.html name="arrow" %}
+      </a>
+    </div>
+    <div class="wc-hero__socials">
+      <a href="{{ p.instagram_url }}" target="_blank" rel="noopener" aria-label="Instagram">{% include wc/icon.html name="instagram" %}</a>
+      <a href="{{ p.github_url }}" target="_blank" rel="noopener" aria-label="GitHub">{% include wc/icon.html name="github" %}</a>
+      <a href="{{ p.linkedin_url }}" target="_blank" rel="noopener" aria-label="LinkedIn">{% include wc/icon.html name="linkedin" %}</a>
+      <a href="{{ p.twitter_url }}" target="_blank" rel="noopener" aria-label="X / Twitter">{% include wc/icon.html name="x" %}</a>
+    </div>
+  </div>
+</header>
+
+<!-- ============================ BUILDING ============================ -->
+<section class="wc-section">
+  <div class="wc-wrap">
+    <div class="wc-section__head"><h2>{{ t.ui.building[L] }}</h2></div>
+    <div class="wc-bets">
+      {%- for bet in site.data.bets -%}
+      {%- if bet.status != "closed" -%}
+      {%- capture metric -%}
+        {%- if bet.metric_type == "challenge_day" -%}{{ t.ui.day[L] }} {{ site.data.challenge.config.current_day }}
+        {%- elsif bet.metric -%}{{ bet.metric[L] }}{%- endif -%}
+      {%- endcapture -%}
+      {%- assign tag = "div" -%}{%- if bet.url != "" and bet.url -%}{%- assign tag = "a" -%}{%- endif -%}
+      <{{ tag }} class="wc-bet"{% if tag == "a" %} href="{{ bet.url }}" data-track="project_click" data-label="{{ bet.id }}"{% endif %}>
+        <div class="wc-bet__top">
+          <span class="wc-bet__name">{{ bet.name[L] }}</span>
+          <span class="wc-bet__status wc-bet__status--{{ bet.status }}">{{ t.ui.status[bet.status][L] }}</span>
+          {%- assign metric = metric | strip -%}
+          {%- if metric != "" %}<span class="wc-bet__metric">{{ metric }}</span>{% endif %}
+        </div>
+        <p class="wc-bet__desc">{{ bet.desc[L] }}</p>
+      </{{ tag }}>
+      {%- endif -%}
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+<!-- ============================ WRITING ============================ -->
+<section class="wc-section">
+  <div class="wc-wrap">
+    <div class="wc-section__head">
+      <h2>{{ t.ui.writing[L] }} <span class="wc-muted" style="font-weight:500;">· {{ t.ui.writing_note[L] }}</span></h2>
+      <a class="wc-link" href="/blog/">{{ t.ui.view_all[L] }} →</a>
+    </div>
+    <div class="wc-writing">
+      {%- for post in site.posts limit: 5 -%}
+      <a class="wc-post" href="{{ post.url }}">
+        <span class="wc-post__title">{{ post.title }}</span>
+        <span class="wc-post__date">{{ post.date | date: "%Y" }}</span>
+      </a>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>

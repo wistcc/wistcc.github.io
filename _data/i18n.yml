@@ -1,0 +1,49 @@
+# ============================================================================
+#  i18n — textos de la interfaz (ES por defecto, EN espejo bajo /en/)
+#
+#  Uso en plantillas:  {{ t.ui.follow_ig[L] }}   (L = 'es' | 'en')
+#  Para agregar un texto: añade la clave con sus dos idiomas aquí.
+#  Las páginas declaran su idioma con `lang: es|en` en el front matter.
+# ============================================================================
+
+# Navegación principal (url por idioma)
+nav:
+  - id: home
+    label: { es: "Inicio", en: "Home" }
+    url:   { es: "/", en: "/en/" }
+  - id: challenge
+    label: { es: "El reto", en: "The challenge" }
+    url:   { es: "/challenge/", en: "/challenge/" }   # el reto solo existe en español por ahora
+  - id: writing
+    label: { es: "Escritura", en: "Writing" }
+    url:   { es: "/blog/", en: "/blog/" }
+  - id: about
+    label: { es: "Sobre mí", en: "About" }
+    url:   { es: "/about/", en: "/about/" }
+
+ui:
+  follow_ig:     { es: "Sígueme en Instagram", en: "Follow me on Instagram" }
+  see_challenge: { es: "Ver el reto", en: "See the challenge" }
+  building:      { es: "Lo que estoy construyendo", en: "What I'm building" }
+  writing:       { es: "Escritura", en: "Writing" }
+  writing_note:  { es: "Artículos técnicos, en inglés", en: "Technical articles" }
+  view_all:      { es: "Ver todo", en: "View all" }
+  day:           { es: "Día", en: "Day" }
+  language:      { es: "Idioma", en: "Language" }
+  skip:          { es: "Saltar al contenido", en: "Skip to content" }
+  status:
+    active: { es: "Activo", en: "Active" }
+    paused: { es: "En pausa", en: "Paused" }
+    closed: { es: "Cerrado", en: "Closed" }
+
+home:
+  # <title> se deja como "Winner Crespo" (igual que antes) para no alterar el SEO.
+  tagline:
+    es: "Construyendo para que trabajar sea una opción, no una necesidad."
+    en: "Building so that working is a choice, not a necessity."
+  bio:
+    es: "Soy ingeniero de software. Tengo un trabajo full-time, una familia y una meta: construir ingresos que no dependan directamente de cada hora de mi tiempo. Construyo en público y documento lo que funciona y lo que no."
+    en: "I'm a software engineer. I have a full-time job, a family, and one goal: building income that doesn't depend directly on every hour of my time. I build in public and document what works and what doesn't."
+  description:
+    es: "Winner Crespo, ingeniero de software. Construyo en público para que trabajar sea una opción y no una necesidad."
+    en: "Winner Crespo, software engineer. Building in public so that working becomes a choice, not a necessity."

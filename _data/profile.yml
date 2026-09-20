@@ -1,0 +1,17 @@
+# ============================================================================
+#  PERFIL — datos personales compartidos por todo el sitio
+#  Edita aquí; se usan en el hero, footer y CTAs de todas las páginas.
+# ============================================================================
+name: "Winner Crespo"
+
+# ⚠️ PLACEHOLDER: reemplaza el archivo con tu foto de perfil de Instagram
+#    (mismo nombre de archivo, no hay que tocar código).
+portrait: "/assets/images/challenge/portrait.jpg"
+
+# ⚠️ PLACEHOLDER: confirma tu usuario/URL real de Instagram.
+instagram_url: "https://www.instagram.com/winnercrespo/"
+instagram_handle: "winnercrespo"
+
+github_url: "https://github.com/wistcc"
+linkedin_url: "https://www.linkedin.com/in/winnercrespo"
+twitter_url: "https://twitter.com/winnercrespo"
