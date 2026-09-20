@@ -47,7 +47,7 @@ Regla permanente de Winner: **todo contenido nuevo se publica en los dos idiomas
 
 - **Post nuevo:** dos archivos en `_posts/`, uno con `lang: es` y otro con `lang: en`, con slugs distintos y `alt_url` apuntando cada uno al otro (genera el `hreflang`). Los enlaces internos apuntan a la versión del mismo idioma (`/challenge/` vs `/en/challenge/`).
 - **Páginas y textos del sitio:** cada texto visible con `{ es, en }` (`_data/i18n.yml`, `_data/challenge.yml`, `_data/bets.yml`). Páginas nuevas: versión en `/en/...` con `alt_url` cruzado.
-- **Reel nuevo del reto:** entrada en `days` de `challenge.yml` con título y resumen en `es` y `en`, y su portada como miniatura (guardar la imagen de portada en `assets/images/challenge/<código-del-reel>.jpg`, 240px de ancho, y poner la ruta en `thumbnail`). Las URLs de imágenes de Instagram caducan: nunca enlazarlas directo.
+- **Reel nuevo del reto:** lo agrega solo la Action diaria (ver `.github/AUTOMATION.md`), en español y sin traducir, con su portada y su "Día N" (del caption). Si hay que hacerlo a mano: entrada en `days` de `challenge.yml` con título y resumen, y su portada como miniatura (guardar la imagen de portada en `assets/images/challenge/<código-del-reel>.jpg`, 240px de ancho, y poner la ruta en `thumbnail`). Las URLs de imágenes de Instagram caducan: nunca enlazarlas directo.
 - Escribe el original primero y traduce después fielmente. Ninguna versión debe sonar más "escrita" que la otra.
 - Antes de dar algo por terminado, revisa que no quede nada en un solo idioma.
 

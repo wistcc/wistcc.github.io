@@ -1,0 +1,15 @@
+{%- comment -%}
+  Sets `current_day` (Día N del reto), computed at build time in Dominican Republic time
+  (_config.yml `timezone: America/Santo_Domingo`). Day 1 = config.start_date.
+  Optional override: config.current_day in _data/challenge.yml (useful for testing).
+  Usage: {% include wc/current-day.html %} then use {{ current_day }}.
+{%- endcomment -%}
+{%- assign _cd_cfg = site.data.challenge.config -%}
+{%- if _cd_cfg.current_day -%}
+  {%- assign current_day = _cd_cfg.current_day -%}
+{%- else -%}
+  {%- assign _cd_now = site.time | date: "%s" -%}
+  {%- assign _cd_start = _cd_cfg.start_date | date: "%Y-%m-%d" | date: "%s" -%}
+  {%- assign current_day = _cd_now | minus: _cd_start | divided_by: 86400 | plus: 1 -%}
+  {%- if current_day < 1 -%}{%- assign current_day = 1 -%}{%- endif -%}
+{%- endif -%}
