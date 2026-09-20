@@ -90,7 +90,6 @@ h1, h2, h3, h4 { color: var(--wc-ink); font-weight: 700; letter-spacing: -0.02em
 .wc-btn--primary:hover { background: #e9edf2; box-shadow: 0 8px 24px rgba(0,0,0,.4); }
 .wc-btn--ghost { background: var(--wc-surface-2); color: var(--wc-ink); border-color: var(--wc-line-strong); }
 .wc-btn--ghost:hover { background: var(--wc-elevated); }
-.wc-btn--sm { padding: .5em .9em; font-size: .86rem; }
 .wc-btn svg { width: 1.05em; height: 1.05em; }
 
 /* ---------- Hero (home) ---------- */
@@ -131,7 +130,6 @@ a.wc-bet:hover { border-color: var(--wc-line-strong); background: var(--wc-surfa
 .wc-bet__status--closed { background: var(--wc-surface-2); color: var(--wc-muted); }
 .wc-bet__metric { margin-left: auto; font-size: .82rem; font-weight: 700; color: var(--wc-accent); white-space: nowrap; }
 .wc-bet__desc { color: var(--wc-body); font-size: .96rem; margin: 0; }
-.wc-bet__arrow { color: var(--wc-muted); }
 
 /* ---------- Writing list ---------- */
 .wc-writing { display: grid; gap: 2px; }

@@ -173,7 +173,6 @@
 }
 .ch-jday.is-milestone { border-color: var(--ch-line-strong); background: var(--ch-surface-2); }
 .ch-jday__num { font-size: 1.4rem; font-weight: 800; color: var(--ch-ink); }
-.ch-jday__date { font-size: .82rem; color: var(--ch-muted); }
 .ch-jday__type { display: inline-block; margin-top: 8px; font-size: .68rem; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: var(--ch-muted); border: 1px solid var(--ch-line-strong); border-radius: 999px; padding: .25em .6em; }
 .ch-jday__title { font-size: 1.2rem; font-weight: 700; color: var(--ch-ink); }
 .ch-jday__title .ch-star { color: var(--ch-accent); }

@@ -1,6 +1,6 @@
 {%- comment -%}
   Formats an integer with thousands separators (pure Liquid, no plugins).
-  Usage: {% include challenge/money.html value=1234567 %}  ->  1,234,567
+  Usage: {% include wc/money.html value=1234567 %}  ->  1,234,567
 {%- endcomment -%}
 {%- assign _digits = include.value | round: 0 | append: '' -%}
 {%- assign _rev = _digits | split: '' | reverse -%}
