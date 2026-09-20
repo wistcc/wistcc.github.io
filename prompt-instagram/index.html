@@ -1,0 +1,758 @@
+---
+layout: single
+title: "El prompt que uso para que mi agente analice mi Instagram"
+permalink: /prompt-instagram/
+author_profile: true
+description: "El prompt exacto que le doy a mi agente de IA para que analice las analíticas de mi Instagram de los últimos 30 días y me diga qué repetir, qué reducir y qué experimentar. Cópialo y úsalo tú."
+---
+
+<style>
+  .pi-wrap { max-width: 760px; }
+  .pi-hero p { font-size: 1.05em; }
+  .pi-lead {
+    border-left: 4px solid #52adc8;
+    padding: 0.6em 1.1em;
+    margin: 1.5em 0;
+    background: rgba(82, 173, 200, 0.08);
+    border-radius: 4px;
+  }
+  .pi-steps { counter-reset: pi; list-style: none; padding-left: 0; }
+  .pi-steps li {
+    counter-increment: pi;
+    position: relative;
+    padding-left: 2.4em;
+    margin-bottom: 0.9em;
+  }
+  .pi-steps li::before {
+    content: counter(pi);
+    position: absolute;
+    left: 0; top: 0;
+    width: 1.7em; height: 1.7em;
+    line-height: 1.7em;
+    text-align: center;
+    background: #52adc8;
+    color: #fff;
+    border-radius: 50%;
+    font-weight: 700;
+    font-size: 0.85em;
+  }
+  .pi-prompt-box {
+    position: relative;
+    margin: 1.2em 0 2em;
+  }
+  .pi-copy-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5em;
+    background: #52adc8;
+    color: #fff;
+    border: none;
+    padding: 0.7em 1.4em;
+    border-radius: 6px;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.15s ease;
+  }
+  .pi-copy-btn:hover { background: #3f93ac; }
+  .pi-copy-btn.copied { background: #2e8b57; }
+  .pi-prompt {
+    max-height: 460px;
+    overflow: auto;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-size: 0.82em;
+    line-height: 1.5;
+    padding: 1.2em;
+    border-radius: 6px;
+    margin-top: 0.8em;
+  }
+  .pi-note {
+    font-size: 0.9em;
+    opacity: 0.8;
+    margin-top: 0.4em;
+  }
+</style>
+
+<div class="pi-wrap" markdown="1">
+
+Si llegaste aquí desde uno de mis videos en Instagram: bienvenido 👋. Este es exactamente el prompt que le paso a mi agente de IA para que **analice todas las analíticas de mi cuenta de los últimos 30 días** y me diga, con datos reales, qué está funcionando y qué no.
+
+<div class="pi-lead" markdown="1">
+**La idea:** dejar de adivinar. En lugar de mirar los números a ojo, le doy este prompt a un agente con acceso a un navegador, entra a mi Instagram (donde ya estoy logueado), lee las métricas de cada Reel y post de los últimos 30 días y me devuelve un análisis accionable — sin publicar, editar ni tocar nada de la cuenta.
+</div>
+
+## Qué logra este prompt
+
+- Una **tabla maestra** con una fila por contenido y todas sus métricas (views, reach, follows, retención, skip rate, shares, saves, etc.).
+- Los **top performers** por views, por reach, por follows y por conversión (follows por cada 1,000 views), con qué tienen en común.
+- **Patrones que no son obvios**: qué hooks, formatos, temas, duraciones y horarios rinden mejor cuando normalizas por alcance — no solo por quién tuvo más views.
+- Análisis de **conversión a followers**: qué contenido trae views pero pocos follows, y cuál trae menos views pero seguidores de calidad.
+- Una lista clara de **qué repetir, qué reducir y qué experimentar** (con hipótesis y métrica a observar), más una sección honesta de **lo que todavía no sabemos**.
+
+## Cómo usarlo
+
+<ol class="pi-steps" markdown="1">
+<li markdown="1">Abre tu agente de IA con acceso a navegador (yo uso <strong>Claude</strong>) y asegúrate de estar <strong>logueado en Instagram</strong> en esa sesión.</li>
+<li markdown="1">Copia el prompt de abajo y <strong>ajusta el contexto</strong>: cambia el número de días, la descripción de tu cuenta y tus experimentos por los tuyos.</li>
+<li markdown="1">Pégalo, déjalo trabajar (primero recolecta, después analiza) y revisa los screenshots que va tomando para verificar los datos.</li>
+</ol>
+
+<div class="pi-lead" markdown="1">
+⚠️ **Importante:** este prompt es solo de **lectura/análisis**. Le indica al agente que NO publique, edite, borre ni cambie nada de tu cuenta. Aun así, revísalo antes de usarlo y verifica siempre los números importantes tú mismo.
+</div>
+
+## El prompt
+
+<div class="pi-prompt-box">
+  <button type="button" class="pi-copy-btn" id="pi-copy">
+    <span id="pi-copy-label">Copiar prompt</span>
+  </button>
+  <div class="pi-note">El prompt está escrito para mi cuenta. Cambia el contexto, los días y los experimentos por los tuyos.</div>
+  <pre class="pi-prompt" id="pi-prompt">{% raw %}Quiero que hagas un análisis completo del rendimiento de mi cuenta de Instagram durante los últimos 30 días.
+
+IMPORTANTE:
+- Ve directamente a mi cuenta de Instagram usando el navegador.
+- Estoy logueado en Instagram en esta sesión.
+- NO publiques, edites, borres, archives, impulses ni cambies absolutamente nada de la cuenta.
+- Solo lectura y análisis.
+- Quiero que recolectes los datos reales disponibles dentro de Instagram, no estimaciones.
+- Si algún dato no está disponible, indícalo claramente.
+- No inventes métricas.
+- Toma screenshots cuando sean útiles para verificar datos.
+- Analiza todo el contenido publicado durante los últimos 30 días, no solamente los mejores posts.
+- Cuando sea posible, utiliza los datos de Insights individuales de cada publicación/Reel además de los datos generales de la cuenta.
+
+## OBJETIVO
+
+Quiero entender qué está funcionando y qué no está funcionando en esta cuenta.
+
+No quiero solamente saber cuáles fueron los posts con más views.
+
+Quiero descubrir patrones relacionados con:
+- contenido;
+- hooks;
+- formatos;
+- duración;
+- horarios;
+- engagement;
+- retención;
+- conversión a followers;
+- shares;
+- saves;
+- alcance a non-followers;
+- frecuencia de publicación;
+- tipos de audiencia;
+- y cualquier otro patrón relevante que aparezca en los datos.
+
+Quiero que el análisis sirva para tomar mejores decisiones sobre qué contenido crear, qué experimentar y qué dejar de hacer.
+
+## PASO 1 — ENTENDER LA CUENTA
+
+Antes de sacar conclusiones, analiza:
+
+- tipo de cuenta;
+- tamaño actual de la audiencia;
+- crecimiento durante los últimos 30 días;
+- frecuencia de publicación;
+- principales formatos utilizados;
+- principales temas;
+- audiencia disponible en Insights;
+- porcentaje de views/interactions provenientes de followers vs non-followers.
+
+No asumas cuál es el objetivo de la cuenta.
+
+En su lugar, identifica qué parece estar intentando conseguir a partir del contenido y de las métricas disponibles.
+
+Si el objetivo no es evidente, dilo.
+
+## PASO 2 — CREAR UN DATASET DE TODO EL CONTENIDO
+
+Para cada Reel, video, post u otra pieza de contenido relevante publicada durante los últimos 30 días, recopila todos los datos disponibles.
+
+Intenta obtener:
+
+1. Fecha
+2. Hora exacta de publicación
+3. Día de la semana
+4. Tipo de contenido
+5. Duración, si aplica
+6. Views
+7. Reach
+8. Unique viewers, si está disponible
+9. Followers %
+10. Non-followers %
+11. Likes
+12. Comments
+13. Shares
+14. Saves
+15. Reposts, si existe
+16. Profile visits
+17. Follows atribuidos al contenido
+18. Average watch time
+19. Skip rate
+20. Retention data
+21. Watch-through/completion data
+22. Traffic sources
+23. Explore %
+24. Reels tab %
+25. Feed %
+26. Profile %
+27. Audience geography, cuando esté disponible
+28. Caption
+29. First comment, si existe
+30. Texto visible en el video
+31. Hook principal
+32. Tipo de hook
+33. Formato
+34. Tema principal
+35. Presencia o ausencia de CTA
+36. Cualquier otra métrica relevante disponible
+
+No necesitas forzar todas las métricas para todos los formatos.
+
+Por ejemplo, un Reel puede tener watch time y skip rate, mientras que una imagen no.
+
+## PASO 3 — CLASIFICAR EL CONTENIDO
+
+Clasifica cada pieza de contenido según las características que realmente tenga.
+
+Puedes utilizar categorías como:
+
+### Tipo de contenido
+- educational
+- storytelling
+- entertainment
+- opinion
+- personal
+- behind the scenes
+- tutorial
+- product
+- promotional
+- inspirational
+- news/current events
+- community
+- other
+
+### Hook
+Clasifica el hook cuando sea posible como:
+- curiosity
+- question
+- surprising result
+- contrarian
+- problem/pain point
+- story
+- numbers/data
+- transformation
+- statement
+- challenge
+- direct benefit
+- other
+
+### Formato
+Por ejemplo:
+- talking head
+- voice-over
+- timelapse
+- screen recording
+- tutorial
+- demonstration
+- interview
+- vlog
+- visual metaphor
+- list
+- text-led
+- other
+
+No fuerces una categoría si no encaja.
+
+## PASO 4 — ANALIZAR LOS RESULTADOS
+
+### A. TOP CONTENT
+
+Identifica:
+
+- top 10 por views;
+- top 10 por reach;
+- top 10 por follows;
+- top 10 por follows por 1,000 views;
+- top 10 por shares por 1,000 views;
+- top 10 por saves por 1,000 views;
+- top 10 por comments por 1,000 views;
+- top 10 por engagement.
+
+No me des solamente una lista.
+
+Explica qué tienen en común los mejores contenidos.
+
+---
+
+### B. FOLLOWER CONVERSION
+
+Calcula:
+
+follows / views × 1,000
+
+para todos los contenidos donde sea posible.
+
+Quiero saber:
+
+- qué contenido genera views pero pocos followers;
+- qué contenido genera relativamente pocas views pero muchos followers;
+- qué temas/formats convierten mejor;
+- qué hooks parecen generar más interés en seguir la cuenta.
+
+Este análisis es especialmente importante.
+
+---
+
+### C. ENGAGEMENT QUALITY
+
+No trates todos los engagements como iguales.
+
+Analiza por separado:
+
+- likes;
+- comments;
+- shares;
+- saves;
+- follows.
+
+Determina qué tipos de contenido producen principalmente:
+
+**likes**
+
+vs.
+
+**comments**
+
+vs.
+
+**shares**
+
+vs.
+
+**saves**
+
+vs.
+
+**follows**.
+
+Busca patrones.
+
+Por ejemplo:
+
+- contenido que la gente consume pero no comparte;
+- contenido que genera conversación;
+- contenido que parece particularmente útil;
+- contenido que hace que las personas quieran seguir la cuenta.
+
+---
+
+### D. RETENTION
+
+Analiza:
+
+- skip rate;
+- average watch time;
+- watch time / duración;
+- early dropoff;
+- completion rate;
+- retention curve cuando esté disponible.
+
+Busca patrones relacionados con:
+
+- longitud del video;
+- hook;
+- formato;
+- velocidad;
+- cantidad de cortes;
+- tipo de opening;
+- uso de texto;
+- talking head vs voice-over;
+- etc.
+
+No asumas causalidad.
+
+Distingue claramente entre:
+- correlación;
+- patrón probable;
+- evidencia insuficiente.
+
+---
+
+### E. HORARIO
+
+Analiza el rendimiento según:
+
+- hora del día;
+- día de la semana;
+- combinación día + hora.
+
+No concluyas simplemente que un horario es mejor porque tuvo el Reel con más views.
+
+Ten en cuenta:
+
+- número de publicaciones por horario;
+- antigüedad del contenido;
+- outliers;
+- diferencias entre weekdays y weekends.
+
+Cuando haya suficiente data, identifica ventanas de publicación potencialmente útiles.
+
+---
+
+### F. FRECUENCIA
+
+Analiza:
+
+- cuántas veces se publicó;
+- separación entre publicaciones;
+- días con múltiples publicaciones;
+- posibles diferencias de rendimiento según frecuencia.
+
+Quiero saber si existe algún patrón visible entre frecuencia y rendimiento.
+
+---
+
+### G. FORMATO
+
+Compara los principales formatos.
+
+Por ejemplo:
+
+- talking head;
+- voice-over;
+- timelapse;
+- screen recording;
+- demonstration;
+- vlog;
+- carousel;
+- static;
+- etc.
+
+Analiza:
+
+- reach;
+- views;
+- retention;
+- shares;
+- saves;
+- follows.
+
+Identifica diferencias significativas.
+
+---
+
+### H. TEMA
+
+Agrupa los posts por tema y determina cuáles generan:
+
+- alcance;
+- engagement;
+- shares;
+- saves;
+- followers.
+
+Busca tanto winners como temas consistentemente débiles.
+
+---
+
+### I. NON-FOLLOWER DISTRIBUTION
+
+Analiza qué contenidos alcanzan más personas que no siguen la cuenta.
+
+Compara:
+
+- followers;
+- non-followers;
+- Explore;
+- Reels tab;
+- Feed;
+- Profile.
+
+Quiero saber qué características parecen estar asociadas con contenido que sale de la audiencia actual.
+
+---
+
+### J. CAPTIONS Y CTA
+
+Analiza:
+
+- longitud del caption;
+- primeras líneas;
+- preguntas;
+- CTAs;
+- captions cortos vs largos;
+- captions educativos vs narrativos;
+- captions con preguntas vs sin preguntas.
+
+Determina si existe algún patrón observable.
+
+No asumas que una diferencia es causal.
+
+---
+
+### K. COMMENTS Y AUDIENCIA
+
+Analiza comentarios cuando sea posible.
+
+Busca:
+
+- preguntas repetidas;
+- objeciones;
+- temas que generan conversación;
+- lenguaje utilizado por la audiencia;
+- señales de identificación;
+- contenido que genera desacuerdo;
+- contenido que genera entusiasmo;
+- ideas para futuros contenidos.
+
+No necesito una transcripción de todos los comentarios.
+
+Quiero los patrones útiles.
+
+---
+
+## PASO 5 — BUSCAR PATRONES QUE NO SEAN OBVIOS
+
+Esta parte es muy importante.
+
+No quiero solamente:
+
+"Los videos con más views tuvieron más views."
+
+Quiero que intentes encontrar relaciones como:
+
+- un tipo específico de hook aparece desproporcionadamente en los mejores Reels;
+- cierta duración parece funcionar mejor;
+- determinados formatos generan muchas shares pero pocas follows;
+- cierto tipo de contenido convierte mejor;
+- cierto horario funciona independientemente del contenido;
+- algún cambio reciente en la estrategia parece haber alterado resultados;
+- un formato que parecía bueno realmente no lo es cuando se normaliza por tamaño del alcance;
+- un Reel con views moderadas fue excepcionalmente bueno para convertir followers;
+- un Reel con muchísimas views realmente tuvo poco valor para crecer la cuenta.
+
+Busca estos patrones activamente.
+
+## PASO 6 — NORMALIZAR CUANDO SEA NECESARIO
+
+No compares solamente valores absolutos.
+
+Cuando tenga sentido, calcula:
+
+- follows / 1,000 views
+- shares / 1,000 views
+- saves / 1,000 views
+- comments / 1,000 views
+- interactions / 1,000 views
+- profile visits / 1,000 views
+
+Para watch time:
+
+average watch time / video duration
+
+cuando sea apropiado.
+
+Esto es importante porque un Reel con 10K views y otro con 2K views no necesariamente tienen diferente calidad de contenido.
+
+## PASO 7 — SEPARAR OBSERVACIONES DE CONCLUSIONES
+
+Para todas las conclusiones importantes indica implícitamente qué nivel de evidencia tenemos.
+
+Usa categorías como:
+
+**Dato observado**
+
+**Patrón probable**
+
+**Hipótesis**
+
+**Evidencia insuficiente**
+
+Por ejemplo:
+
+"No podemos afirmar que publicar a las 3 PM sea mejor porque solamente hay 4 posts a esa hora."
+
+Quiero que seas escéptico con nuestras propias conclusiones.
+
+## PASO 8 — RECOMENDACIONES
+
+Después del análisis, dame recomendaciones concretas.
+
+### Qué repetir
+
+Contenido, hooks, formatos y prácticas que parecen funcionar.
+
+### Qué reducir
+
+Contenido o prácticas que consistentemente tienen bajo rendimiento.
+
+### Qué probar
+
+Experimentos específicos y medibles.
+
+Cada experimento debería incluir:
+
+- hipótesis;
+- variable;
+- qué mantener constante;
+- qué cambiar;
+- qué métrica observar;
+- cuánto tiempo/datos necesitamos antes de decidir.
+
+No recomiendo hacer 10 experimentos simultáneamente.
+
+Prioriza los más importantes.
+
+## PASO 9 — EXPERIMENTOS
+
+Propón entre 5 y 10 experimentos concretos.
+
+Priorízalos por:
+
+1. impacto potencial;
+2. facilidad de ejecución;
+3. calidad de la evidencia disponible.
+
+Para cada uno explica exactamente cómo realizarlo.
+
+## PASO 10 — OUTPUT FINAL
+
+Quiero que entregues el análisis en este formato:
+
+### 1. Executive summary
+
+5–10 conclusiones principales.
+
+### 2. Account snapshot
+
+Resumen de los últimos 30 días:
+- views;
+- reach;
+- engagement;
+- follower growth;
+- non-follower reach;
+- frecuencia.
+
+### 3. Master content table
+
+Una fila por contenido con todas las métricas disponibles.
+
+### 4. Top performers
+
+Qué funcionó y por qué.
+
+### 5. Biggest patterns
+
+Los patrones más interesantes encontrados en los datos.
+
+### 6. Hook analysis
+
+Qué hooks funcionan y cuáles no.
+
+### 7. Format analysis
+
+Qué formatos funcionan mejor.
+
+### 8. Topic analysis
+
+Qué temas funcionan mejor.
+
+### 9. Retention analysis
+
+Qué está pasando con watch time y retención.
+
+### 10. Follower conversion
+
+Qué contenido realmente convierte viewers en followers.
+
+### 11. Timing analysis
+
+Qué podemos aprender sobre días y horarios.
+
+### 12. Audience analysis
+
+Quién está viendo el contenido y qué contenido parece alcanzar nuevas audiencias.
+
+### 13. What to repeat
+
+Lista corta y específica.
+
+### 14. What to stop/reduce
+
+Lista corta y específica.
+
+### 15. Experiments to run next
+
+5–10 experimentos priorizados.
+
+### 16. What we still don't know
+
+Preguntas que no podemos responder todavía por falta de data.
+
+## REGLAS IMPORTANTES
+
+- No inventes datos.
+- No uses benchmarks genéricos de internet para reemplazar los datos de esta cuenta.
+- No me digas qué "debería funcionar" según teoría si mis datos muestran otra cosa.
+- Usa primero los datos reales de la cuenta.
+- Cuando una muestra sea pequeña, dilo.
+- No confundas correlación con causalidad.
+- No te enfoques exclusivamente en views.
+- Prioriza insights accionables.
+- No cambies nada de la cuenta.
+- No publiques nada.
+- No edites nada.
+- No borres nada.
+- No hagas ninguna acción irreversible.
+
+Primero recopila los datos.
+Después analízalos.
+Después presenta las conclusiones y recomendaciones.{% endraw %}</pre>
+</div>
+
+<div class="pi-lead" markdown="1">
+¿Te sirvió? Sígueme para más experimentos de IA aplicados a contenido y negocios. Y si lo usas, cuéntame qué encontraste tu agente en tu cuenta 👇
+</div>
+
+</div>
+
+<script>
+(function () {
+  var btn = document.getElementById('pi-copy');
+  var label = document.getElementById('pi-copy-label');
+  var pre = document.getElementById('pi-prompt');
+  if (!btn || !pre) return;
+
+  function fallbackCopy(text) {
+    var ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.position = 'fixed';
+    ta.style.opacity = '0';
+    document.body.appendChild(ta);
+    ta.select();
+    try { document.execCommand('copy'); } catch (e) {}
+    document.body.removeChild(ta);
+  }
+
+  btn.addEventListener('click', function () {
+    var text = pre.innerText;
+    var done = function () {
+      btn.classList.add('copied');
+      label.textContent = '¡Copiado!';
+      setTimeout(function () {
+        btn.classList.remove('copied');
+        label.textContent = 'Copiar prompt';
+      }, 2000);
+    };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(done, function () { fallbackCopy(text); done(); });
+    } else {
+      fallbackCopy(text);
+      done();
+    }
+  });
+})();
+</script>
