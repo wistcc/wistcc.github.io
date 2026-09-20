@@ -1,6 +1,7 @@
 ---
 title: "Llevo 20 días intentando reemplazar mi sueldo"
 lang: es
+alt_url: /20-days-trying-to-replace-my-salary/
 description: "Cómo van los primeros 20 días del reto: de dónde vengo, qué pasa con KASSO y cuánto ha generado el reto hasta ahora (todavía cero)."
 ---
 
