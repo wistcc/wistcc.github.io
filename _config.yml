@@ -156,7 +156,7 @@ kramdown:
 
 # Outputting
 permalink: /:categories/:title/
-timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+timezone: America/Santo_Domingo # el día del reto se calcula en hora de RD
 
 
 # Plugins (previously gems:)

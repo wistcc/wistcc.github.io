@@ -1,6 +1,7 @@
 {%- assign L = page.lang | default: "es" -%}
 {%- assign t = site.data.i18n -%}
 {%- assign p = site.data.profile -%}
+{%- include wc/current-day.html -%}
 {%- assign prefix = "" -%}{%- if L == "en" -%}{%- assign prefix = "/en" -%}{%- endif -%}
 
 <!-- ============================ HERO ============================ -->
@@ -35,7 +36,7 @@
       {%- for bet in site.data.bets -%}
       {%- if bet.status != "closed" -%}
       {%- capture metric -%}
-        {%- if bet.metric_type == "challenge_day" -%}{{ t.ui.day[L] }} {{ site.data.challenge.config.current_day }}
+        {%- if bet.metric_type == "challenge_day" -%}{{ t.ui.day[L] }} {{ current_day }}
         {%- elsif bet.metric -%}{{ bet.metric[L] }}{%- endif -%}
       {%- endcapture -%}
       {%- assign tag = "div" -%}{%- assign bet_url = bet.url -%}{%- if bet.localized -%}{%- assign bet_url = prefix | append: bet.url -%}{%- endif -%}{%- if bet_url != "" and bet_url -%}{%- assign tag = "a" -%}{%- endif -%}
