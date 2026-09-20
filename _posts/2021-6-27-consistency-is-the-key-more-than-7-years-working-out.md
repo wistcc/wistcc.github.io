@@ -1,5 +1,6 @@
 ---
 title: "Consistency when working out is the key - More than 7 years working out"
+alt_url: /constancia-es-la-clave-mas-de-7-anos-entrenando/
 last_modified_at: 2021-6-27
 ---
 

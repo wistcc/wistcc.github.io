@@ -1,5 +1,6 @@
 ---
 title: "What is camelCase, PascalCase, kebab-case and snake_case?"
+alt_url: /convenciones-de-nombres/
 header:
   teaser: /assets/images/2020-5-13-naming-conventions.jpg
   author: Patrick Perkins

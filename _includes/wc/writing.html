@@ -1,0 +1,25 @@
+{%- assign L = page.lang | default: "es" -%}
+{%- assign t = site.data.i18n -%}
+{%- assign items = site.posts | where: "lang", L -%}
+<header class="wc-hero" style="padding-bottom: 12px;">
+  <div class="wc-wrap">
+    <h1 class="wc-hero__title" style="font-size: 2rem;">{{ t.ui.writing[L] }}</h1>
+    <p class="wc-hero__lead" style="margin-bottom:0;">{{ t.ui.writing_note[L] }}.</p>
+  </div>
+</header>
+
+<section class="wc-section">
+  <div class="wc-wrap">
+    <div class="wc-list">
+      {%- for post in items -%}
+      <a class="wc-item" href="{{ post.url }}">
+        <div class="wc-item__top">
+          <span class="wc-item__title">{{ post.title }}</span>
+          <time class="wc-post__date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y-%m-%d" }}</time>
+        </div>
+        <p class="wc-item__excerpt">{{ post.excerpt | strip_html | strip_newlines | truncate: 160 }}</p>
+      </a>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>

@@ -1,5 +1,6 @@
 ---
 title: The power of saying thank you
+alt_url: /el-poder-de-dar-las-gracias/
 header:
   teaser: /assets/images/2018-7-13-the-power-of-saying-thank-you.jpeg
   author: Simon Maage

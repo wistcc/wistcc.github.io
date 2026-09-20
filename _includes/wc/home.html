@@ -59,10 +59,11 @@
   <div class="wc-wrap">
     <div class="wc-section__head">
       <h2>{{ t.ui.writing[L] }} <span class="wc-muted" style="font-weight:500;">· {{ t.ui.writing_note[L] }}</span></h2>
-      <a class="wc-link" href="/blog/">{{ t.ui.view_all[L] }} →</a>
+      <a class="wc-link" href="{{ prefix }}/blog/">{{ t.ui.view_all[L] }} →</a>
     </div>
     <div class="wc-writing">
-      {%- for post in site.posts limit: 5 -%}
+      {%- assign lang_posts = site.posts | where: "lang", L -%}
+      {%- for post in lang_posts limit: 5 -%}
       <a class="wc-post" href="{{ post.url }}">
         <span class="wc-post__title">{{ post.title }}</span>
         <span class="wc-post__date">{{ post.date | date: "%Y" }}</span>

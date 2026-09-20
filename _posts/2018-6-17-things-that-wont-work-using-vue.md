@@ -1,5 +1,6 @@
 ---
 title: Things that won't work using Vue
+alt_url: /cosas-que-no-van-a-funcionar-usando-vue/
 header:
   teaser: /assets/images/2018-6-21-things-that-wont-work-using-vue.jpeg
   author: Goh Rhy Yan

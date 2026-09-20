@@ -1,5 +1,6 @@
 ---
 title: Learning the position CSS property for good
+alt_url: /aprendiendo-la-propiedad-position-de-css-de-una-vez-por-todas/
 header:
   teaser: /assets/images/2018-6-27-learning-the-position-css-property-for-good.jpeg
   author: Caspar Rubin
