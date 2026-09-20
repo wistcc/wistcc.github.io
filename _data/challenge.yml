@@ -107,7 +107,8 @@ milestones:
 #  Journey: un episodio por Reel. Lo más reciente arriba.
 #  type: personal | business | build-in-public | lesson | milestone | experiment | other
 #  milestone: true = marca ★ y aparece con el filtro "Hitos".
-#  thumbnail: opcional (/assets/images/challenge/dia-XX.jpg). No se descarga de IG.
+#  thumbnail: portada del Reel (guardada en /assets/images/challenge/<código>.jpg, 240px).
+#             Para un Reel nuevo: guarda su portada ahí y pon la ruta. Vacío = ícono genérico.
 #  Varios Reels del mismo día = varias entradas con el mismo `day`.
 # ----------------------------------------------------------------------------
 days:
@@ -119,7 +120,7 @@ days:
       en: "What mattered wasn't the number, but that KASSO collected without us being there. That's what I'm trying to build: something that keeps creating value without needing me every second."
     metric: { es: "RD$66,552", en: "RD$66,552" }
     milestone: true
-    thumbnail: ""
+    thumbnail: "/assets/images/challenge/DdhSbrPAkP0.jpg"
     instagram_url: "https://www.instagram.com/reel/DdhSbrPAkP0/"
   - day: 20
     type: "experiment"
@@ -128,7 +129,7 @@ days:
       es: "Le pedí un análisis completo de mis últimos 30 días: datos reales, patrones y qué repetir."
       en: "I asked it for a full analysis of my last 30 days: real data, patterns and what to repeat."
     milestone: false
-    thumbnail: ""
+    thumbnail: "/assets/images/challenge/DdhMN_oR5nJ.jpg"
     instagram_url: "https://www.instagram.com/reel/DdhMN_oR5nJ/"
   - day: 19
     type: "business"
@@ -138,7 +139,7 @@ days:
       en: "Two weeks ago we reviewed almost every bot conversation. Today it handles over 100 a day and only a few need our intervention."
     metric: { es: "+100 / día", en: "100+ / day" }
     milestone: true
-    thumbnail: ""
+    thumbnail: "/assets/images/challenge/DdethoRE1Bn.jpg"
     instagram_url: "https://www.instagram.com/reel/DdethoRE1Bn/"
   - day: 18
     type: "lesson"
@@ -147,7 +148,7 @@ days:
       es: "IA, internet, conocimiento gratis y herramientas que antes requerían equipos enteros. Crear un negocio sigue siendo difícil, pero las barreras para empezar son más bajas que nunca."
       en: "AI, the internet, free knowledge and tools that used to require whole teams. Building a business is still hard, but the barriers to start are lower than ever."
     milestone: false
-    thumbnail: ""
+    thumbnail: "/assets/images/challenge/DdcIvfECPqR.jpg"
     instagram_url: "https://www.instagram.com/reel/DdcIvfECPqR/"
   - day: 17
     type: "lesson"
@@ -156,7 +157,7 @@ days:
       es: "Con KASSO lo hicimos al revés: encontrar el problema, conseguir personas dispuestas a pagar y solo entonces construir."
       en: "With KASSO we did it the other way around: find the problem, find people willing to pay, and only then build."
     milestone: false
-    thumbnail: ""
+    thumbnail: "/assets/images/challenge/DdZkD87ioP7.jpg"
     instagram_url: "https://www.instagram.com/reel/DdZkD87ioP7/"
   - day: 16
     type: "business"
@@ -165,7 +166,7 @@ days:
       es: "KASSO todavía no ha generado su primer peso y acabamos de contratar a nuestra primera empleada. Todavía no somos rentables, pero apostamos a que esto va a funcionar."
       en: "KASSO hasn't generated its first peso yet and we just hired our first employee. We're not profitable yet, but we're betting this is going to work."
     milestone: true
-    thumbnail: ""
+    thumbnail: "/assets/images/challenge/DdW_O1wiAAP.jpg"
     instagram_url: "https://www.instagram.com/reel/DdW_O1wiAAP/"
   - day: 15
     type: "lesson"
@@ -174,7 +175,7 @@ days:
       es: "La mejor validación es que alguien esté dispuesto a pagar. Conseguimos nuestros primeros dos clientes antes de escribir una sola línea de código."
       en: "The best validation is someone being willing to pay. We got our first two customers before writing a single line of code."
     milestone: false
-    thumbnail: ""
+    thumbnail: "/assets/images/challenge/DdUaZSlDA-J.jpg"
     instagram_url: "https://www.instagram.com/reel/DdUaZSlDA-J/"
   - day: 14
     type: "business"
@@ -183,7 +184,7 @@ days:
       es: "KASSO tiene solamente dos clientes y nuestra prioridad no es conseguir veinte más, sino crear muchísimo valor para esos dos."
       en: "KASSO has only two customers and our priority isn't getting twenty more, but creating a lot of value for those two."
     milestone: false
-    thumbnail: ""
+    thumbnail: "/assets/images/challenge/DdR1rtCjL5Y.jpg"
     instagram_url: "https://www.instagram.com/reel/DdR1rtCjL5Y/"
   - day: 14
     type: "personal"
@@ -192,7 +193,7 @@ days:
       es: "Así que seguimos."
       en: "So we keep going."
     milestone: false
-    thumbnail: ""
+    thumbnail: "/assets/images/challenge/DdRMGdkR9CP.jpg"
     instagram_url: "https://www.instagram.com/reel/DdRMGdkR9CP/"
   - day: 13
     type: "personal"
@@ -201,7 +202,7 @@ days:
       es: "Una de las razones por las que volvimos de Suecia a RD fue recuperar horas. Si quiero construir algo sin sacrificar a mi familia, cada hora que pueda recuperar importa."
       en: "One of the reasons we moved back from Sweden to the DR was to get hours back. If I want to build something without sacrificing my family, every hour I can recover matters."
     milestone: false
-    thumbnail: ""
+    thumbnail: "/assets/images/challenge/DdPQ9O9AHCG.jpg"
     instagram_url: "https://www.instagram.com/reel/DdPQ9O9AHCG/"
   - day: 12
     type: "personal"
@@ -210,7 +211,7 @@ days:
       es: "Mi trabajo nunca fue el problema; mi meta cambió. Ahora quiero llegar al punto donde trabajar sea una decisión y no una necesidad. Ahí empezó todo esto."
       en: "My job was never the problem; my goal changed. Now I want to reach the point where working is a choice, not a necessity. That's where all this started."
     milestone: false
-    thumbnail: ""
+    thumbnail: "/assets/images/challenge/DdMsEi1AaLO.jpg"
     instagram_url: "https://www.instagram.com/reel/DdMsEi1AaLO/"
   - day: 11
     type: "lesson"
@@ -219,14 +220,14 @@ days:
       es: "Con tu cuerpo, tu dinero o un negocio, muchas veces haces el trabajo hoy y no ves el resultado hasta mucho después. El problema es dejar de hacerlo porque todavía no ves nada."
       en: "With your body, your money or a business, you often do the work today and don't see the result until much later. The problem is quitting because you don't see anything yet."
     milestone: false
-    thumbnail: ""
+    thumbnail: "/assets/images/challenge/DdKHRHokzjD.jpg"
     instagram_url: "https://www.instagram.com/reel/DdKHRHokzjD/"
   - day: 10
     type: "other"
     title: { es: "POV: trabajando para reemplazar mi sueldo", en: "POV: working to replace my salary" }
     summary: { es: "", en: "" }
     milestone: false
-    thumbnail: ""
+    thumbnail: "/assets/images/challenge/DdIBqH9RRTZ.jpg"
     instagram_url: "https://www.instagram.com/reel/DdIBqH9RRTZ/"
   - day: 10
     type: "lesson"
@@ -235,7 +236,7 @@ days:
       es: "Ya probé tener 3 y 4 trabajos al mismo tiempo. Ahora no busco crearme otro trabajo, sino construir ingresos que dependan cada vez menos de mi tiempo."
       en: "I've already tried having 3 and 4 jobs at once. Now I'm not trying to create another job, but to build income that depends less and less on my time."
     milestone: false
-    thumbnail: ""
+    thumbnail: "/assets/images/challenge/DdFsJCVx8AW.jpg"
     instagram_url: "https://www.instagram.com/reel/DdFsJCVx8AW/"
   - day: 9
     type: "lesson"
@@ -244,7 +245,7 @@ days:
       es: "Empieza con el tiempo que ya tienes: avanzar con lo que tengas disponible, aunque algunos días sea poco."
       en: "Start with the time you already have: move forward with what you've got, even if some days it's not much."
     milestone: false
-    thumbnail: ""
+    thumbnail: "/assets/images/challenge/DdE9ov-ASLx.jpg"
     instagram_url: "https://www.instagram.com/reel/DdE9ov-ASLx/"
   - day: 8
     type: "lesson"
@@ -253,7 +254,7 @@ days:
       es: "En vez de preguntarte qué puedes crear o vender, empieza buscando problemas que tú o alguien cercano tenga con frecuencia."
       en: "Instead of asking what you can create or sell, start by looking for problems you or someone close to you often has."
     milestone: false
-    thumbnail: ""
+    thumbnail: "/assets/images/challenge/DdCY1HCgonu.jpg"
     instagram_url: "https://www.instagram.com/reel/DdCY1HCgonu/"
   - day: 7
     type: "build-in-public"
@@ -262,7 +263,7 @@ days:
       es: "Ya sé cómo hacer dinero fuera de mi trabajo. Ahora quiero construir ingresos que no dependan directamente de mi tiempo: la meta es recuperar el control de mi tiempo."
       en: "I already know how to make money outside my job. Now I want to build income that doesn't depend directly on my time: the goal is to take back control of my time."
     milestone: false
-    thumbnail: ""
+    thumbnail: "/assets/images/challenge/Dc_0EjeCT1Z.jpg"
     instagram_url: "https://www.instagram.com/reel/Dc_0EjeCT1Z/"
   - day: 6
     type: "personal"
@@ -271,7 +272,7 @@ days:
       es: "Cancelé dos carreras que ya tenía pagadas. No dejo de entrenar: esta etapa tiene otras prioridades — mi familia, mi trabajo y construir esto."
       en: "I cancelled two races I'd already paid for. I'm not giving up training: this stage has other priorities — my family, my job and building this."
     milestone: false
-    thumbnail: ""
+    thumbnail: "/assets/images/challenge/Dc9j2GbDE9H.jpg"
     instagram_url: "https://www.instagram.com/reel/Dc9j2GbDE9H/"
   - day: 5
     type: "business"
@@ -280,7 +281,7 @@ days:
       es: "Primera prueba real de KASSO: 1 pago y 3 promesas de pago de los primeros 5 clientes. Una muestra demasiado pequeña para celebrar todavía, pero promete."
       en: "KASSO's first real test: 1 payment and 3 payment promises from the first 5 customers. Too small a sample to celebrate yet, but it's promising."
     milestone: true
-    thumbnail: ""
+    thumbnail: "/assets/images/challenge/Dc6_AL3AR8-.jpg"
     instagram_url: "https://www.instagram.com/reel/Dc6_AL3AR8-/"
   - day: 5
     type: "other"
@@ -289,7 +290,7 @@ days:
       es: "Sígueme y lo hacemos juntos."
       en: "Follow me and let's do it together."
     milestone: false
-    thumbnail: ""
+    thumbnail: "/assets/images/challenge/Dc6IIv4RfW5.jpg"
     instagram_url: "https://www.instagram.com/reel/Dc6IIv4RfW5/"
   - day: 4
     type: "personal"
@@ -298,7 +299,7 @@ days:
       es: "Para mí, la meta es que trabajar sea una decisión y no una necesidad."
       en: "For me, the goal is that working is a choice, not a necessity."
     milestone: false
-    thumbnail: ""
+    thumbnail: "/assets/images/challenge/Dc4aWVFDQer.jpg"
     instagram_url: "https://www.instagram.com/reel/Dc4aWVFDQer/"
   - day: 3
     type: "personal"
@@ -307,7 +308,7 @@ days:
       es: "He hecho dinero con algunas ideas y otras no funcionaron, pero ninguna ha logrado todavía ingresos sostenibles que dependan cada vez menos de mi tiempo."
       en: "I've made money with some ideas and others didn't work, but none has yet reached sustainable income that depends less and less on my time."
     milestone: false
-    thumbnail: ""
+    thumbnail: "/assets/images/challenge/Dc11hdUjzXg.jpg"
     instagram_url: "https://www.instagram.com/reel/Dc11hdUjzXg/"
   - day: 2
     type: "other"
@@ -316,7 +317,7 @@ days:
       es: "Hacer una app con IA es fácil; convertirla en un producto real es otra cosa. Hoy trabajo con @equalityai en Citizen Developers para enseñar justamente eso."
       en: "Building an app with AI is easy; turning it into a real product is something else. Today I'm working with @equalityai on Citizen Developers to teach exactly that."
     milestone: false
-    thumbnail: ""
+    thumbnail: "/assets/images/challenge/DczQs-flxvW.jpg"
     instagram_url: "https://www.instagram.com/reel/DczQs-flxvW/"
   - day: 1
     type: "build-in-public"
@@ -325,7 +326,7 @@ days:
       es: "Tengo un trabajo full-time, una familia y una vida que no quiero sacrificar. El reto: una hora (mínimo) al día para construir hasta reemplazar mi sueldo. Voy a compartir los números, lo que funciona y lo que no."
       en: "I have a full-time job, a family and a life I don't want to sacrifice. The challenge: at least one hour a day to build until I replace my salary. I'll share the numbers, what works and what doesn't."
     milestone: true
-    thumbnail: ""
+    thumbnail: "/assets/images/challenge/DcttgZ5xjO4.jpg"
     instagram_url: "https://www.instagram.com/reel/DcttgZ5xjO4/"
 
 # ----------------------------------------------------------------------------
