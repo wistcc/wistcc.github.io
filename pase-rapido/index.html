@@ -206,6 +206,9 @@
   .cinfo b{font-size:.85rem;display:block}
   .cinfo span{font-size:.72rem;color:var(--muted)}
   .cpill{display:inline-flex;align-items:center;gap:5px;font-size:.66rem;font-weight:800;color:var(--green-deep);background:rgba(31,157,85,.14);padding:6px 10px;border-radius:999px;white-space:nowrap}
+  .rcase{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:13px}
+  .rcase b{font-size:.82rem;display:block;margin-bottom:4px}
+  .rcase p{font-size:.78rem;color:var(--muted);margin:0 0 10px;line-height:1.45}
   .cards.three{grid-template-columns:repeat(3,1fr)}
   @media(max-width:860px){.cards.three{grid-template-columns:1fr;max-width:440px;margin-inline:auto}}
   .taphere{text-align:center;font-size:.74rem;font-weight:800;color:var(--green-deep);margin:0 0 8px;animation:bob 1.4s ease-in-out infinite}
@@ -262,6 +265,7 @@
           </div>
           <div class="ptabs" role="tablist">
             <button role="tab" aria-selected="true" data-pview="res" data-i18n="phone.tabRes"></button>
+            <button role="tab" aria-selected="false" data-pview="rep" data-i18n="phone.tabRep"></button>
             <button role="tab" aria-selected="false" data-pview="gua" data-i18n="phone.tabGua"></button>
           </div>
           <div class="pview active" data-pview="res">
@@ -279,6 +283,11 @@
             <div id="r-live" hidden></div>
             <div class="psp"></div>
             <p class="pnote" id="r-note" data-i18n-html="phone.res.note"></p>
+          </div>
+          <div class="pview" data-pview="rep">
+            <div><div class="pk" data-i18n="phone.rep.k"></div><h3 class="ph" data-i18n="phone.rep.h"></h3></div>
+            <div class="rcase"><b data-i18n="phone.rep.case1t"></b><p data-i18n="phone.rep.case1p"></p></div>
+            <div class="rcase"><b data-i18n="phone.rep.case2t"></b><p data-i18n="phone.rep.case2p"></p><div id="c-live"></div></div>
           </div>
           <div class="pview" data-pview="gua">
             <div><div class="pk" data-i18n="phone.gua.k"></div><h3 class="ph" data-i18n="phone.gua.h"></h3></div>
@@ -397,7 +406,7 @@
         notproduct:"Esto es un concepto que armé yo. No es un producto que exista."
       },
       phone:{
-        tabRes:"Residente", tabGua:"Guardia",
+        tabRes:"Residente", tabRep:"Repartidor", tabGua:"Guardia",
         res:{ k:"Pase rápido", h:"Delivery en camino",
           orderT:"Pase rápido de delivery", orderS:"Un toque · sin cédula · sin tu número",
           phoneLabel:'Teléfono del repartidor <span>(opcional)</span>',
@@ -418,6 +427,10 @@
           note:"<b>Y si mira la pantalla del repartidor:</b> el reloj real, la cuenta regresiva y el código que cambia le prueban que es de ahora, no un screenshot de ayer.",
           empty:"Sin pases activos ahora.", consoleType:"Pase rápido · una entrada", live:"Vivo"
         },
+        rep:{ k:"Repartidor", h:"Del lado del repartidor",
+          case1t:"Caso normal", case1p:"No recibe ni instala nada. Llega a la entrada, dice la casa y el guardia confirma el pase que ya está en la caseta.",
+          case2t:"Si le comparten un enlace", case2p:"Para invitados o suplidores. Abre el enlace y muestra esto en la caseta:",
+          empty:"El residente todavía no ha activado un pase." },
         pass:{ live:"Pase en vivo", expires:"expira en", code:"código vivo", swipe:"✨ Desliza el dedo por el pase",
           mProp:"Propiedad", mType:"Tipo", mAcc:"Acceso", mVal:"Válido", accVal:"1 entrada", valVal:"Hoy · 15 min", typeVal:"Pase rápido",
           dead:"Pase desactivado", deadSub:"Ya no permite el acceso.", exp:"Pase expirado", expSub:"El tiempo se agotó. Genera uno nuevo." }
@@ -486,7 +499,7 @@
         notproduct:"This is a concept I put together. It's not a real product."
       },
       phone:{
-        tabRes:"Resident", tabGua:"Guard",
+        tabRes:"Resident", tabRep:"Courier", tabGua:"Guard",
         res:{ k:"Quick pass", h:"Delivery on the way",
           orderT:"Quick delivery pass", orderS:"One tap · no ID · not your number",
           phoneLabel:'Courier phone <span>(optional)</span>',
@@ -507,6 +520,10 @@
           note:"<b>And if they look at the courier's screen:</b> the real clock, the countdown and the changing code prove it's from right now, not yesterday's screenshot.",
           empty:"No active passes right now.", consoleType:"Quick pass · single entry", live:"Live"
         },
+        rep:{ k:"Courier", h:"The courier's side",
+          case1t:"Normal case", case1p:"They get nothing and install nothing. They reach the gate, say the unit, and the guard confirms the pass that's already at the gate.",
+          case2t:"If they get a link", case2p:"For guests or suppliers. They open the link and show this at the gate:",
+          empty:"The resident hasn't activated a pass yet." },
         pass:{ live:"Live pass", expires:"expires in", code:"live code", swipe:"✨ Swipe your finger across the pass",
           mProp:"Property", mType:"Type", mAcc:"Access", mVal:"Valid", accVal:"1 entry", valVal:"Today · 15 min", typeVal:"Quick pass",
           dead:"Pass deactivated", deadSub:"No longer grants access.", exp:"Pass expired", expSub:"Time's up. Generate a new one." }
@@ -608,13 +625,13 @@
     document.getElementById('r-live').innerHTML=deadPass(kind)+'<button class="pbtn primary" id="regen" style="margin-top:12px">'+r.regen+'</button>';
     document.getElementById('regen').onclick=activate;
     document.getElementById('r-note').innerHTML=(kind==='exp'?r.noteExp:r.noteOff);
-    renderConsole();
+    renderConsole();renderCourier();
   }
   function deactivate(){endState('dead');}
   function activate(){
     var pe=document.getElementById('cphone');smsPhone=pe&&pe.value.trim()?pe.value.trim():"";
     currentAddr=ADDRESSES[Math.floor(Math.random()*ADDRESSES.length)];
-    active=true;left=DURATION;renderLive();renderConsole();
+    active=true;left=DURATION;renderLive();renderConsole();renderCourier();
     document.querySelectorAll('[data-clock]').forEach(function(e){e.textContent=nowStr();});
     if(codeTimer)clearInterval(codeTimer);
     codeTimer=setInterval(function(){
@@ -630,6 +647,11 @@
     var el=document.getElementById('g-console');if(!el)return;var g=tt("phone.gua");
     if(active){el.innerHTML='<div class="ccard"><span class="ic">🛵</span><div class="cinfo"><b>'+currentAddr+'</b><span>'+g.consoleType+'</span></div><span class="cpill">● '+g.live+' · <span data-time>'+fmt(left)+'</span></span></div>';}
     else{el.innerHTML='<div class="pnote" style="text-align:center">'+g.empty+'</div>';}
+  }
+  function renderCourier(){
+    var el=document.getElementById('c-live');if(!el)return;
+    if(active){el.innerHTML=passHTML();}
+    else{el.innerHTML='<div class="pnote" style="text-align:center">'+tt('phone.rep.empty')+'</div>';}
   }
 
   function buildSteps(){
@@ -652,7 +674,7 @@
     document.querySelectorAll('.lang button').forEach(function(b){b.setAttribute('aria-pressed', b.dataset.lang===LANG);});
     buildSteps();buildCards();buildTech();buildBiz();refreshShare();
     if(active)renderLive();else renderConsole();
-    renderConsole();
+    renderConsole();renderCourier();
   }
 
   // interactions
@@ -664,7 +686,7 @@
 
   document.querySelectorAll('.ptabs button').forEach(function(b){
     b.onclick=function(){document.querySelectorAll('.ptabs button').forEach(function(x){x.setAttribute('aria-selected','false');});b.setAttribute('aria-selected','true');
-      phoneView=b.dataset.pview;document.querySelectorAll('.pview').forEach(function(v){v.classList.toggle('active',v.dataset.pview===phoneView);});renderConsole();};
+      phoneView=b.dataset.pview;document.querySelectorAll('.pview').forEach(function(v){v.classList.toggle('active',v.dataset.pview===phoneView);});renderConsole();renderCourier();};
   });
   document.querySelectorAll('.lang button').forEach(function(b){b.onclick=function(){LANG=b.dataset.lang;applyLang();};});
 
