@@ -1,0 +1,93 @@
+---
+layout: challenge
+permalink: /challenge/journey/
+title: "El journey completo — El reto de Winner Crespo"
+description: "Todos los días del reto: decisiones, experimentos, errores y aprendizajes construyendo ingresos que no dependan directamente de mi tiempo."
+header:
+  og_image: /assets/images/challenge/portrait.jpg
+---
+{% assign cfg = site.data.challenge.config %}
+{% assign data = site.data.challenge %}
+
+<header class="ch-hero" style="padding-bottom: 8px;">
+  <div class="ch-wrap">
+    <p class="ch-eyebrow"><a href="/challenge/" style="color:inherit; text-decoration:none;">← El reto</a></p>
+    <h1 class="ch-hero__title" style="font-size: 2.2rem; margin-bottom: 12px;">El journey completo</h1>
+    <p class="ch-hero__lead" style="max-width: 60ch;">Día 1 hasta el día {{ cfg.current_day }}. Cada episodio, hito y aprendizaje del reto, en orden.</p>
+  </div>
+</header>
+
+<section class="ch-section" style="padding-top: 20px;">
+  <div class="ch-wrap">
+    <!-- Filters -->
+    <div class="ch-filters" role="tablist" aria-label="Filtrar el journey">
+      <button class="ch-filter is-active" data-filter="all">Todos</button>
+      <button class="ch-filter" data-filter="milestone">Hitos</button>
+      <button class="ch-filter" data-filter="business">Negocio</button>
+      <button class="ch-filter" data-filter="build-in-public">Build in public</button>
+      <button class="ch-filter" data-filter="personal">Personal</button>
+      <button class="ch-filter" data-filter="lesson">Aprendizajes</button>
+      <button class="ch-filter" data-filter="experiment">Experimentos</button>
+    </div>
+
+    {% assign days = data.days %}
+    {% if days and days.size > 0 %}
+    <div class="ch-journey" id="ch-journey">
+      {% for d in days %}
+      <article class="ch-jday{% if d.milestone %} is-milestone{% endif %}"
+               data-type="{{ d.type }}" data-milestone="{{ d.milestone }}">
+        <div class="ch-jday__left">
+          <div class="ch-jday__num">Día {{ d.day }}</div>
+          <div class="ch-jday__date">{{ d.date | date: "%-d %b, %Y" }}</div>
+          {% if d.type and d.type != "" %}<span class="ch-jday__type">{{ d.type }}</span>{% endif %}
+        </div>
+        <div>
+          <h2 class="ch-jday__title">{% if d.milestone %}<span class="ch-star">★</span> {% endif %}{{ d.title }}</h2>
+          <p class="ch-jday__sum">{{ d.summary }}</p>
+          <div>
+            {% if d.metric and d.metric != "" %}<span class="ch-jday__metric">{{ d.metric }}</span>{% endif %}
+            {% if d.instagram_url and d.instagram_url != "" %}
+            <a class="ch-btn ch-btn--ghost ch-btn--sm" href="{{ d.instagram_url }}" target="_blank" rel="noopener"
+               data-ch-event="journey_day_click" data-ch-label="dia-{{ d.day }}">
+              {% include challenge/ig-icon.html %} Ver en Instagram
+            </a>
+            {% endif %}
+          </div>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+    <p class="ch-placeholder-note" id="ch-empty" style="display:none;">No hay episodios en esta categoría todavía.</p>
+    {% else %}
+    <p class="ch-placeholder-note">Todavía no hay episodios. Agrégalos en <code>_data/challenge.yml</code> → <code>days</code>.</p>
+    {% endif %}
+
+    <div style="margin-top: 40px;">
+      <a class="ch-link" href="/challenge/">← Volver al reto</a>
+    </div>
+  </div>
+</section>
+
+<script>
+  (function () {
+    var buttons = document.querySelectorAll('.ch-filter');
+    var items = document.querySelectorAll('#ch-journey .ch-jday');
+    var empty = document.getElementById('ch-empty');
+    buttons.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var f = btn.getAttribute('data-filter');
+        buttons.forEach(function (b) { b.classList.remove('is-active'); });
+        btn.classList.add('is-active');
+        var visible = 0;
+        items.forEach(function (it) {
+          var show = f === 'all'
+            || (f === 'milestone' && it.getAttribute('data-milestone') === 'true')
+            || it.getAttribute('data-type') === f;
+          it.style.display = show ? '' : 'none';
+          if (show) visible++;
+        });
+        if (empty) empty.style.display = visible === 0 ? 'block' : 'none';
+      });
+    });
+  })();
+</script>

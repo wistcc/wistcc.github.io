@@ -1,5 +1,7 @@
 # main links
 main:
+  - title: "El reto"
+    url: /challenge/
   - title: "Blog"
     url: /blog
   - title: "Resume"

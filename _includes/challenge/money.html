@@ -1,0 +1,15 @@
+{%- comment -%}
+  Formats an integer with thousands separators (pure Liquid, no plugins).
+  Usage: {% include challenge/money.html value=1234567 %}  ->  1,234,567
+{%- endcomment -%}
+{%- assign _digits = include.value | round: 0 | append: '' -%}
+{%- assign _rev = _digits | split: '' | reverse -%}
+{%- assign _out = '' -%}
+{%- assign _count = 0 -%}
+{%- for _d in _rev -%}
+  {%- assign _mod = _count | modulo: 3 -%}
+  {%- if _count > 0 and _mod == 0 -%}{%- assign _out = _out | prepend: ',' -%}{%- endif -%}
+  {%- assign _out = _out | prepend: _d -%}
+  {%- assign _count = _count | plus: 1 -%}
+{%- endfor -%}
+{{- _out -}}

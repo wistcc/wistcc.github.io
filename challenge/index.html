@@ -1,0 +1,297 @@
+---
+layout: challenge
+permalink: /challenge/
+title: "Intentando reemplazar mi sueldo — Winner Crespo"
+description: "Estoy documentando mi intento de construir ingresos que no dependan directamente de mi tiempo, una hora a la vez."
+header:
+  og_image: /assets/images/challenge/portrait.jpg
+---
+{% assign cfg = site.data.challenge.config %}
+{% assign data = site.data.challenge %}
+
+<!-- ============================ HERO ============================ -->
+<header class="ch-hero">
+  <div class="ch-wrap">
+    <div class="ch-hero__grid">
+      <div>
+        <p class="ch-eyebrow">El reto</p>
+        <h1 class="ch-hero__title">Día {{ cfg.current_day }} intentando reemplazar mi sueldo, una hora a la vez.</h1>
+        <p class="ch-hero__sub">No quiero dejar de trabajar.<br>Quiero dejar de <em>tener que trabajar</em>.</p>
+        <p class="ch-hero__lead">Estoy documentando públicamente mi intento de construir ingresos que no dependan directamente de mi tiempo mientras mantengo mi trabajo full-time y mi vida normal.</p>
+        <a href="{{ cfg.instagram_url }}" target="_blank" rel="noopener"
+           class="ch-btn ch-btn--primary"
+           data-ch-event="instagram_cta_click" data-ch-label="hero">
+          {% include challenge/ig-icon.html %} Sígueme en Instagram
+        </a>
+      </div>
+      <div class="ch-hero__media">
+        <img class="ch-hero__photo" src="{{ cfg.portrait }}" alt="{{ site.name }}" width="420" height="525">
+        <p class="ch-hero__note">Mismo trabajo. Más opciones.</p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============================ SCOREBOARD ============================ -->
+<section class="ch-section" style="padding-top: 24px;" aria-label="Marcador del reto">
+  <div class="ch-wrap">
+    {% assign bar = 0 %}
+    {% if cfg.target_monthly_income > 0 %}
+      {% assign pct_raw = cfg.monthly_income | times: 100.0 | divided_by: cfg.target_monthly_income %}
+      {% assign pct = pct_raw | round: 1 %}
+      {% assign bar = pct_raw %}
+      {% if bar > 100 %}{% assign bar = 100 %}{% endif %}
+    {% endif %}
+    <div class="ch-board">
+      <div class="ch-stat">
+        <div class="ch-stat__label">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Día actual
+        </div>
+        <div class="ch-stat__value ch-stat__value--day">{{ cfg.current_day }}</div>
+        <div class="ch-stat__hint">Iniciado el {{ cfg.start_date | date: "%-d de %b, %Y" }}.</div>
+      </div>
+
+      <div class="ch-stat">
+        <div class="ch-stat__label">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+          Total generado
+        </div>
+        <div class="ch-stat__value">{{ cfg.currency }}{% include challenge/money.html value=cfg.total_generated %}</div>
+        <div class="ch-stat__hint">Todo el dinero generado fuera de mi trabajo durante el reto.</div>
+      </div>
+
+      <div class="ch-stat ch-stat--primary">
+        <div class="ch-stat__label">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.7 4 3 9 3s9-1.3 9-3V5"/><path d="M3 12c0 1.7 4 3 9 3s9-1.3 9-3"/></svg>
+          Ingreso mensual
+        </div>
+        <div class="ch-stat__value">{{ cfg.currency }}{% include challenge/money.html value=cfg.monthly_income %} <span class="ch-stat__unit">/ mes</span></div>
+        <div class="ch-stat__hint">Ingresos que pueden continuar sin depender directamente de cada hora de mi tiempo.</div>
+      </div>
+
+      <div class="ch-stat">
+        <div class="ch-stat__label">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg>
+          Meta mensual
+        </div>
+        <div class="ch-stat__value">{{ cfg.currency }}{% include challenge/money.html value=cfg.target_monthly_income %} <span class="ch-stat__unit">/ mes</span></div>
+        <div class="ch-progress">
+          <div class="ch-progress__track"><div class="ch-progress__fill" style="width: {{ bar }}%;"></div></div>
+          <div class="ch-progress__meta"><span>Camino a reemplazar mi sueldo</span><span>{{ pct | default: 0 }}%</span></div>
+        </div>
+      </div>
+    </div>
+    <p class="ch-placeholder-note">El reto arranca desde cero. La meta mensual es provisional hasta fijar la cifra real.</p>
+  </div>
+</section>
+
+<!-- ============================ BUILDING + FOCUS ============================ -->
+<section class="ch-section">
+  <div class="ch-wrap">
+    <div class="ch-cols">
+      <!-- What I'm building -->
+      <div>
+        <div class="ch-section__head">
+          <h2>Lo que estoy construyendo</h2>
+        </div>
+        {% assign active_projects = data.projects | where: "status", "active" %}
+        {% for p in active_projects limit: 1 %}
+        <div class="ch-card">
+          <div class="ch-proj__head">
+            <div class="ch-proj__logo">{{ p.name | slice: 0 }}</div>
+            <div>
+              <div class="ch-proj__name">{{ p.name }}</div>
+              <div class="ch-proj__tag">{{ p.tagline }}</div>
+            </div>
+            <span class="ch-proj__status ch-proj__status--{{ p.status }}">{{ p.status }}</span>
+          </div>
+          <p class="ch-proj__desc">{{ p.description }}</p>
+          {% if p.metrics %}
+          <ul class="ch-checks">
+            {% for m in p.metrics %}
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> {{ m }}</li>
+            {% endfor %}
+          </ul>
+          {% endif %}
+          {% if p.why %}<p class="ch-proj__why">{{ p.why }}</p>{% endif %}
+          {% if p.link and p.link != "" %}
+          <a href="{{ p.link }}" target="_blank" rel="noopener" class="ch-btn ch-btn--ghost ch-btn--sm"
+             data-ch-event="project_click" data-ch-label="{{ p.name }}">Conocer más sobre {{ p.name }} →</a>
+          {% endif %}
+        </div>
+        {% endfor %}
+      </div>
+
+      <!-- Current focus + rules -->
+      <div>
+        <div class="ch-section__head"><h2>En qué estoy enfocado ahora</h2></div>
+        <div class="ch-card" style="margin-bottom: 28px;">
+          <div class="ch-focus">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.3 1 2.3h6c0-1 .4-1.8 1-2.3A7 7 0 0 0 12 2z"/></svg>
+            <p>{{ cfg.current_focus }}</p>
+          </div>
+        </div>
+
+        <div class="ch-section__head"><h2>Las reglas del experimento</h2></div>
+        <div class="ch-card">
+          <ol class="ch-olist">
+            {% for r in data.rules %}<li><span>{{ r }}</span></li>{% endfor %}
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ MONTHLY INCOME CHART ============================ -->
+{% assign hist = data.income_history %}
+{% if hist and hist.size > 1 %}
+<section class="ch-section">
+  <div class="ch-wrap">
+    <div class="ch-section__head"><h2>Evolución del ingreso mensual</h2></div>
+    <div class="ch-card">
+      {% assign padL = 46 %}{% assign padR = 16 %}{% assign padT = 20 %}{% assign padB = 34 %}
+      {% assign vbW = 640 %}{% assign vbH = 240 %}
+      {% assign plotW = vbW | minus: padL | minus: padR %}
+      {% assign plotH = vbH | minus: padT | minus: padB %}
+      {% assign baseY = padT | plus: plotH %}
+      {% assign firstDay = hist.first.day %}
+      {% assign lastDay = cfg.current_day %}
+      {% assign span = lastDay | minus: firstDay %}
+      {% if span <= 0 %}{% assign span = 1 %}{% endif %}
+      {% assign ymax = cfg.target_monthly_income %}
+      {% for p in hist %}{% if p.monthly_income > ymax %}{% assign ymax = p.monthly_income %}{% endif %}{% endfor %}
+      {% if ymax <= 0 %}{% assign ymax = 1 %}{% endif %}
+
+      {% comment %} target line y {% endcomment %}
+      {% assign tRatio = cfg.target_monthly_income | times: 1.0 | divided_by: ymax %}
+      {% assign targetY = tRatio | times: plotH %}
+      {% assign targetY = baseY | minus: targetY %}
+
+      {% capture points %}{% for p in hist %}{% assign dx = p.day | minus: firstDay | times: 1.0 | divided_by: span %}{% assign px = dx | times: plotW | plus: padL %}{% assign dy = p.monthly_income | times: 1.0 | divided_by: ymax %}{% assign py = dy | times: plotH %}{% assign py = baseY | minus: py %}{{ px }},{{ py }} {% endfor %}{% endcapture %}
+      {% assign last = hist.last %}
+      {% assign ldx = last.day | minus: firstDay | times: 1.0 | divided_by: span %}
+      {% assign lastX = ldx | times: plotW | plus: padL %}
+      {% assign ldy = last.monthly_income | times: 1.0 | divided_by: ymax %}
+      {% assign lastY = ldy | times: plotH %}{% assign lastY = baseY | minus: lastY %}
+
+      <svg class="ch-chart" viewBox="0 0 {{ vbW }} {{ vbH }}" role="img" aria-label="Gráfico de evolución del ingreso mensual">
+        <!-- baseline -->
+        <line x1="{{ padL }}" y1="{{ baseY }}" x2="{{ vbW | minus: padR }}" y2="{{ baseY }}" stroke="#23272f" stroke-width="1"/>
+        <!-- target line -->
+        <line x1="{{ padL }}" y1="{{ targetY }}" x2="{{ vbW | minus: padR }}" y2="{{ targetY }}" stroke="#52adc8" stroke-width="1.5" stroke-dasharray="5 5" opacity="0.8"/>
+        <text x="{{ padL }}" y="{{ targetY | minus: 7 }}" fill="#52adc8" font-size="12" font-weight="600">Meta {{ cfg.currency }}{% include challenge/money.html value=cfg.target_monthly_income %}</text>
+        <!-- income line -->
+        <polyline points="{{ points }}" fill="none" stroke="#34d399" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        {% for p in hist %}{% assign dx = p.day | minus: firstDay | times: 1.0 | divided_by: span %}{% assign px = dx | times: plotW | plus: padL %}{% assign dy = p.monthly_income | times: 1.0 | divided_by: ymax %}{% assign py = dy | times: plotH %}{% assign py = baseY | minus: py %}<circle cx="{{ px }}" cy="{{ py }}" r="3" fill="#34d399"/>{% endfor %}
+        <!-- last value label -->
+        <circle cx="{{ lastX }}" cy="{{ lastY }}" r="5" fill="#34d399" stroke="#0b0d10" stroke-width="2"/>
+        <text x="{{ lastX | minus: 4 }}" y="{{ lastY | minus: 12 }}" fill="#f3f5f8" font-size="13" font-weight="700" text-anchor="end">{{ cfg.currency }}{% include challenge/money.html value=last.monthly_income %}</text>
+        <!-- x labels -->
+        <text x="{{ padL }}" y="{{ vbH | minus: 12 }}" fill="#838c9a" font-size="11">Día {{ firstDay }}</text>
+        <text x="{{ vbW | minus: padR }}" y="{{ vbH | minus: 12 }}" fill="#838c9a" font-size="11" text-anchor="end">Día {{ lastDay }}</text>
+      </svg>
+      <div class="ch-chart-legend">
+        <span><i class="ch-dot" style="background:#34d399"></i> Ingreso mensual actual</span>
+        <span><i class="ch-dot" style="background:#52adc8"></i> Meta mensual</span>
+      </div>
+    </div>
+  </div>
+</section>
+{% endif %}
+
+<!-- ============================ LATEST EPISODES ============================ -->
+{% assign days = data.days %}
+{% if days and days.size > 0 %}
+<section class="ch-section">
+  <div class="ch-wrap">
+    <div class="ch-section__head">
+      <h2>Últimos episodios</h2>
+      <a class="ch-link" href="/challenge/journey/">Ver todos los días →</a>
+    </div>
+    <div class="ch-eps">
+      {% for d in days limit: 4 %}
+      {% assign href = d.instagram_url | default: "/challenge/journey/" %}
+      {% if d.instagram_url and d.instagram_url != "" %}{% assign ext = true %}{% else %}{% assign ext = false %}{% endif %}
+      <a class="ch-ep" href="{{ href }}" {% if ext %}target="_blank" rel="noopener"{% endif %}
+         data-ch-event="journey_day_click" data-ch-label="dia-{{ d.day }}">
+        {% if d.thumbnail and d.thumbnail != "" %}
+          <img class="ch-ep__thumb" src="{{ d.thumbnail }}" alt="Día {{ d.day }}">
+        {% else %}
+          <div class="ch-ep__thumb ch-ep__thumb-ph">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="10 8 16 12 10 16 10 8" fill="currentColor" stroke="none"/><rect x="3" y="4" width="18" height="16" rx="3"/></svg>
+          </div>
+        {% endif %}
+        <div>
+          <div class="ch-ep__day">
+            {% if d.milestone %}<span class="ch-badge-day">Día {{ d.day }}</span>{% else %}Día {{ d.day }} · {{ d.date | date: "%-d %b" }}{% endif %}
+          </div>
+          <div class="ch-ep__title">{{ d.title }}</div>
+          <p class="ch-ep__sum">{{ d.summary }}</p>
+          {% if ext %}<span class="ch-ep__link">Ver en Instagram →</span>{% endif %}
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+<!-- ============================ MILESTONES + LESSONS ============================ -->
+<section class="ch-section">
+  <div class="ch-wrap">
+    <div class="ch-cols">
+      <!-- Milestones -->
+      <div>
+        <div class="ch-section__head">
+          <h2>Hitos del camino</h2>
+          <a class="ch-link" href="/challenge/journey/">Ver todos →</a>
+        </div>
+        {% assign featured = data.milestones | where: "featured", true %}
+        <div class="ch-timeline">
+          {% for m in featured limit: 5 %}
+          <div class="ch-mile">
+            {% if m.instagram_url and m.instagram_url != "" %}
+            <a href="{{ m.instagram_url }}" target="_blank" rel="noopener"
+               data-ch-event="milestone_click" data-ch-label="dia-{{ m.day }}">
+            {% endif %}
+              <div class="ch-mile__meta">Día {{ m.day }} · {{ m.date | date: "%-d %b, %Y" }}</div>
+              <div class="ch-mile__title">{{ m.title }}</div>
+              <p class="ch-mile__desc">{{ m.description }}</p>
+              {% if m.metric and m.metric != "" %}<span class="ch-mile__metric">{{ m.metric }}</span>{% endif %}
+            {% if m.instagram_url and m.instagram_url != "" %}</a>{% endif %}
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+
+      <!-- Lessons -->
+      <div>
+        <div class="ch-section__head"><h2>Lo que he aprendido</h2></div>
+        <div class="ch-card">
+          <ol class="ch-olist">
+            {% for l in data.lessons limit: 6 %}<li><span>{{ l }}</span></li>{% endfor %}
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ CTA ============================ -->
+<section>
+  <div class="ch-wrap">
+    <div class="ch-cta">
+      <div>
+        <h2>Acompáñame en el proceso</h2>
+        <p>Estoy compartiendo todo en tiempo real en Instagram: avances, errores, números y aprendizajes.</p>
+      </div>
+      <a href="{{ cfg.instagram_url }}" target="_blank" rel="noopener"
+         class="ch-btn ch-btn--primary"
+         data-ch-event="instagram_cta_click" data-ch-label="footer-cta">
+        {% include challenge/ig-icon.html %} Sígueme en Instagram
+      </a>
+    </div>
+  </div>
+</section>
