@@ -1,0 +1,3 @@
+{%- comment -%} Usage: {% include wc/day.html n=d.day lang=L %} -> "Día 3" | "Day 3" | "Inicio" | "Kickoff" (day 0) {%- endcomment -%}
+{%- assign _c = site.data.i18n.ch -%}
+{%- if include.n == 0 -%}{{ _c.kickoff[include.lang] }}{%- else -%}{{ _c.hero_a[include.lang] }} {{ include.n }}{%- endif -%}

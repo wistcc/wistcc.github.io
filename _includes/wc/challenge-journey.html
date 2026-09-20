@@ -1,0 +1,85 @@
+{%- assign L = page.lang | default: "es" -%}
+{%- assign c = site.data.i18n.ch -%}
+{%- assign cfg = site.data.challenge.config -%}
+{%- assign days = site.data.challenge.days -%}
+{%- assign prefix = "" -%}{%- if L == "en" -%}{%- assign prefix = "/en" -%}{%- endif -%}
+
+<header class="ch-hero" style="padding-bottom: 8px;">
+  <div class="ch-wrap">
+    <p class="ch-eyebrow"><a href="{{ prefix }}/challenge/" style="color:inherit; text-decoration:none;">← {{ c.eyebrow[L] }}</a></p>
+    <h1 class="ch-hero__title" style="font-size: 2.2rem; margin-bottom: 12px;">{{ c.journey_h1[L] }}</h1>
+    <p class="ch-hero__lead" style="max-width: 60ch;">{{ c.journey_lead_a[L] }} {{ cfg.current_day }}. {{ c.journey_lead_b[L] }}</p>
+  </div>
+</header>
+
+<section class="ch-section" style="padding-top: 20px;">
+  <div class="ch-wrap">
+    {%- if days and days.size > 0 %}
+    <div class="ch-filters" role="group" aria-label="{{ c.filters_aria[L] }}">
+      <button class="ch-filter is-active" data-filter="all">{{ c.filters.all[L] }}</button>
+      {%- assign n_ms = days | where: "milestone", true | size -%}
+      {%- if n_ms > 0 %}<button class="ch-filter" data-filter="milestone">{{ c.filters.milestone[L] }}</button>{% endif %}
+      {%- assign keys = "business,build-in-public,personal,lesson,experiment,other" | split: "," -%}
+      {%- for key in keys -%}
+        {%- assign n = days | where: "type", key | size -%}
+        {%- if n > 0 %}<button class="ch-filter" data-filter="{{ key }}">{{ c.filters[key][L] }}</button>{% endif %}
+      {%- endfor %}
+    </div>
+
+    <div class="ch-journey" id="ch-journey">
+      {%- for d in days %}
+      <article class="ch-jday{% if d.milestone %} is-milestone{% endif %}" data-type="{{ d.type }}" data-milestone="{{ d.milestone }}">
+        <div class="ch-jday__left">
+          <div class="ch-jday__num">{% include wc/day.html n=d.day lang=L %}</div>
+          {%- if d.type and d.type != "" %}<span class="ch-jday__type">{{ c.filters[d.type][L] | default: d.type }}</span>{% endif %}
+        </div>
+        <div>
+          <h2 class="ch-jday__title">{% if d.milestone %}<span class="ch-star">★</span> {% endif %}{{ d.title[L] }}</h2>
+          {%- if d.summary[L] != "" %}<p class="ch-jday__sum">{{ d.summary[L] }}</p>{% endif %}
+          <div>
+            {%- if d.metric %}<span class="ch-jday__metric">{{ d.metric[L] }}</span>{% endif %}
+            {%- if d.instagram_url and d.instagram_url != "" %}
+            <a class="ch-btn ch-btn--ghost ch-btn--sm" href="{{ d.instagram_url }}" target="_blank" rel="noopener"
+               data-track="journey_day_click" data-label="dia-{{ d.day }}">
+              {% include wc/icon.html name="instagram" %} {{ c.watch[L] }}
+            </a>
+            {%- endif %}
+          </div>
+        </div>
+      </article>
+      {%- endfor %}
+    </div>
+    <p class="ch-placeholder-note" id="ch-empty" style="display:none;">{{ c.empty[L] }}</p>
+    {%- else %}
+    <p class="ch-placeholder-note">{{ c.none_yet[L] }}</p>
+    {%- endif %}
+
+    <div style="margin-top: 40px;">
+      <a class="ch-link" href="{{ prefix }}/challenge/">{{ c.back[L] }}</a>
+    </div>
+  </div>
+</section>
+
+<script>
+  (function () {
+    var buttons = document.querySelectorAll('.ch-filter');
+    var items = document.querySelectorAll('#ch-journey .ch-jday');
+    var empty = document.getElementById('ch-empty');
+    buttons.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var f = btn.getAttribute('data-filter');
+        buttons.forEach(function (b) { b.classList.remove('is-active'); });
+        btn.classList.add('is-active');
+        var visible = 0;
+        items.forEach(function (it) {
+          var show = f === 'all'
+            || (f === 'milestone' && it.getAttribute('data-milestone') === 'true')
+            || it.getAttribute('data-type') === f;
+          it.style.display = show ? '' : 'none';
+          if (show) visible++;
+        });
+        if (empty) empty.style.display = visible === 0 ? 'block' : 'none';
+      });
+    });
+  })();
+</script>

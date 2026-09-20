@@ -1,167 +1,352 @@
 # ============================================================================
-#  THE CHALLENGE — SINGLE SOURCE OF TRUTH
+#  EL RETO / THE CHALLENGE — FUENTE ÚNICA DE DATOS
 #  "Intentando reemplazar mi sueldo, una hora a la vez."
 #
-#  Edita SOLO este archivo para actualizar el reto. Nada está hardcodeado en
-#  la UI. Las páginas /challenge/ y /challenge/journey/ leen todo desde aquí.
+#  Edita SOLO este archivo para actualizar el reto (las páginas /challenge/ y
+#  /en/challenge/ leen todo de aquí). Todo texto visible tiene {es, en}.
+#  Los textos fijos de la interfaz están en _data/i18n.yml (bloque `ch`).
+#  Instagram y foto: _data/profile.yml.
 #
-#  ⚠️  PLACEHOLDER = valor de ejemplo. Reemplázalo por datos reales.
-#      Los montos NO son reales: confírmalos antes de publicar.
+#  Numeración: los "Día N" son los que dices en cada Reel. El anuncio del
+#  31 ago es el inicio (day: 0, se muestra como "Inicio" / "Kickoff").
+#  No se muestran fechas de publicación, solo "Día N".
 # ============================================================================
 
 config:
-  # --- Estado del reto ---
   current_day: 20                 # Día actual del reto (actualízalo a diario)
-  start_date: 2026-08-31          # Fecha de inicio del reto
+  start_date: 2026-08-31          # Fecha de inicio (se muestra en el marcador)
 
-  # --- Dinero ---
-  currency: "RD$"                 # Prefijo de moneda
-  total_generated: 0              # Todo lo generado fuera del trabajo durante el reto (hoy: 0)
-  monthly_income: 0               # Ingreso recurrente que NO depende directamente de cada hora (hoy: 0)
-  target_monthly_income: 150000   # ⚠️ PLACEHOLDER — pon aquí tu sueldo real a reemplazar
+  currency: "RD$"
+  total_generated: 0              # Todo lo generado fuera del trabajo durante el reto
+  monthly_income: 0               # Ingreso recurrente que NO depende de cada hora de tu tiempo
 
-  # Instagram y foto de retrato ahora viven en _data/profile.yml (compartidos por todo el sitio).
+  # Meta mensual: OPCIONAL. Sin cifra fija hoy. Si algún día pones un número,
+  # el marcador muestra la barra de progreso y el gráfico dibuja la línea de meta.
+  # target_monthly_income: 150000
 
-  # --- Enfoque actual (cambia con frecuencia) ---
-  current_focus: >-
-    Demostrar que KASSO crea valor real para nuestros primeros clientes antes
-    de empezar a crecer agresivamente.
+  current_focus:
+    es: "Demostrar que KASSO crea valor real para nuestros primeros clientes antes de empezar a crecer agresivamente."
+    en: "Proving that KASSO creates real value for our first customers before we start growing aggressively."
 
-# ============================================================================
-#  HISTÓRICO DE INGRESO MENSUAL (para el gráfico)
-#  Agrega un punto cada vez que el ingreso mensual cambie de forma relevante.
-#  ⚠️ PLACEHOLDER — reemplaza por los valores reales de tu histórico.
-# ============================================================================
+# ----------------------------------------------------------------------------
+#  Histórico del ingreso mensual (gráfico). Agrega un punto cuando cambie.
+#  Ej: - { day: 30, monthly_income: 1500 }
+# ----------------------------------------------------------------------------
 income_history:
-  - { day: 1,  date: 2026-08-31, monthly_income: 0 }
-  - { day: 20, date: 2026-09-19, monthly_income: 0 }
-  # Agrega un punto nuevo cuando el ingreso mensual cambie, ej:
-  # - { day: 30, date: 2026-09-29, monthly_income: 1500 }
+  - { day: 0,  monthly_income: 0 }
+  - { day: 20, monthly_income: 0 }
 
-# ============================================================================
-#  LO QUE ESTOY CONSTRUYENDO  (1–3 proyectos relevantes)
-#  status: active | paused | closed
-# ============================================================================
+# ----------------------------------------------------------------------------
+#  Proyectos (1–3). status: active | paused | closed
+# ----------------------------------------------------------------------------
 projects:
   - name: "KASSO"
     status: "active"
-    tagline: "Cobros con IA para empresas"
-    description: >-
-      KASSO utiliza inteligencia artificial para ayudar a empresas a cobrar
-      dinero pendiente y automatizar gran parte del seguimiento de cobros.
-    why: >-
-      El trabajo de seguimiento de cobros es repetitivo y hoy lo hace el bot,
-      no yo. Eso lo convierte en una fuente de ingreso que puede crecer sin
-      depender directamente de cada hora de mi tiempo.
+    tagline:
+      es: "Cobros con IA para empresas"
+      en: "AI-powered collections for companies"
+    description:
+      es: "KASSO utiliza inteligencia artificial para ayudar a empresas a cobrar dinero pendiente y automatizar gran parte del seguimiento de cobros."
+      en: "KASSO uses artificial intelligence to help companies collect overdue payments and automate much of the collections follow-up."
+    why:
+      es: "Es algo que puede seguir creando valor sin necesitarme ahí cada segundo: justo el tipo de ingreso que estoy intentando construir."
+      en: "It's something that can keep creating value without needing me there every second: exactly the kind of income I'm trying to build."
     link: ""                      # Opcional: URL del proyecto (vacío = sin botón)
     metrics:
-      - "En uso con clientes reales"
-      - "El bot ya maneja +100 conversaciones al día"
-      - "Cobró RD$66,552 de manera autónoma (Día 20)"
-      - "Primer empleado del equipo"
+      - { es: "En uso con clientes reales", en: "Used with real customers" }
+      - { es: "El bot maneja más de 100 conversaciones al día", en: "The bot handles 100+ conversations a day" }
+      - { es: "Cobró RD$66,552 de manera autónoma", en: "Collected RD$66,552 autonomously" }
+      - { es: "Primera empleada contratada", en: "First employee hired" }
 
-# ============================================================================
-#  HITOS (milestones). featured: true los muestra en la home.
-# ============================================================================
+# ----------------------------------------------------------------------------
+#  Hitos. featured: true = aparece en la home del reto.
+# ----------------------------------------------------------------------------
 milestones:
   - day: 20
-    date: 2026-09-19
-    title: "RD$66,552 cobrados de manera autónoma"
-    description: "KASSO cobró RD$66,552 sin que mi socio y yo estuviéramos trabajando."
+    title: { es: "RD$66,552 cobrados", en: "RD$66,552 collected" }
+    description:
+      es: "KASSO cobra RD$66,552 mientras el equipo atiende otras cosas."
+      en: "KASSO collects RD$66,552 while the team is busy with other things."
     metric: "RD$66,552"
-    instagram_url: ""             # ⚠️ PLACEHOLDER — URL del Reel
+    instagram_url: "https://www.instagram.com/reel/DdhSbrPAkP0/"
+    featured: true
+  - day: 19
+    title: { es: "+100 conversaciones al día", en: "100+ conversations a day" }
+    description:
+      es: "El bot supera las 100 conversaciones diarias y solo unas pocas necesitan intervención."
+      en: "The bot passes 100 conversations a day and only a few need intervention."
+    metric: "+100"
+    instagram_url: "https://www.instagram.com/reel/DdethoRE1Bn/"
     featured: true
   - day: 16
-    date: 2026-09-15
-    title: "+100 conversaciones al día"
-    description: "KASSO empezó a manejar más de 100 conversaciones diarias."
-    metric: "+100 / día"
-    instagram_url: ""             # ⚠️ PLACEHOLDER
-    featured: true
-  - day: 13
-    date: 2026-09-12
-    title: "Mi mayor motivación"
-    description: "Una conversación con mi familia que me recordó por qué estoy haciendo esto."
+    title: { es: "Primera empleada", en: "First employee" }
+    description:
+      es: "Después de tres meses haciéndolo todo, KASSO contrata a su primera empleada."
+      en: "After three months of doing everything themselves, KASSO hires its first employee."
     metric: ""
-    instagram_url: ""             # ⚠️ PLACEHOLDER
+    instagram_url: "https://www.instagram.com/reel/DdW_O1wiAAP/"
     featured: true
-  # Ejemplos de hitos por agregar cuando tengas el día/fecha real (no inventar):
-  # - { day: ?, date: ?, title: "Primer pago", description: "...", instagram_url: "", featured: true }
-  # - { day: ?, date: ?, title: "Primer empleado", description: "...", instagram_url: "", featured: true }
-  - day: 8
-    date: 2026-09-07
-    title: "Primeros clientes reales"
-    description: "KASSO empezó a trabajar con cuentas reales."
+  - day: 5
+    title: { es: "Primeros clientes reales y primer pago", en: "First real customers and first payment" }
+    description:
+      es: "1 pago y 3 promesas de pago de los primeros 5 clientes."
+      en: "1 payment and 3 payment promises from the first 5 customers."
     metric: ""
-    instagram_url: ""             # ⚠️ PLACEHOLDER
+    instagram_url: "https://www.instagram.com/reel/Dc6_AL3AR8-/"
     featured: true
-  - day: 1
-    date: 2026-08-31
-    title: "Comienza el reto"
-    description: "Decidí documentar públicamente este proceso."
+  - day: 0
+    title: { es: "Comienza el reto", en: "The challenge begins" }
+    description:
+      es: "Una hora (mínimo) al día para construir hasta reemplazar mi sueldo."
+      en: "At least one hour a day to build until I replace my salary."
     metric: ""
-    instagram_url: ""             # ⚠️ PLACEHOLDER
+    instagram_url: "https://www.instagram.com/reel/DcttgZ5xjO4/"
     featured: true
 
-# ============================================================================
-#  JOURNEY DIARIO / EPISODIOS
-#  Lo más reciente arriba. La home muestra los últimos 3–5; /journey los muestra todos.
+# ----------------------------------------------------------------------------
+#  Journey: un episodio por Reel. Lo más reciente arriba.
 #  type: personal | business | build-in-public | lesson | milestone | experiment | other
-# ============================================================================
+#  milestone: true = marca ★ y aparece con el filtro "Hitos".
+#  thumbnail: opcional (/assets/images/challenge/dia-XX.jpg). No se descarga de IG.
+#  Varios Reels del mismo día = varias entradas con el mismo `day`.
+# ----------------------------------------------------------------------------
 days:
   - day: 20
-    date: 2026-09-19
-    title: "RD$66,552 sin que estuviéramos trabajando"
-    summary: >-
-      KASSO cobró RD$66,552 mientras mi socio y yo estábamos atendiendo
-      asuntos personales.
     type: "business"
-    metric: "RD$66,552"
+    title: { es: "RD$66,552 cobrados mientras atendíamos otras cosas", en: "RD$66,552 collected while we were busy with other things" }
+    summary:
+      es: "Lo importante no fue la cifra, sino que KASSO cobró sin que estuviéramos ahí. Eso es lo que intento construir: algo que siga creando valor sin necesitarme cada segundo."
+      en: "What mattered wasn't the number, but that KASSO collected without us being there. That's what I'm trying to build: something that keeps creating value without needing me every second."
+    metric: { es: "RD$66,552", en: "RD$66,552" }
     milestone: true
-    thumbnail: ""                 # ⚠️ Opcional: /assets/images/challenge/dia-20.jpg
-    instagram_url: ""             # ⚠️ PLACEHOLDER — URL del Reel
-
+    thumbnail: ""
+    instagram_url: "https://www.instagram.com/reel/DdhSbrPAkP0/"
+  - day: 20
+    type: "experiment"
+    title: { es: "Le di a mi agente de IA acceso a mi Instagram", en: "I gave my AI agent access to my Instagram" }
+    summary:
+      es: "Le pedí un análisis completo de mis últimos 30 días: datos reales, patrones y qué repetir."
+      en: "I asked it for a full analysis of my last 30 days: real data, patterns and what to repeat."
+    milestone: false
+    thumbnail: ""
+    instagram_url: "https://www.instagram.com/reel/DdhMN_oR5nJ/"
   - day: 19
-    date: 2026-09-18
-    title: "De 5 a más de 100 conversaciones"
-    summary: >-
-      Hace dos semanas revisábamos prácticamente cada conversación. Ahora el
-      bot maneja más de 100 conversaciones al día.
-    type: "build-in-public"
-    metric: "+100 / día"
-    milestone: false
+    type: "business"
+    title: { es: "De 5 a más de 100 conversaciones", en: "From 5 to over 100 conversations" }
+    summary:
+      es: "Hace dos semanas revisábamos prácticamente cada conversación del bot. Hoy maneja más de 100 al día y solo unas pocas necesitan nuestra intervención."
+      en: "Two weeks ago we reviewed almost every bot conversation. Today it handles over 100 a day and only a few need our intervention."
+    metric: { es: "+100 / día", en: "100+ / day" }
+    milestone: true
     thumbnail: ""
-    instagram_url: ""             # ⚠️ PLACEHOLDER
-
+    instagram_url: "https://www.instagram.com/reel/DdethoRE1Bn/"
   - day: 18
-    date: 2026-09-17
-    title: "Un día difícil (pero importante)"
-    summary: >-
-      No todo es lineal. Hoy fue uno de esos días que te hacen cuestionar todo.
-    type: "personal"
-    metric: ""
+    type: "lesson"
+    title: { es: "Nunca ha sido tan fácil empezar", en: "It has never been easier to start" }
+    summary:
+      es: "IA, internet, conocimiento gratis y herramientas que antes requerían equipos enteros. Crear un negocio sigue siendo difícil, pero las barreras para empezar son más bajas que nunca."
+      en: "AI, the internet, free knowledge and tools that used to require whole teams. Building a business is still hard, but the barriers to start are lower than ever."
     milestone: false
     thumbnail: ""
-    instagram_url: ""             # ⚠️ PLACEHOLDER
+    instagram_url: "https://www.instagram.com/reel/DdcIvfECPqR/"
+  - day: 17
+    type: "lesson"
+    title: { es: "Validar que alguien lo quiere comprar", en: "Validating that someone wants to buy it" }
+    summary:
+      es: "Con KASSO lo hicimos al revés: encontrar el problema, conseguir personas dispuestas a pagar y solo entonces construir."
+      en: "With KASSO we did it the other way around: find the problem, find people willing to pay, and only then build."
+    milestone: false
+    thumbnail: ""
+    instagram_url: "https://www.instagram.com/reel/DdZkD87ioP7/"
+  - day: 16
+    type: "business"
+    title: { es: "Apostamos antes de ganar", en: "We bet before we win" }
+    summary:
+      es: "KASSO todavía no ha generado su primer peso y acabamos de contratar a nuestra primera empleada. Todavía no somos rentables, pero apostamos a que esto va a funcionar."
+      en: "KASSO hasn't generated its first peso yet and we just hired our first employee. We're not profitable yet, but we're betting this is going to work."
+    milestone: true
+    thumbnail: ""
+    instagram_url: "https://www.instagram.com/reel/DdW_O1wiAAP/"
+  - day: 15
+    type: "lesson"
+    title: { es: "No construyas todavía", en: "Don't build yet" }
+    summary:
+      es: "La mejor validación es que alguien esté dispuesto a pagar. Conseguimos nuestros primeros dos clientes antes de escribir una sola línea de código."
+      en: "The best validation is someone being willing to pay. We got our first two customers before writing a single line of code."
+    milestone: false
+    thumbnail: ""
+    instagram_url: "https://www.instagram.com/reel/DdUaZSlDA-J/"
+  - day: 14
+    type: "business"
+    title: { es: "Primero valor para dos clientes, después crecer", en: "Value for two customers first, growth later" }
+    summary:
+      es: "KASSO tiene solamente dos clientes y nuestra prioridad no es conseguir veinte más, sino crear muchísimo valor para esos dos."
+      en: "KASSO has only two customers and our priority isn't getting twenty more, but creating a lot of value for those two."
+    milestone: false
+    thumbnail: ""
+    instagram_url: "https://www.instagram.com/reel/DdR1rtCjL5Y/"
+  - day: 14
+    type: "personal"
+    title: { es: "La única forma de garantizar el fracaso es rendirse", en: "The only way to guarantee failure is to quit" }
+    summary:
+      es: "Así que seguimos."
+      en: "So we keep going."
+    milestone: false
+    thumbnail: ""
+    instagram_url: "https://www.instagram.com/reel/DdRMGdkR9CP/"
+  - day: 13
+    type: "personal"
+    title: { es: "Más dinero sí, más tiempo no", en: "More money, yes. More time, no." }
+    summary:
+      es: "Una de las razones por las que volvimos de Suecia a RD fue recuperar horas. Si quiero construir algo sin sacrificar a mi familia, cada hora que pueda recuperar importa."
+      en: "One of the reasons we moved back from Sweden to the DR was to get hours back. If I want to build something without sacrificing my family, every hour I can recover matters."
+    milestone: false
+    thumbnail: ""
+    instagram_url: "https://www.instagram.com/reel/DdPQ9O9AHCG/"
+  - day: 12
+    type: "personal"
+    title: { es: "¿Crecer hacia dónde?", en: "Grow toward what?" }
+    summary:
+      es: "Mi trabajo nunca fue el problema; mi meta cambió. Ahora quiero llegar al punto donde trabajar sea una decisión y no una necesidad. Ahí empezó todo esto."
+      en: "My job was never the problem; my goal changed. Now I want to reach the point where working is a choice, not a necessity. That's where all this started."
+    milestone: false
+    thumbnail: ""
+    instagram_url: "https://www.instagram.com/reel/DdMsEi1AaLO/"
+  - day: 11
+    type: "lesson"
+    title: { es: "El resultado de hoy refleja lo que hiciste hace tiempo", en: "Today's result reflects what you did a while ago" }
+    summary:
+      es: "Con tu cuerpo, tu dinero o un negocio, muchas veces haces el trabajo hoy y no ves el resultado hasta mucho después. El problema es dejar de hacerlo porque todavía no ves nada."
+      en: "With your body, your money or a business, you often do the work today and don't see the result until much later. The problem is quitting because you don't see anything yet."
+    milestone: false
+    thumbnail: ""
+    instagram_url: "https://www.instagram.com/reel/DdKHRHokzjD/"
+  - day: 10
+    type: "other"
+    title: { es: "POV: trabajando para reemplazar mi sueldo", en: "POV: working to replace my salary" }
+    summary: { es: "", en: "" }
+    milestone: false
+    thumbnail: ""
+    instagram_url: "https://www.instagram.com/reel/DdIBqH9RRTZ/"
+  - day: 10
+    type: "lesson"
+    title: { es: "Trabajar más no es lo mismo que más libertad", en: "Working more isn't the same as more freedom" }
+    summary:
+      es: "Ya probé tener 3 y 4 trabajos al mismo tiempo. Ahora no busco crearme otro trabajo, sino construir ingresos que dependan cada vez menos de mi tiempo."
+      en: "I've already tried having 3 and 4 jobs at once. Now I'm not trying to create another job, but to build income that depends less and less on my time."
+    milestone: false
+    thumbnail: ""
+    instagram_url: "https://www.instagram.com/reel/DdFsJCVx8AW/"
+  - day: 9
+    type: "lesson"
+    title: { es: "No esperes a tener más tiempo", en: "Don't wait to have more time" }
+    summary:
+      es: "Empieza con el tiempo que ya tienes: avanzar con lo que tengas disponible, aunque algunos días sea poco."
+      en: "Start with the time you already have: move forward with what you've got, even if some days it's not much."
+    milestone: false
+    thumbnail: ""
+    instagram_url: "https://www.instagram.com/reel/DdE9ov-ASLx/"
+  - day: 8
+    type: "lesson"
+    title: { es: "La idea sale del problema", en: "The idea comes from the problem" }
+    summary:
+      es: "En vez de preguntarte qué puedes crear o vender, empieza buscando problemas que tú o alguien cercano tenga con frecuencia."
+      en: "Instead of asking what you can create or sell, start by looking for problems you or someone close to you often has."
+    milestone: false
+    thumbnail: ""
+    instagram_url: "https://www.instagram.com/reel/DdCY1HCgonu/"
+  - day: 7
+    type: "build-in-public"
+    title: { es: "Si dejo de trabajar, dejo de cobrar", en: "If I stop working, I stop getting paid" }
+    summary:
+      es: "Ya sé cómo hacer dinero fuera de mi trabajo. Ahora quiero construir ingresos que no dependan directamente de mi tiempo: la meta es recuperar el control de mi tiempo."
+      en: "I already know how to make money outside my job. Now I want to build income that doesn't depend directly on my time: the goal is to take back control of my time."
+    milestone: false
+    thumbnail: ""
+    instagram_url: "https://www.instagram.com/reel/Dc_0EjeCT1Z/"
+  - day: 6
+    type: "personal"
+    title: { es: "Puedes tenerlo todo, pero no al mismo tiempo", en: "You can have it all, just not all at once" }
+    summary:
+      es: "Cancelé dos carreras que ya tenía pagadas. No dejo de entrenar: esta etapa tiene otras prioridades — mi familia, mi trabajo y construir esto."
+      en: "I cancelled two races I'd already paid for. I'm not giving up training: this stage has other priorities — my family, my job and building this."
+    milestone: false
+    thumbnail: ""
+    instagram_url: "https://www.instagram.com/reel/Dc9j2GbDE9H/"
+  - day: 5
+    type: "business"
+    title: { es: "5 clientes reales. 5 minutos. Primer pago.", en: "5 real customers. 5 minutes. First payment." }
+    summary:
+      es: "Primera prueba real de KASSO: 1 pago y 3 promesas de pago de los primeros 5 clientes. Una muestra demasiado pequeña para celebrar todavía, pero promete."
+      en: "KASSO's first real test: 1 payment and 3 payment promises from the first 5 customers. Too small a sample to celebrate yet, but it's promising."
+    milestone: true
+    thumbnail: ""
+    instagram_url: "https://www.instagram.com/reel/Dc6_AL3AR8-/"
+  - day: 5
+    type: "other"
+    title: { es: "¡Lo vamos a lograr!", en: "We're going to make it!" }
+    summary:
+      es: "Sígueme y lo hacemos juntos."
+      en: "Follow me and let's do it together."
+    milestone: false
+    thumbnail: ""
+    instagram_url: "https://www.instagram.com/reel/Dc6IIv4RfW5/"
+  - day: 4
+    type: "personal"
+    title: { es: "Dejar de tener que trabajar", en: "Stop having to work" }
+    summary:
+      es: "Para mí, la meta es que trabajar sea una decisión y no una necesidad."
+      en: "For me, the goal is that working is a choice, not a necessity."
+    milestone: false
+    thumbnail: ""
+    instagram_url: "https://www.instagram.com/reel/Dc4aWVFDQer/"
+  - day: 3
+    type: "personal"
+    title: { es: "4 años intentando. Todavía no lo he logrado.", en: "4 years trying. I haven't made it yet." }
+    summary:
+      es: "He hecho dinero con algunas ideas y otras no funcionaron, pero ninguna ha logrado todavía ingresos sostenibles que dependan cada vez menos de mi tiempo."
+      en: "I've made money with some ideas and others didn't work, but none has yet reached sustainable income that depends less and less on my time."
+    milestone: false
+    thumbnail: ""
+    instagram_url: "https://www.instagram.com/reel/Dc11hdUjzXg/"
+  - day: 2
+    type: "other"
+    title: { es: "Del vibe coding a productos reales", en: "From vibe coding to real products" }
+    summary:
+      es: "Hacer una app con IA es fácil; convertirla en un producto real es otra cosa. Hoy trabajo con @equalityai en Citizen Developers para enseñar justamente eso."
+      en: "Building an app with AI is easy; turning it into a real product is something else. Today I'm working with @equalityai on Citizen Developers to teach exactly that."
+    milestone: false
+    thumbnail: ""
+    instagram_url: "https://www.instagram.com/reel/DczQs-flxvW/"
+  - day: 0
+    type: "build-in-public"
+    title: { es: "¿Qué construirías si solo tuvieras una hora al día?", en: "What would you build if you only had one hour a day?" }
+    summary:
+      es: "Tengo un trabajo full-time, una familia y una vida que no quiero sacrificar. El reto: una hora (mínimo) al día para construir hasta reemplazar mi sueldo. Voy a compartir los números, lo que funciona y lo que no."
+      en: "I have a full-time job, a family and a life I don't want to sacrifice. The challenge: at least one hour a day to build until I replace my salary. I'll share the numbers, what works and what doesn't."
+    milestone: true
+    thumbnail: ""
+    instagram_url: "https://www.instagram.com/reel/DcttgZ5xjO4/"
 
-# ============================================================================
-#  LO QUE HE APRENDIDO  (aprendizajes acumulados, no verdades universales)
-# ============================================================================
+# ----------------------------------------------------------------------------
+#  Lo que he aprendido (salen de tus propios Reels; no son verdades universales)
+# ----------------------------------------------------------------------------
 lessons:
-  - "Vender antes de construir."
-  - "Los problemas reales valen más que las ideas."
-  - "Crear valor antes de intentar crecer."
-  - "El progreso rara vez es lineal."
-  - "Trabajar más no es lo mismo que crear libertad."
+  - { es: "La idea sale del problema.", en: "The idea comes from the problem." }
+  - { es: "No construyas todavía: primero valida que alguien esté dispuesto a pagar.", en: "Don't build yet: first validate that someone is willing to pay." }
+  - { es: "Trabajar más no es lo mismo que crear libertad.", en: "Working more isn't the same as creating freedom." }
+  - { es: "Empieza con el tiempo que ya tienes.", en: "Start with the time you already have." }
+  - { es: "El resultado de hoy refleja lo que hiciste hace tiempo.", en: "Today's result reflects what you did a while ago." }
+  - { es: "Primero crear valor para pocos clientes, después crecer.", en: "Create value for a few customers first, then grow." }
 
-# ============================================================================
-#  LAS REGLAS DEL EXPERIMENTO
-# ============================================================================
+# ----------------------------------------------------------------------------
+#  Las reglas del experimento
+# ----------------------------------------------------------------------------
 rules:
-  - "Mantener mi trabajo full-time."
-  - "Proteger mi tiempo con mi familia."
-  - "Construir de forma consistente."
-  - "Documentar públicamente."
-  - "Medir ingresos reales."
-  - "Separar el ingreso total del ingreso mensual recurrente."
-  - "Compartir lo que funciona y lo que no."
+  - { es: "Mantener mi trabajo full-time.", en: "Keep my full-time job." }
+  - { es: "Proteger mi tiempo con mi familia.", en: "Protect my time with my family." }
+  - { es: "Construir de forma consistente.", en: "Build consistently." }
+  - { es: "Documentar públicamente.", en: "Document publicly." }
+  - { es: "Medir ingresos reales.", en: "Measure real income." }
+  - { es: "Separar el ingreso total del ingreso mensual recurrente.", en: "Separate total income from recurring monthly income." }
+  - { es: "Compartir lo que funciona y lo que no.", en: "Share what works and what doesn't." }

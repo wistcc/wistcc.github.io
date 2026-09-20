@@ -4,11 +4,10 @@
 # ============================================================================
 name: "Winner Crespo"
 
-# ⚠️ PLACEHOLDER: reemplaza el archivo con tu foto de perfil de Instagram
-#    (mismo nombre de archivo, no hay que tocar código).
-portrait: "/assets/images/challenge/portrait.jpg"
+# Foto de perfil de Instagram (150x150, es lo que expone Instagram).
+# Para una más nítida: reemplaza assets/images/portrait.jpg (mismo nombre).
+portrait: "/assets/images/portrait.jpg"
 
-# ⚠️ PLACEHOLDER: confirma tu usuario/URL real de Instagram.
 instagram_url: "https://www.instagram.com/winnercrespo/"
 instagram_handle: "winnercrespo"
 
