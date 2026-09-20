@@ -13,7 +13,7 @@ nav:
     url:   { es: "/", en: "/en/" }
   - id: challenge
     label: { es: "El reto", en: "The challenge" }
-    url:   { es: "/challenge/", en: "/challenge/" }   # el reto solo existe en español por ahora
+    url:   { es: "/challenge/", en: "/en/challenge/" }
   - id: writing
     label: { es: "Escritura", en: "Writing" }
     url:   { es: "/blog/", en: "/blog/" }
@@ -48,3 +48,91 @@ home:
   description:
     es: "Winner Crespo, ingeniero de software. Construyo en público para que trabajar sea una opción y no una necesidad."
     en: "Winner Crespo, software engineer. Building in public so that working becomes a choice, not a necessity."
+
+months_short:
+  es: ["ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sep", "oct", "nov", "dic"]
+  en: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+
+# ----------------------------------------------------------------------------
+#  Textos de las páginas del reto (/challenge y /en/challenge)
+#  Los DATOS del reto (episodios, hitos, lecciones...) viven en challenge.yml.
+# ----------------------------------------------------------------------------
+ch:
+  meta:
+    title:
+      es: "Intentando reemplazar mi sueldo"
+      en: "Trying to replace my salary"
+    description:
+      es: "Estoy documentando mi intento de construir ingresos que no dependan directamente de mi tiempo, una hora a la vez."
+      en: "I'm documenting my attempt to build income that doesn't depend directly on my time, one hour at a time."
+    journey_title:
+      es: "El journey completo del reto"
+      en: "The full journey of the challenge"
+    journey_description:
+      es: "Todos los días del reto: decisiones, experimentos, errores y aprendizajes construyendo ingresos que no dependan directamente de mi tiempo."
+      en: "Every day of the challenge: decisions, experiments, mistakes and lessons while building income that doesn't depend directly on my time."
+  eyebrow:   { es: "El reto", en: "The challenge" }
+  hero_a:    { es: "Día", en: "Day" }
+  hero_b:
+    es: "intentando reemplazar mi sueldo, una hora a la vez."
+    en: "trying to replace my salary, one hour at a time."
+  sub1:      { es: "No quiero dejar de trabajar.", en: "I don't want to stop working." }
+  sub2_a:    { es: "Quiero dejar de", en: "I want to stop" }
+  sub2_em:   { es: "tener que trabajar", en: "having to work" }
+  lead:
+    es: "Estoy documentando públicamente mi intento de construir ingresos que no dependan directamente de mi tiempo mientras mantengo mi trabajo full-time y mi vida normal."
+    en: "I'm publicly documenting my attempt to build income that doesn't depend directly on my time, while keeping my full-time job and my normal life."
+  board_aria: { es: "Marcador del reto", en: "Challenge scoreboard" }
+  day_label:     { es: "Día actual", en: "Current day" }
+  started:       { es: "Iniciado el", en: "Started on" }
+  total_label:   { es: "Total generado", en: "Total generated" }
+  total_hint:
+    es: "Todo el dinero generado fuera de mi trabajo durante el reto."
+    en: "All the money generated outside my job during the challenge."
+  monthly_label: { es: "Ingreso mensual", en: "Monthly income" }
+  per_month:     { es: "/ mes", en: "/ month" }
+  monthly_hint:
+    es: "Ingresos que pueden continuar sin depender directamente de cada hora de mi tiempo."
+    en: "Income that can continue without depending directly on every hour of my time."
+  goal_label:    { es: "Objetivo", en: "Goal" }
+  goal_value:    { es: "Reemplazar mi sueldo", en: "Replace my salary" }
+  goal_hint:
+    es: "Sin una cifra fija: que trabajar sea una decisión, no una necesidad."
+    en: "No fixed number: working should be a choice, not a necessity."
+  target_label:  { es: "Meta mensual", en: "Monthly target" }
+  progress_label: { es: "Camino a reemplazar mi sueldo", en: "Progress toward replacing my salary" }
+  board_note:    { es: "El reto arranca desde cero.", en: "The challenge starts from zero." }
+  building:      { es: "Lo que estoy construyendo", en: "What I'm building" }
+  learn_more:    { es: "Conocer más sobre", en: "Learn more about" }
+  focus:         { es: "En qué estoy enfocado ahora", en: "What I'm focused on now" }
+  rules:         { es: "Las reglas del experimento", en: "The rules of the experiment" }
+  chart:         { es: "Evolución del ingreso mensual", en: "Monthly income over time" }
+  chart_aria:    { es: "Gráfico de evolución del ingreso mensual", en: "Chart of monthly income over time" }
+  chart_current: { es: "Ingreso mensual actual", en: "Current monthly income" }
+  latest:        { es: "Últimos episodios", en: "Latest episodes" }
+  all_days:      { es: "Ver todos los días →", en: "See all days →" }
+  milestones:    { es: "Hitos del camino", en: "Milestones" }
+  see_all:       { es: "Ver todos →", en: "See all →" }
+  lessons:       { es: "Lo que he aprendido", en: "What I've learned" }
+  cta_title:     { es: "Acompáñame en el proceso", en: "Follow along" }
+  cta_text:
+    es: "Estoy compartiendo todo en tiempo real en Instagram: avances, errores, números y aprendizajes."
+    en: "I'm sharing everything in real time on Instagram: progress, mistakes, numbers and lessons."
+  kickoff:       { es: "Inicio", en: "Kickoff" }
+  watch:         { es: "Ver en Instagram", en: "Watch on Instagram" }
+  journey_h1:    { es: "El journey completo", en: "The full journey" }
+  journey_lead_a: { es: "Desde el inicio hasta el día", en: "From the start to day" }
+  journey_lead_b: { es: "Cada episodio, hito y aprendizaje del reto, en orden.", en: "Every episode, milestone and lesson of the challenge, in order." }
+  back:          { es: "← Volver al reto", en: "← Back to the challenge" }
+  filters_aria:  { es: "Filtrar el journey", en: "Filter the journey" }
+  filters:
+    all:             { es: "Todos", en: "All" }
+    milestone:       { es: "Hitos", en: "Milestones" }
+    business:        { es: "Negocio", en: "Business" }
+    build-in-public: { es: "Build in public", en: "Build in public" }
+    personal:        { es: "Personal", en: "Personal" }
+    lesson:          { es: "Aprendizajes", en: "Lessons" }
+    experiment:      { es: "Experimentos", en: "Experiments" }
+    other:           { es: "Otros", en: "Other" }
+  empty:         { es: "No hay episodios en esta categoría todavía.", en: "No episodes in this category yet." }
+  none_yet:      { es: "Todavía no hay episodios.", en: "No episodes yet." }

@@ -3,7 +3,7 @@
 #  Puede haber varias a la vez. Agrega una entrada para sumar otra.
 #
 #  status: active | paused | closed   (solo se muestran las que no están closed)
-#  url:    opcional. Vacío = tarjeta sin enlace.
+#  url:    opcional. Vacío = tarjeta sin enlace. `localized: true` antepone /en en inglés.
 #  metric: opcional, texto corto por idioma. `metric_type: challenge_day`
 #          muestra "Día N" leyendo el día actual de _data/challenge.yml.
 # ============================================================================
@@ -14,6 +14,7 @@
     en: "A public challenge: building income that doesn't depend directly on my time, one hour at a time."
   status: active
   url: "/challenge/"
+  localized: true          # en /en/ apuntará a /en/challenge/
   metric_type: challenge_day
 
 - id: kasso

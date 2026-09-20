@@ -14,7 +14,7 @@
       <a class="wc-btn wc-btn--primary" href="{{ p.instagram_url }}" target="_blank" rel="noopener" data-track="instagram_cta_click" data-label="home-hero">
         {% include wc/icon.html name="instagram" %} {{ t.ui.follow_ig[L] }}
       </a>
-      <a class="wc-btn wc-btn--ghost" href="/challenge/" data-track="challenge_click" data-label="home-hero">
+      <a class="wc-btn wc-btn--ghost" href="{{ prefix }}/challenge/" data-track="challenge_click" data-label="home-hero">
         {{ t.ui.see_challenge[L] }} {% include wc/icon.html name="arrow" %}
       </a>
     </div>
@@ -38,8 +38,8 @@
         {%- if bet.metric_type == "challenge_day" -%}{{ t.ui.day[L] }} {{ site.data.challenge.config.current_day }}
         {%- elsif bet.metric -%}{{ bet.metric[L] }}{%- endif -%}
       {%- endcapture -%}
-      {%- assign tag = "div" -%}{%- if bet.url != "" and bet.url -%}{%- assign tag = "a" -%}{%- endif -%}
-      <{{ tag }} class="wc-bet"{% if tag == "a" %} href="{{ bet.url }}" data-track="project_click" data-label="{{ bet.id }}"{% endif %}>
+      {%- assign tag = "div" -%}{%- assign bet_url = bet.url -%}{%- if bet.localized -%}{%- assign bet_url = prefix | append: bet.url -%}{%- endif -%}{%- if bet_url != "" and bet_url -%}{%- assign tag = "a" -%}{%- endif -%}
+      <{{ tag }} class="wc-bet"{% if tag == "a" %} href="{{ bet_url }}" data-track="project_click" data-label="{{ bet.id }}"{% endif %}>
         <div class="wc-bet__top">
           <span class="wc-bet__name">{{ bet.name[L] }}</span>
           <span class="wc-bet__status wc-bet__status--{{ bet.status }}">{{ t.ui.status[bet.status][L] }}</span>
