@@ -16,7 +16,7 @@ nav:
     url:   { es: "/challenge/", en: "/en/challenge/" }
   - id: writing
     label: { es: "Escritura", en: "Writing" }
-    url:   { es: "/blog/", en: "/blog/" }
+    url:   { es: "/blog/", en: "/en/blog/" }
   - id: about
     label: { es: "Sobre mí", en: "About" }
     url:   { es: "/about/", en: "/en/about/" }
@@ -27,7 +27,7 @@ ui:
   building:      { es: "Lo que estoy construyendo", en: "What I'm building" }
   writing:       { es: "Escritura", en: "Writing" }
   resume:        { es: "Currículum", en: "Resume" }
-  writing_note:  { es: "Artículos en español y en inglés", en: "Articles in Spanish and English" }
+  writing_note:  { es: "Desarrollo de software, carrera y el reto", en: "Software development, career and the challenge" }
   view_all:      { es: "Ver todo", en: "View all" }
   day:           { es: "Día", en: "Day" }
   language:      { es: "Idioma", en: "Language" }

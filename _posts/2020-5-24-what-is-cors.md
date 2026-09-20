@@ -1,5 +1,6 @@
 ---
 title: "What is CORS?"
+alt_url: /que-es-cors/
 header:
   teaser: /assets/images/2020-5-24-what-is-cors.jpg
   author: Michael Geiger

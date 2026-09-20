@@ -1,5 +1,6 @@
 ---
 title: 'Introducing gameflix.app - Wordle for Netflix'
+alt_url: /presentando-gameflix-app-wordle-para-netflix/
 header:
   teaser: /assets/images/gameflix.png
 last_modified_at: 2024-5-12

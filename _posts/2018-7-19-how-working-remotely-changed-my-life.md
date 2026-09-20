@@ -1,5 +1,6 @@
 ---
 title: How working remotely changed my life
+alt_url: /como-trabajar-remoto-cambio-mi-vida/
 header:
   teaser: /assets/images/2018-7-19-how-working-remotely-changed-my-life.jpg
 last_modified_at: 2018-7-19

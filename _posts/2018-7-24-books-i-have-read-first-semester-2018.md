@@ -1,5 +1,6 @@
 ---
 title: "Books I have read: first semester 2018"
+alt_url: /libros-que-lei-primer-semestre-2018/
 header:
   teaser: /assets/images/2018-7-24-books-i-have-read-first-semester-2018.jpg
   author: Vikas Pawar

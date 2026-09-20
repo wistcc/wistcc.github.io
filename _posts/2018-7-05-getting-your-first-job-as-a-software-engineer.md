@@ -1,5 +1,6 @@
 ---
 title: Getting your first job as a software engineer
+alt_url: /conseguir-tu-primer-trabajo-como-ingeniero-de-software/
 header:
   teaser: /assets/images/2018-7-05-getting-your-first-job-as-a-software-engineer.jpeg
 last_modified_at: 2018-7-05

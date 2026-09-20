@@ -12,7 +12,7 @@ layout: wc
 <article class="wc-article" itemscope itemtype="http://schema.org/BlogPosting">
   <div class="wc-wrap">
     <header class="wc-article__head">
-      <p class="wc-eyebrow"><a href="/blog/" style="text-decoration:none;">{{ t.ui.writing[L] }}</a></p>
+      <p class="wc-eyebrow"><a href="{% if L == "en" %}/en{% endif %}/blog/" style="text-decoration:none;">{{ t.ui.writing[L] }}</a></p>
       <h1 class="wc-article__title" itemprop="headline">{{ page.title | markdownify | remove: "<p>" | remove: "</p>" }}</h1>
       <p class="wc-article__meta">
         <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{% include wc/date.html d=page.date lang=L %}</time>
@@ -45,19 +45,25 @@ layout: wc
       <a href="https://www.facebook.com/sharer/sharer.php?u={{ share_url }}" target="_blank" rel="noopener">Facebook</a>
     </div>
 
-    {%- if page.previous or page.next %}
+    {%- assign same_lang = site.posts | where: "lang", L -%}
+    {%- assign idx = -1 -%}
+    {%- for p in same_lang -%}{%- if p.url == page.url -%}{%- assign idx = forloop.index0 -%}{%- endif -%}{%- endfor -%}
+    {%- assign prev_post = nil -%}{%- assign next_post = nil -%}
+    {%- if idx > 0 -%}{%- assign i_prev = idx | minus: 1 -%}{%- assign prev_post = same_lang[i_prev] -%}{%- endif -%}
+    {%- assign i_next = idx | plus: 1 -%}{%- if idx >= 0 -%}{%- assign next_post = same_lang[i_next] -%}{%- endif -%}
+    {%- if prev_post or next_post %}
     <nav class="wc-pager" aria-label="{{ t.ui.writing[L] }}">
-      {%- if page.previous %}<a class="wc-pager__link" href="{{ page.previous.url }}"><span class="wc-muted">{{ t.post.previous[L] }}</span><span>{{ page.previous.title }}</span></a>{% else %}<span></span>{% endif %}
-      {%- if page.next %}<a class="wc-pager__link wc-pager__link--next" href="{{ page.next.url }}"><span class="wc-muted">{{ t.post.next[L] }}</span><span>{{ page.next.title }}</span></a>{% endif %}
+      {%- if prev_post %}<a class="wc-pager__link" href="{{ prev_post.url }}"><span class="wc-muted">{{ t.post.previous[L] }}</span><span>{{ prev_post.title }}</span></a>{% else %}<span></span>{% endif %}
+      {%- if next_post %}<a class="wc-pager__link wc-pager__link--next" href="{{ next_post.url }}"><span class="wc-muted">{{ t.post.next[L] }}</span><span>{{ next_post.title }}</span></a>{% endif %}
     </nav>
     {%- endif %}
 
     {%- comment -%} More posts (excludes current) {%- endcomment %}
     <section class="wc-section" style="padding-top:36px;">
-      <div class="wc-section__head"><h2>{{ t.post.more[L] }}</h2><a class="wc-link" href="/blog/">{{ t.ui.view_all[L] }} →</a></div>
+      <div class="wc-section__head"><h2>{{ t.post.more[L] }}</h2><a class="wc-link" href="{% if L == "en" %}/en{% endif %}/blog/">{{ t.ui.view_all[L] }} →</a></div>
       <div class="wc-writing">
         {%- assign shown = 0 -%}
-        {%- for post in site.posts -%}
+        {%- for post in same_lang -%}
           {%- if post.url != page.url and shown < 3 -%}
           {%- assign shown = shown | plus: 1 -%}
           <a class="wc-post" href="{{ post.url }}"><span class="wc-post__title">{{ post.title }}</span><span class="wc-post__date">{{ post.date | date: "%Y" }}</span></a>

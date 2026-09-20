@@ -1,18 +1,19 @@
 ---
-title: "Chart xkcd vue wrapper"
-alt_url: /graficos-estilo-xkcd-con-chart-xkcd/
+title: "Chart xkcd wrapper para Vue"
 header:
   teaser: /assets/images/2019-8-30-chart-xkcd.gif
 last_modified_at: 2019-8-30
+lang: es
+alt_url: /chart-xkcd/
 ---
 
-A friend shared [this](https://github.com/timqian/chart.xkcd) great library the other day and I fell in love with it automatically. It's very beautiful the way these charts look like they were hand-drawn.
+Un amigo compartió [esta](https://github.com/timqian/chart.xkcd) gran librería el otro día y me enamoré de ella automáticamente. Es muy bonito cómo estos gráficos parecen dibujados a mano.
 
-It is also very easy to use, you only need to include the script tag on your page and add a `svg` element where the chart will be rendered. Learn more about it on the [documentation](https://timqian.com/chart.xkcd/).
+También es muy fácil de usar, solo necesitas incluir el tag script en tu página y agregar un elemento `svg` donde se va a renderizar el gráfico. Aprende más en la [documentación](https://timqian.com/chart.xkcd/).
 
-I thought it would be cool to have a wrapper to use it very easy on my Vue projects but there were none at that moment so I decided to create my own [chart.xkcd-vue-wrapper](https://github.com/wistcc/chart.xkcd-vue-wrapper).
+Pensé que sería genial tener un wrapper para usarla muy fácil en mis proyectos de Vue pero en ese momento no había ninguno, así que decidí crear el mío, [chart.xkcd-vue-wrapper](https://github.com/wistcc/chart.xkcd-vue-wrapper).
 
-It's also pretty easy to use, you just need to install it `yarn add chart.xkcd-vue-wrapper` or `npm i chart.xkcd-vue-wrapper` and then use the components like this:
+También es bastante fácil de usar, solo necesitas instalarlo con `yarn add chart.xkcd-vue-wrapper` o `npm i chart.xkcd-vue-wrapper` y luego usar los componentes así:
 
 ```javascript
 <template>
@@ -74,6 +75,6 @@ export default {
 </script>
 ```
 
-I hope that you like using beautiful and funny charts on your projects and that this wrapper is useful for you.
+Espero que te guste usar gráficos bonitos y divertidos en tus proyectos y que este wrapper te sea útil.
 
 Happy coding!
