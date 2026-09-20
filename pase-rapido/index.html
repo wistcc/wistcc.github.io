@@ -200,6 +200,20 @@
   .sharetitle{display:block;font-size:.7rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--green);margin-bottom:10px}
   .sharemsg{font-size:.86rem;color:#374b40;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px;max-width:560px;margin:0 auto 14px;line-height:1.5}
 
+  .ccard{display:flex;align-items:center;gap:11px;background:var(--card);border:1px solid var(--line);border-radius:15px;padding:12px;flex-wrap:wrap}
+  .ccard .ic{width:38px;height:38px;border-radius:11px;background:rgba(31,157,85,.12);display:grid;place-items:center;flex:0 0 auto;font-size:1.1rem}
+  .cinfo{flex:1;min-width:130px}
+  .cinfo b{font-size:.85rem;display:block}
+  .cinfo span{font-size:.72rem;color:var(--muted)}
+  .cpill{display:inline-flex;align-items:center;gap:5px;font-size:.66rem;font-weight:800;color:var(--green-deep);background:rgba(31,157,85,.14);padding:6px 10px;border-radius:999px;white-space:nowrap}
+  .cards.three{grid-template-columns:repeat(3,1fr)}
+  @media(max-width:860px){.cards.three{grid-template-columns:1fr;max-width:440px;margin-inline:auto}}
+  .taphere{text-align:center;font-size:.74rem;font-weight:800;color:var(--green-deep);margin:0 0 8px;animation:bob 1.4s ease-in-out infinite}
+  @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(3px)}}
+  #activar{animation:pulseBtn 2s ease-out infinite}
+  @keyframes pulseBtn{0%,100%{box-shadow:0 0 0 0 rgba(31,157,85,.5)}55%{box-shadow:0 0 0 12px rgba(31,157,85,0)}}
+  @media(prefers-reduced-motion:reduce){.taphere,#activar{animation:none}}
+
   @media (prefers-color-scheme: dark){
     :root{--ink:#eaf3ec;--muted:#9db3a4;--line:#25382e;--card:#132420;--bg:#0b1611;--bg2:#0f1d16}
     body{background:radial-gradient(120% 60% at 50% -5%, rgba(31,157,85,.16), transparent 60%),var(--bg)}
@@ -220,7 +234,6 @@
     <span><b>Pase Rápido</b><small>PROPUESTA</small></span>
   </div>
   <span class="sp"></span>
-  <span class="disc" data-i18n="disc"></span>
   <div class="lang" role="group" aria-label="Idioma">
     <button data-lang="es" aria-pressed="true">ES</button>
     <button data-lang="en" aria-pressed="false">EN</button>
@@ -260,6 +273,7 @@
                 <input id="cphone" type="tel" inputmode="tel" data-i18n-attr="placeholder|phone.res.phonePh">
               </div>
               <p class="psub" style="margin:12px 0" data-i18n="phone.res.tip"></p>
+              <div class="taphere" data-i18n="phone.res.taphere"></div>
               <button class="pbtn primary" id="activar" data-i18n="phone.res.activate"></button>
             </div>
             <div id="r-live" hidden></div>
@@ -336,7 +350,7 @@
       <div class="eyebrow" data-i18n="biz.eyebrow"></div>
       <h2 data-i18n="biz.h"></h2>
     </div>
-    <div class="cards" id="biz-cards" style="grid-template-columns:repeat(3,1fr)"></div>
+    <div class="cards three" id="biz-cards"></div>
   </div>
 </section>
 
@@ -394,11 +408,14 @@
           noteActive:"<b>Activo.</b> El pase ya aparece en la pantalla del guardia en la caseta. Si no lo usan, expira en 15 min.",
           noteSms:"<b>Activo.</b> Enlace enviado por SMS a {p}. También aparece en la pantalla del guardia; expira en 15 min.",
           share:"Copiar enlace", shared:"Enlace copiado ✓", deactivate:"Desactivar", regen:"Generar nuevo pase",
-          shareTip:"Opcional, para invitados o suplidores. Para delivery no hace falta: ya está en la caseta."
+          shareTip:"Opcional, para invitados o suplidores. Para delivery no hace falta: ya está en la caseta.",
+          taphere:"👇 Toca aquí para probarlo",
+          noteOff:"<b>Desactivado.</b> Ya no permite el acceso. Genera otro cuando quieras.",
+          noteExp:"<b>Expirado.</b> Se acabó el tiempo. Genera uno nuevo."
         },
         gua:{ k:"Caseta de acceso", h:"Pases activos ahora",
           sub:"Cuando el residente activa un pase, aparece aquí automáticamente. El repartidor no tiene que mandar nada: dice la unidad y el guardia confirma.",
-          note:"<b>Y si mira la pantalla del repartidor:</b> el reloj real, la cuenta regresiva y el código que cambia le prueban que es de ahora — no un screenshot de ayer.",
+          note:"<b>Y si mira la pantalla del repartidor:</b> el reloj real, la cuenta regresiva y el código que cambia le prueban que es de ahora, no un screenshot de ayer.",
           empty:"Sin pases activos ahora.", consoleType:"Pase rápido · una entrada", live:"Vivo"
         },
         pass:{ live:"Pase en vivo", expires:"expira en", code:"código vivo", swipe:"✨ Desliza el dedo por el pase",
@@ -480,11 +497,14 @@
           noteActive:"<b>Active.</b> The pass now shows on the guard's screen at the gate. If unused, it expires in 15 min.",
           noteSms:"<b>Active.</b> Link sent by SMS to {p}. It also shows on the guard's screen; expires in 15 min.",
           share:"Copy link", shared:"Link copied ✓", deactivate:"Deactivate", regen:"Generate new pass",
-          shareTip:"Optional, for guests or suppliers. Not needed for delivery: it's already at the gate."
+          shareTip:"Optional, for guests or suppliers. Not needed for delivery: it's already at the gate.",
+          taphere:"👇 Tap here to try it",
+          noteOff:"<b>Deactivated.</b> No longer grants access. Generate another whenever you want.",
+          noteExp:"<b>Expired.</b> Time's up. Generate a new one."
         },
         gua:{ k:"Gate console", h:"Active passes now",
           sub:"When a resident activates a pass, it appears here automatically. The courier doesn't send anything: they say the unit and the guard confirms.",
-          note:"<b>And if they look at the courier's screen:</b> the real clock, the countdown and the changing code prove it's from right now — not yesterday's screenshot.",
+          note:"<b>And if they look at the courier's screen:</b> the real clock, the countdown and the changing code prove it's from right now, not yesterday's screenshot.",
           empty:"No active passes right now.", consoleType:"Quick pass · single entry", live:"Live"
         },
         pass:{ live:"Live pass", expires:"expires in", code:"live code", swipe:"✨ Swipe your finger across the pass",
@@ -587,6 +607,7 @@
     var r=tt("phone.res");
     document.getElementById('r-live').innerHTML=deadPass(kind)+'<button class="pbtn primary" id="regen" style="margin-top:12px">'+r.regen+'</button>';
     document.getElementById('regen').onclick=activate;
+    document.getElementById('r-note').innerHTML=(kind==='exp'?r.noteExp:r.noteOff);
     renderConsole();
   }
   function deactivate(){endState('dead');}
@@ -607,7 +628,7 @@
   }
   function renderConsole(){
     var el=document.getElementById('g-console');if(!el)return;var g=tt("phone.gua");
-    if(active){el.innerHTML='<div class="order"><span class="ic">🛵</span><div><b>'+currentAddr+'</b><span>'+g.consoleType+'</span></div><span class="pill">● '+g.live+' · <span data-time>'+fmt(left)+'</span></span></div>';}
+    if(active){el.innerHTML='<div class="ccard"><span class="ic">🛵</span><div class="cinfo"><b>'+currentAddr+'</b><span>'+g.consoleType+'</span></div><span class="cpill">● '+g.live+' · <span data-time>'+fmt(left)+'</span></span></div>';}
     else{el.innerHTML='<div class="pnote" style="text-align:center">'+g.empty+'</div>';}
   }
 
@@ -641,9 +662,6 @@
   var waB=document.getElementById('wa-share');if(waB)waB.onclick=function(){window.open('https://wa.me/?text='+encodeURIComponent(tt("share.suggested")),'_blank');};
   var cpB=document.getElementById('copy-msg');if(cpB)cpB.onclick=function(){var t=tt("share.suggested");try{navigator.clipboard.writeText(t);}catch(e){}this.textContent=tt("share.copied");};
 
-  // auto-play the pass for viewers who don't tap (#13); cancel if they start typing the phone
-  var autoTimer=setTimeout(function(){if(!active)activate();},2600);
-  var ciF=document.getElementById('cphone');if(ciF)ciF.addEventListener('focus',function(){clearTimeout(autoTimer);});
   document.querySelectorAll('.ptabs button').forEach(function(b){
     b.onclick=function(){document.querySelectorAll('.ptabs button').forEach(function(x){x.setAttribute('aria-selected','false');});b.setAttribute('aria-selected','true');
       phoneView=b.dataset.pview;document.querySelectorAll('.pview').forEach(function(v){v.classList.toggle('active',v.dataset.pview===phoneView);});renderConsole();};
