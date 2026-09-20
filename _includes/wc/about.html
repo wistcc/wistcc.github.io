@@ -1,0 +1,44 @@
+{%- assign L = page.lang | default: "es" -%}
+{%- assign t = site.data.i18n -%}
+{%- assign p = site.data.profile -%}
+<header class="wc-hero" style="padding-bottom: 8px;">
+  <div class="wc-wrap">
+    <img class="wc-hero__photo" src="{{ p.portrait }}" alt="{{ p.name }}" width="84" height="84">
+    <h1 class="wc-hero__title" style="font-size: 2rem;">{% if L == "es" %}Sobre mí{% else %}About{% endif %}</h1>
+  </div>
+</header>
+
+<section class="wc-section">
+  <div class="wc-wrap wc-prose">
+  {%- if L == "es" %}
+    <p>Soy Winner Crespo, ingeniero de software. Tengo un trabajo full-time, esposa, un hijo y otras responsabilidades, y aun así estoy intentando construir algo propio.</p>
+    <p>Mi meta no es necesariamente dejar de trabajar. Es llegar al punto donde <strong>trabajar sea una decisión y no una necesidad</strong>. Para eso estoy construyendo ingresos que dependan cada vez menos directamente de mi tiempo.</p>
+
+    <h2>Lo que estoy haciendo</h2>
+    <p>Lo documento públicamente en Instagram: decisiones, experimentos, errores, aprendizajes y resultados, incluidos los números. Mi proyecto principal hoy es <strong>KASSO</strong>, que utiliza inteligencia artificial para ayudar a empresas a cobrar dinero pendiente y automatizar gran parte del seguimiento de cobros. El detalle está en <a href="/challenge/">El reto</a>.</p>
+
+    <h2>Sobre este sitio</h2>
+    <p>Este sitio empezó como un blog técnico para aprender en conjunto con otros. No soy experto en todo lo que escribo aquí: la idea es ser mejor ingeniero compartiendo, colaborando y conversando sobre distintos temas. Escribo sobre lo que veo usando diferentes lenguajes, frameworks y herramientas, y sobre los problemas que encuentro en mi día a día y cómo los resolví. Si algo de lo que escribí está mal, corrígeme.</p>
+    <p>Hoy es, además, mi prueba pública de lo que estoy intentando lograr.</p>
+  {%- else %}
+    <p>I'm Winner Crespo, a software engineer. I have a full-time job, a wife, a son and other responsibilities, and I'm still trying to build something of my own.</p>
+    <p>My goal isn't necessarily to stop working. It's to reach the point where <strong>working is a decision, not a necessity</strong>. To get there I'm building income that depends less and less directly on my time.</p>
+
+    <h2>What I'm doing</h2>
+    <p>I document it publicly on Instagram: decisions, experiments, mistakes, lessons and results, including the numbers. My main project today is <strong>KASSO</strong>, which uses artificial intelligence to help companies collect overdue payments and automate much of the collections follow-up. The details are in <a href="/challenge/">The challenge</a> (in Spanish).</p>
+
+    <h2>About this site</h2>
+    <p>This site started as a technical blog to learn together with others. I'm not an expert on everything written here: the idea is to be a better software engineer by sharing, collaborating and having good conversations about different topics. I write about things I see using different languages, frameworks and tools, and about problems I run into day to day and how I solved them. If something I wrote is wrong, please correct me.</p>
+    <p>Today it's also my public proof of what I'm trying to achieve.</p>
+  {%- endif %}
+  </div>
+  <div class="wc-wrap" style="margin-top: 26px;">
+    <div class="wc-hero__cta">
+      <a class="wc-btn wc-btn--primary" href="{{ p.instagram_url }}" target="_blank" rel="noopener" data-track="instagram_cta_click" data-label="about">
+        {% include wc/icon.html name="instagram" %} {{ t.ui.follow_ig[L] }}
+      </a>
+      <a class="wc-btn wc-btn--ghost" href="{{ p.resume_url }}" target="_blank" rel="noopener" data-track="resume_click" data-label="about">{{ t.ui.resume[L] }} (PDF)</a>
+    </div>
+  </div>
+</section>
+<div class="wc-wrap"><script async data-uid="0609f2b7fa" src="https://winnercrespo.ck.page/0609f2b7fa/index.js"></script></div>

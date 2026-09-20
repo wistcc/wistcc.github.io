@@ -5,6 +5,8 @@
     lang:        es | en            (default es)   -> <html lang>, UI strings
     alt_url:     URL of the translated counterpart  -> hreflang + language switch
     nav_id:      home | challenge | writing | about -> highlights the nav item
+    extra_css:   path of an additional stylesheet for the page
+    track_view:  gtag event name fired once on page load (e.g. challenge_page_view)
     lang_detect: true               -> first-visit redirect by browser language
                                        (only set on the Spanish home; skips bots)
     wide:        true               -> wider content column
@@ -54,6 +56,9 @@
     <script>
       (function () {
         function track(name, params) { if (typeof gtag === 'function') { gtag('event', name, params || {}); } }
+        {%- if page.track_view %}
+        track('{{ page.track_view }}', { page_path: location.pathname });
+        {%- endif %}
         document.addEventListener('click', function (e) {
           var lang = e.target.closest('[data-wc-lang]');
           if (lang) { try { localStorage.setItem('wc_lang', lang.getAttribute('data-wc-lang')); } catch (err) {} }

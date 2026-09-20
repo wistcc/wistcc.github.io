@@ -20,15 +20,7 @@ config:
   monthly_income: 0               # Ingreso recurrente que NO depende directamente de cada hora (hoy: 0)
   target_monthly_income: 150000   # ⚠️ PLACEHOLDER — pon aquí tu sueldo real a reemplazar
 
-  # --- Instagram (⚠️ PLACEHOLDER — confirma tu handle/URL) ---
-  instagram_url: "https://www.instagram.com/winnercrespo/"   # ⚠️ PLACEHOLDER
-  instagram_handle: "winnercrespo"                            # ⚠️ PLACEHOLDER
-
-  # --- Retrato / imagen personal ---
-  # ⚠️ PLACEHOLDER: reemplaza el archivo /assets/images/challenge/portrait.jpg
-  # con tu foto de perfil de Instagram (mismo nombre, no hay que tocar código).
-  # Hoy es una copia del avatar del sitio. Ver assets/images/challenge/README.md
-  portrait: "/assets/images/challenge/portrait.jpg"
+  # Instagram y foto de retrato ahora viven en _data/profile.yml (compartidos por todo el sitio).
 
   # --- Enfoque actual (cambia con frecuencia) ---
   current_focus: >-
@@ -88,11 +80,14 @@ milestones:
     featured: true
   - day: 13
     date: 2026-09-12
-    title: "Primer empleado"
-    description: "El proyecto crece y suma a su primera persona al equipo."
+    title: "Mi mayor motivación"
+    description: "Una conversación con mi familia que me recordó por qué estoy haciendo esto."
     metric: ""
     instagram_url: ""             # ⚠️ PLACEHOLDER
     featured: true
+  # Ejemplos de hitos por agregar cuando tengas el día/fecha real (no inventar):
+  # - { day: ?, date: ?, title: "Primer pago", description: "...", instagram_url: "", featured: true }
+  # - { day: ?, date: ?, title: "Primer empleado", description: "...", instagram_url: "", featured: true }
   - day: 8
     date: 2026-09-07
     title: "Primeros clientes reales"
