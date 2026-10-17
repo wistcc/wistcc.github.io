@@ -1,0 +1,183 @@
+---
+layout: wc
+lang: es
+title: "Cómo Claude edita mis videos"
+permalink: /editor/
+description: "El flujo exacto con el que Claude edita mis videos diarios: transcribe, quita las retomas, acelera el trabajo, pone las animaciones y revisa todo antes de entregarlo. Con el prompt para que lo uses tú."
+---
+
+<style>
+  .pi-wrap { padding-top: 48px; padding-bottom: 24px; }
+  .pi-hero p { font-size: 1.05em; }
+  .pi-lead {
+    border-left: 4px solid #52adc8;
+    padding: 0.6em 1.1em;
+    margin: 1.5em 0;
+    background: rgba(82, 173, 200, 0.08);
+    border-radius: 4px;
+  }
+  .pi-steps { counter-reset: pi; list-style: none; padding-left: 0; }
+  .pi-steps li {
+    counter-increment: pi;
+    position: relative;
+    padding-left: 2.4em;
+    margin-bottom: 0.9em;
+  }
+  .pi-steps li::before {
+    content: counter(pi);
+    position: absolute;
+    left: 0; top: 0;
+    width: 1.7em; height: 1.7em;
+    line-height: 1.7em;
+    text-align: center;
+    background: #52adc8;
+    color: #fff;
+    border-radius: 50%;
+    font-weight: 700;
+    font-size: 0.85em;
+  }
+  .pi-prompt-box {
+    position: relative;
+    margin: 1.2em 0 2em;
+  }
+  .pi-copy-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5em;
+    background: #52adc8;
+    color: #fff;
+    border: none;
+    padding: 0.7em 1.4em;
+    border-radius: 6px;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.15s ease;
+  }
+  .pi-copy-btn:hover { background: #3f93ac; }
+  .pi-copy-btn.copied { background: #2e8b57; }
+  .pi-prompt {
+    max-height: 460px;
+    overflow: auto;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-size: 0.82em;
+    line-height: 1.5;
+    padding: 1.2em;
+    border-radius: 6px;
+    margin-top: 0.8em;
+  }
+  .pi-note {
+    font-size: 0.9em;
+    opacity: 0.8;
+    margin-top: 0.4em;
+  }
+</style>
+<div class="wc-wrap wc-prose pi-wrap">
+<h1 style="margin-bottom:.6em;">Cómo Claude edita mis videos</h1>
+<p>Si llegaste aquí desde uno de mis videos: bienvenido 👋. No contraté un editor. Cada día grabo tres cosas, se las paso a <strong>Claude</strong> y él me devuelve el video listo para publicar: cortes, animaciones, subtítulos y los números que se mueven.</p>
+<div class="pi-lead">
+<strong>Lo que cambió:</strong> antes editaba en CapCut como media hora y el resultado era siempre el mismo. Ahora tardo casi lo mismo, pero el video sale mucho mejor, y yo solo grabo.
+</div>
+
+<h2>Lo que grabo cada día</h2>
+<ol class="pi-steps">
+<li><strong>El intro a cámara</strong> (3 segundos): "Día N intentando reemplazar mi sueldo, una hora a la vez".</li>
+<li><strong>El trabajo</strong>: grabo mi escritorio mientras trabajo, siempre 8 minutos. Después se acelera.</li>
+<li><strong>La voz</strong>: una nota de voz leyendo el guion. Si me equivoco, repito la frase y sigo. No vuelvo a empezar.</li>
+<li><strong>El cierre a cámara</strong>: "Sígueme, que lo vamos a lograr".</li>
+</ol>
+
+<h2>Lo que hace Claude</h2>
+<ol class="pi-steps">
+<li><strong>Transcribe la voz palabra por palabra</strong> con los tiempos exactos de cada palabra (Whisper).</li>
+<li><strong>Quita las retomas</strong>: si dije una frase dos veces, se queda con la última. Después vuelve a transcribir el resultado para confirmar que no se comió ninguna palabra.</li>
+<li><strong>Acorta los silencios</strong> a un cuarto de segundo para que el video tenga ritmo.</li>
+<li><strong>Acelera el trabajo</strong> a 7x y usa solo lo que cabe en la voz. Lo que sobra se bota.</li>
+<li><strong>Diseña las tarjetas animadas</strong> según lo que digo, sincronizadas a la palabra exacta, sin taparme la cara (Remotion).</li>
+<li><strong>Pone los subtítulos</strong> con la palabra que estoy diciendo resaltada, y el contador de cuánto llevo en el reto.</li>
+<li><strong>Revisa antes de entregar</strong>: saca cuadros del video y los mira, y me dice con honestidad lo que no quedó bien.</li>
+</ol>
+
+<h2>Las herramientas</h2>
+<ul>
+<li><strong>Claude Code</strong>: el agente que hace todo el trabajo en mi computadora.</li>
+<li><strong>Whisper</strong>: para transcribir con tiempos por palabra.</li>
+<li><strong>ffmpeg</strong>: para cortar, acelerar y unir.</li>
+<li><strong>Remotion</strong>: para las animaciones, escritas como código.</li>
+</ul>
+
+<div class="pi-lead">
+⚠️ <strong>La parte que más importa no es la herramienta:</strong> cada vez que algo no me gusta, se lo digo y Claude lo anota como regla. Con el tiempo el editor aprende mi estilo. Los primeros videos no salieron bien; ahora casi no tengo que corregir nada.
+</div>
+
+<h2>El prompt para empezar</h2>
+<div class="pi-prompt-box">
+  <button type="button" class="pi-copy-btn" id="pi-copy">
+    <span id="pi-copy-label">Copiar prompt</span>
+  </button>
+  <div class="pi-note">Pégalo en Claude Code, en una carpeta nueva para tus videos. Cambia el estilo por el tuyo.</div>
+  <pre class="pi-prompt" id="pi-prompt">{% raw %}Quiero que seas mi editor de video para Reels verticales (1080x1920).
+
+Cada día te voy a dar:
+- intro.mov: un clip corto hablando a cámara.
+- trabajo.mov: un video largo de mí trabajando (se acelera).
+- voz.m4a: una nota de voz con el guion. Si me equivoco, repito la frase.
+- cierre.mov: un clip corto de cierre a cámara.
+
+Arma un flujo que repitas cada día:
+1. Transcribe la voz con tiempos por palabra (Whisper).
+2. Busca frases repetidas y quédate con la última toma. Revisa con cuidado: a veces la retoma se esconde en una pausa larga.
+3. Baja los silencios largos a unos 0.25 segundos.
+4. Vuelve a transcribir el audio cortado y compáralo con el original para confirmar que no se perdió ninguna palabra.
+5. Acelera trabajo.mov para que dure lo mismo que la voz (máximo 7x; si sobra, usa solo el principio).
+6. Une intro + trabajo con la voz + cierre.
+7. Con Remotion, agrega tarjetas animadas que ilustren lo que digo, sincronizadas a la palabra exacta, sin tapar mi cara.
+8. Agrega subtítulos grandes con la palabra que estoy diciendo resaltada.
+9. Antes de entregarme el video, saca cuadros del render, míralos y dime con honestidad qué no quedó bien.
+
+Reglas:
+- Si te corrijo algo, anótalo como regla en un archivo CLAUDE.md para que no se repita.
+- Nunca me cambies las palabras: si un subtítulo está mal escrito, corrige el subtítulo, no la voz.
+- Pregúntame antes de instalar algo o de gastar dinero en una API.{% endraw %}</pre>
+</div>
+
+<p>Si lo pruebas, cuéntame qué tal te fue. Y si quieres ver cómo va el reto, estoy en Instagram como <a href="https://www.instagram.com/winnercrespo/">@winnercrespo</a>.</p>
+</div>
+<script>
+(function () {
+  var btn = document.getElementById('pi-copy');
+  var label = document.getElementById('pi-copy-label');
+  var pre = document.getElementById('pi-prompt');
+  if (!btn || !pre) return;
+
+  function fallbackCopy(text) {
+    var ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.position = 'fixed';
+    ta.style.opacity = '0';
+    document.body.appendChild(ta);
+    ta.select();
+    try { document.execCommand('copy'); } catch (e) {}
+    document.body.removeChild(ta);
+  }
+
+  btn.addEventListener('click', function () {
+    var text = pre.innerText;
+    var done = function () {
+      btn.classList.add('copied');
+      label.textContent = '¡Copiado!';
+      setTimeout(function () {
+        btn.classList.remove('copied');
+        label.textContent = 'Copiar prompt';
+      }, 2000);
+    };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(done, function () { fallbackCopy(text); done(); });
+    } else {
+      fallbackCopy(text);
+      done();
+    }
+  });
+})();
+</script>
