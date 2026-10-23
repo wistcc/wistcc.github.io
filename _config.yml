@@ -205,6 +205,11 @@ whitelist:
 
 # Defaults
 defaults:
+  # private, password-protected pages: keep out of the sitemap
+  - scope:
+      path: "kasso-crm"
+    values:
+      sitemap: false
   # _posts
   - scope:
       path: ""
