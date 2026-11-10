@@ -1,9 +1,9 @@
 ---
 layout: wc
 lang: es
-title: "Cómo Claude edita mis videos"
+title: "Cómo montar tu propio editor de video con Claude"
 permalink: /editor/
-description: "El flujo exacto con el que Claude edita mis videos diarios: transcribe, quita las retomas, acelera el trabajo, pone las animaciones y revisa todo antes de entregarlo. Con el prompt para que lo uses tú."
+description: "Cómo usar Claude como editor de video para cualquier tipo de contenido: quita las retomas, pone subtítulos, textos, animaciones y música, y revisa todo antes de entregarlo. Con el prompt para que montes el tuyo."
 ---
 
 <style>
@@ -74,75 +74,75 @@ description: "El flujo exacto con el que Claude edita mis videos diarios: transc
   }
 </style>
 <div class="wc-wrap wc-prose pi-wrap">
-<h1 style="margin-bottom:.6em;">Cómo Claude edita mis videos</h1>
-<p>Si llegaste aquí desde uno de mis videos: bienvenido 👋. No contraté un editor. Cada día grabo tres cosas, se las paso a <strong>Claude</strong> y él me devuelve el video listo para publicar: cortes, animaciones, subtítulos y los números que se mueven.</p>
+<h1 style="margin-bottom:.6em;">Cómo montar tu propio editor de video con Claude</h1>
+<p>Si llegaste aquí desde uno de mis videos: bienvenido 👋. Yo no contraté un editor. Grabo, le paso los archivos a <strong>Claude</strong> y él me devuelve el video listo para publicar. Esta guía es para que montes el tuyo, hagas el tipo de video que hagas: hablando a cámara, voz en off con imágenes, tutoriales grabando la pantalla, recetas, ejercicios, lo que sea.</p>
 <div class="pi-lead">
-<strong>Lo que cambió:</strong> antes editaba en CapCut como media hora y el resultado era siempre el mismo. Ahora tardo casi lo mismo, pero el video sale mucho mejor, y yo solo grabo.
+<strong>Lo que cambió para mí:</strong> antes editaba a mano como media hora y el resultado era siempre igual. Ahora tardo casi lo mismo, pero el video sale mucho mejor, y yo solo grabo.
 </div>
 
-<h2>Lo que grabo cada día</h2>
-<ol class="pi-steps">
-<li><strong>El intro a cámara</strong> (3 segundos): "Día N intentando reemplazar mi sueldo, una hora a la vez".</li>
-<li><strong>El trabajo</strong>: grabo mi escritorio mientras trabajo, siempre 8 minutos. Después se acelera.</li>
-<li><strong>La voz</strong>: una nota de voz leyendo el guion. Si me equivoco, repito la frase y sigo. No vuelvo a empezar.</li>
-<li><strong>El cierre a cámara</strong>: "Sígueme, que lo vamos a lograr".</li>
-</ol>
-
-<h2>Lo que hace Claude</h2>
-<ol class="pi-steps">
-<li><strong>Transcribe la voz palabra por palabra</strong> con los tiempos exactos de cada palabra (Whisper).</li>
-<li><strong>Quita las retomas</strong>: si dije una frase dos veces, se queda con la última. Después vuelve a transcribir el resultado para confirmar que no se comió ninguna palabra.</li>
-<li><strong>Acorta los silencios</strong> a un cuarto de segundo para que el video tenga ritmo.</li>
-<li><strong>Acelera el trabajo</strong> a 7x y usa solo lo que cabe en la voz. Lo que sobra se bota.</li>
-<li><strong>Diseña las tarjetas animadas</strong> según lo que digo, sincronizadas a la palabra exacta, sin taparme la cara (Remotion).</li>
-<li><strong>Pone los subtítulos</strong> con la palabra que estoy diciendo resaltada, y el contador de cuánto llevo en el reto.</li>
-<li><strong>Revisa antes de entregar</strong>: saca cuadros del video y los mira, y me dice con honestidad lo que no quedó bien.</li>
-</ol>
-
-<h2>Las herramientas</h2>
+<h2>Lo que necesitas</h2>
 <ul>
-<li><strong>Claude Code</strong>: el agente que hace todo el trabajo en mi computadora.</li>
-<li><strong>Whisper</strong>: para transcribir con tiempos por palabra.</li>
-<li><strong>ffmpeg</strong>: para cortar, acelerar y unir.</li>
-<li><strong>Remotion</strong>: para las animaciones, escritas como código.</li>
+<li><strong>Claude Code</strong>: el agente que hace el trabajo en tu computadora. Le hablas en español, como a una persona.</li>
+<li><strong>Tus clips</strong>: lo que ya grabas. No hace falta cambiar tu forma de grabar.</li>
+<li>Lo demás lo instala Claude cuando lo necesite (te pregunta antes): <strong>ffmpeg</strong> para cortar y unir, <strong>Whisper</strong> para transcribir con el tiempo de cada palabra y, si quieres animaciones, <strong>Remotion</strong>. Todo es gratis.</li>
 </ul>
 
+<h2>Lo que Claude puede hacer por ti</h2>
+<ol class="pi-steps">
+<li><strong>Transcribir lo que dices</strong>, palabra por palabra y con el segundo exacto de cada una.</li>
+<li><strong>Quitar las retomas</strong>: si dijiste una frase dos veces, se queda con la última. Después vuelve a transcribir para confirmar que no se comió ninguna palabra.</li>
+<li><strong>Acortar los silencios</strong> para que el video tenga ritmo.</li>
+<li><strong>Armar el video</strong> con tus clips en el orden que le digas: cortes, cámara rápida, imágenes encima de tu voz.</li>
+<li><strong>Poner textos y animaciones</strong> justo en la palabra que estás diciendo, sin taparte la cara.</li>
+<li><strong>Poner subtítulos</strong> con la palabra que dices resaltada.</li>
+<li><strong>Agregar sonidos y música</strong> y dejar el volumen al nivel que usan las redes.</li>
+<li><strong>Revisar antes de entregarte</strong>: saca cuadros del video, los mira y te dice con honestidad lo que no quedó bien.</li>
+</ol>
+<p>No tienes que usar todo. Empieza con dos o tres cosas (por ejemplo, quitar retomas y subtítulos) y ve agregando.</p>
+
+<h2>Cómo empezar</h2>
+<ol class="pi-steps">
+<li>Crea una carpeta para tus videos y abre Claude Code ahí.</li>
+<li>Pega el prompt de abajo. Claude te va a hacer unas preguntas sobre tus videos.</li>
+<li>Dale los clips de un video y revisa lo que te entrega.</li>
+<li>Dile lo que no te gustó. Cada corrección queda guardada como regla.</li>
+</ol>
+
 <div class="pi-lead">
-⚠️ <strong>La parte que más importa no es la herramienta:</strong> cada vez que algo no me gusta, se lo digo y Claude lo anota como regla. Con el tiempo el editor aprende mi estilo. Los primeros videos no salieron bien; ahora casi no tengo que corregir nada.
+⚠️ <strong>La parte que más importa no es la herramienta:</strong> cada vez que algo no te guste, díselo y que lo anote como regla. Con el tiempo el editor aprende tu estilo. Mis primeros videos no salieron bien; ahora casi no tengo que corregir nada.
 </div>
 
-<h2>El prompt para empezar</h2>
+<h2>El prompt</h2>
 <div class="pi-prompt-box">
   <button type="button" class="pi-copy-btn" id="pi-copy">
     <span id="pi-copy-label">Copiar prompt</span>
   </button>
-  <div class="pi-note">Pégalo en Claude Code, en una carpeta nueva para tus videos. Cambia el estilo por el tuyo.</div>
-  <pre class="pi-prompt" id="pi-prompt">{% raw %}Quiero que seas mi editor de video para Reels verticales (1080x1920).
+  <div class="pi-note">Pégalo en Claude Code, dentro de la carpeta de tus videos.</div>
+  <pre class="pi-prompt" id="pi-prompt">{% raw %}Quiero que seas mi editor de video.
 
-Cada día te voy a dar:
-- intro.mov: un clip corto hablando a cámara.
-- trabajo.mov: un video largo de mí trabajando (se acelera).
-- voz.m4a: una nota de voz con el guion. Si me equivoco, repito la frase.
-- cierre.mov: un clip corto de cierre a cámara.
+Antes de editar nada, hazme estas preguntas, una a una, y guarda mis respuestas en un archivo CLAUDE.md en esta carpeta:
+1. ¿Qué tipo de videos hago y para qué red (Reels, TikTok, Shorts, YouTube)? ¿Vertical u horizontal?
+2. ¿Qué clips grabo para cada video (hablando a cámara, voz en off, pantalla, imágenes, otros) y en qué orden van?
+3. ¿Cuánto dura más o menos cada video?
+4. ¿Qué quiero que hagas tú? (quitar retomas, acortar silencios, subtítulos, textos o animaciones, música, sonidos, cámara rápida…)
+5. ¿Cómo es mi estilo? (colores, letra, si los subtítulos van grandes o discretos, si hay música o no). Si tengo un video que me guste de referencia, te lo paso.
 
-Arma un flujo que repitas cada día:
-1. Transcribe la voz con tiempos por palabra (Whisper).
-2. Busca frases repetidas y quédate con la última toma. Revisa con cuidado: a veces la retoma se esconde en una pausa larga.
-3. Baja los silencios largos a unos 0.25 segundos.
-4. Vuelve a transcribir el audio cortado y compáralo con el original para confirmar que no se perdió ninguna palabra.
-5. Acelera trabajo.mov para que dure lo mismo que la voz (máximo 7x; si sobra, usa solo el principio).
-6. Une intro + trabajo con la voz + cierre.
-7. Con Remotion, agrega tarjetas animadas que ilustren lo que digo, sincronizadas a la palabra exacta, sin tapar mi cara.
-8. Agrega subtítulos grandes con la palabra que estoy diciendo resaltada.
-9. Antes de entregarme el video, saca cuadros del render, míralos y dime con honestidad qué no quedó bien.
+Después arma un flujo que repitas con cada video:
+- Transcribe la voz con el tiempo de cada palabra (Whisper).
+- Si me equivoco, repito la frase: busca las frases repetidas y quédate con la última toma. Revisa con cuidado, a veces la retoma se esconde en una pausa larga.
+- Acorta los silencios largos.
+- Vuelve a transcribir el audio cortado y compáralo con el original para confirmar que no se perdió ninguna palabra.
+- Arma el video con mis clips según lo que te dije, con lo que pedí (subtítulos, textos, animaciones con Remotion, música, sonidos), sincronizado a la palabra exacta y sin taparme la cara.
+- Deja el volumen al nivel que usan las redes.
+- Antes de entregarme el video, saca cuadros del render, míralos y dime con honestidad qué no quedó bien.
 
 Reglas:
-- Si te corrijo algo, anótalo como regla en un archivo CLAUDE.md para que no se repita.
+- Si te corrijo algo, anótalo como regla en CLAUDE.md para que no se repita.
 - Nunca me cambies las palabras: si un subtítulo está mal escrito, corrige el subtítulo, no la voz.
 - Pregúntame antes de instalar algo o de gastar dinero en una API.{% endraw %}</pre>
 </div>
 
-<p>Si lo pruebas, cuéntame qué tal te fue. Y si quieres ver cómo va el reto, estoy en Instagram como <a href="https://www.instagram.com/winnercrespo/">@winnercrespo</a>.</p>
+<p>Si lo pruebas, cuéntame qué tal te fue. Estoy en Instagram como <a href="https://www.instagram.com/winnercrespo/">@winnercrespo</a>.</p>
 </div>
 <script>
 (function () {
