@@ -3,7 +3,7 @@ layout: wc
 lang: es
 title: "Cómo montar tu propio editor de video con Claude"
 permalink: /editor/
-description: "Cómo usar Claude como editor de video para cualquier tipo de contenido: quita las retomas, pone subtítulos, textos, animaciones y música, y revisa todo antes de entregarlo. Con el prompt para que montes el tuyo."
+description: "Cómo montar tu propio editor de video con Claude Code, para cualquier tipo de video: lo que necesitas y lo que hace la diferencia."
 ---
 
 <style>
@@ -36,148 +36,44 @@ description: "Cómo usar Claude como editor de video para cualquier tipo de cont
     font-weight: 700;
     font-size: 0.85em;
   }
-  .pi-prompt-box {
-    position: relative;
-    margin: 1.2em 0 2em;
-  }
-  .pi-copy-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5em;
-    background: #52adc8;
-    color: #fff;
-    border: none;
-    padding: 0.7em 1.4em;
-    border-radius: 6px;
-    font-size: 1em;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background 0.15s ease;
-  }
-  .pi-copy-btn:hover { background: #3f93ac; }
-  .pi-copy-btn.copied { background: #2e8b57; }
-  .pi-prompt {
-    max-height: 460px;
-    overflow: auto;
-    white-space: pre-wrap;
-    word-wrap: break-word;
-    font-size: 0.82em;
-    line-height: 1.5;
-    padding: 1.2em;
-    border-radius: 6px;
-    margin-top: 0.8em;
-  }
-  .pi-note {
-    font-size: 0.9em;
-    opacity: 0.8;
-    margin-top: 0.4em;
-  }
 </style>
 <div class="wc-wrap wc-prose pi-wrap">
 <h1 style="margin-bottom:.6em;">Cómo montar tu propio editor de video con Claude</h1>
-<p>Si llegaste aquí desde uno de mis videos: bienvenido 👋. Yo no contraté un editor. Grabo, le paso los archivos a <strong>Claude</strong> y él me devuelve el video listo para publicar. Esta guía es para que montes el tuyo, hagas el tipo de video que hagas: hablando a cámara, voz en off con imágenes, tutoriales grabando la pantalla, recetas, ejercicios, lo que sea.</p>
-<div class="pi-lead">
-<strong>Lo que cambió para mí:</strong> antes editaba a mano como media hora y el resultado era siempre igual. Ahora tardo casi lo mismo, pero el video sale mucho mejor, y yo solo grabo.
-</div>
+<p>Si llegaste aquí desde uno de mis videos: bienvenido 👋. Yo no contraté un editor. Grabo, le paso el material a <strong>Claude Code</strong> y me devuelve el video listo: sin retomas, con subtítulos, textos animados, sonidos, el volumen de las redes y revisado antes de que yo lo vea.</p>
+<p>Aquí está lo que hace mi editor y lo que hace la diferencia, para que le pidas lo mismo al tuyo, hagas el tipo de video que hagas.</p>
 
 <h2>Lo que necesitas</h2>
 <ul>
-<li><strong>Claude Code</strong>: el agente que hace el trabajo en tu computadora. Le hablas en español, como a una persona.</li>
-<li><strong>Tus clips</strong>: lo que ya grabas. No hace falta cambiar tu forma de grabar.</li>
-<li>Lo demás lo instala Claude cuando lo necesite (te pregunta antes): <strong>ffmpeg</strong> para cortar y unir, <strong>Whisper</strong> para transcribir con el tiempo de cada palabra y, si quieres animaciones, <strong>Remotion</strong>. Todo es gratis.</li>
+<li><strong>Claude Code</strong>, con tu suscripción de Claude.</li>
+<li>Una Mac con Apple Silicon es lo más fácil. En Windows o Linux también funciona; Claude usa otra versión de Whisper.</li>
+<li>Lo demás lo instala Claude cuando se lo pidas: ffmpeg, Node, Python, Whisper y Remotion. Todo es gratis y corre en tu computadora: el flujo básico no usa ninguna API pagada. Remotion es gratis para personas y equipos pequeños; si eres una empresa, revisa su licencia.</li>
+<li>Música: Pixabay es gratis; escoge pistas que no tengan Content ID.</li>
+<li>Espacio: unos 2 a 5 GB por semana de video crudo. Bórralo cuando termines cada video.</li>
 </ul>
 
-<h2>Lo que Claude puede hacer por ti</h2>
+<h2>Lo que hace la diferencia</h2>
+<p>Cualquiera puede pedirle a una IA que corte un video. Esto es lo que hace que el resultado sea bueno:</p>
 <ol class="pi-steps">
-<li><strong>Transcribir lo que dices</strong>, palabra por palabra y con el segundo exacto de cada una.</li>
-<li><strong>Quitar las retomas</strong>: si dijiste una frase dos veces, se queda con la última. Después vuelve a transcribir para confirmar que no se comió ninguna palabra.</li>
-<li><strong>Acortar los silencios</strong> para que el video tenga ritmo.</li>
-<li><strong>Armar el video</strong> con tus clips en el orden que le digas: cortes, cámara rápida, imágenes encima de tu voz.</li>
-<li><strong>Poner textos y animaciones</strong> justo en la palabra que estás diciendo, sin taparte la cara.</li>
-<li><strong>Poner subtítulos</strong> con la palabra que dices resaltada.</li>
-<li><strong>Agregar sonidos y música</strong> y dejar el volumen al nivel que usan las redes.</li>
-<li><strong>Revisar antes de entregarte</strong>: saca cuadros del video, los mira y te dice con honestidad lo que no quedó bien.</li>
+<li><strong>Verificar que no se comió palabras.</strong> Después de cortar, vuelve a transcribir el audio y lo compara palabra por palabra con el original. Sin esto, se pierden palabras y nadie lo nota.</li>
+<li><strong>Quedarse con la última toma.</strong> Si repetiste una frase, la buena es la última. Las retomas se esconden en pausas largas: esas partes se transcriben de nuevo, solas.</li>
+<li><strong>Todo atado a la palabra.</strong> Cada texto y cada efecto entra en el instante exacto en que dices la palabra, no en un segundo puesto a mano.</li>
+<li><strong>Medir en vez de adivinar.</strong> Claude busca dónde está tu cara y dónde tapa la interfaz de Instagram, y pone el texto donde se ve.</li>
+<li><strong>Un efecto solo cuando ilustra algo.</strong> Nada de zoom en cada frase. Un catálogo de efectos con cuándo usar cada uno.</li>
+<li><strong>Un sonido corto en cada cosa que entra</strong>, unos 10 dB por debajo de la voz.</li>
+<li><strong>El volumen de las redes (-14 LUFS).</strong> Casi todos los videos caseros salen 10 a 15 dB más bajitos.</li>
+<li><strong>Mirar el video antes de entregarlo.</strong> Claude saca cuadros del render, los mira y te dice con honestidad qué no quedó bien.</li>
+<li><strong>Un archivo de reglas que crece.</strong> Cada corrección tuya se anota con la fecha y tus palabras. Es lo que hace que el editor aprenda tu estilo.</li>
+<li><strong>Convertir lo medible en revisión automática.</strong> Si una corrección se puede medir, se vuelve un script que la revisa en cada video.</li>
+<li><strong>Escoger viendo, no describiendo.</strong> Cuando hay dudas, Claude te hace dos versiones lado a lado y tú escoges.</li>
 </ol>
-<p>No tienes que usar todo. Empieza con dos o tres cosas (por ejemplo, quitar retomas y subtítulos) y ve agregando.</p>
 
-<h2>Cómo empezar</h2>
-<ol class="pi-steps">
-<li>Crea una carpeta para tus videos y abre Claude Code ahí.</li>
-<li>Pega el prompt de abajo. Claude te va a hacer unas preguntas sobre tus videos.</li>
-<li>Dale los clips de un video y revisa lo que te entrega.</li>
-<li>Dile lo que no te gustó. Cada corrección queda guardada como regla.</li>
-</ol>
+<h2>Enséñale con videos de otros</h2>
+<p>Una de las cosas que más me ha servido: cuando veo un video de alguien con un estilo que me gusta, se lo paso a Claude y le digo «me gusta esto, vamos a llevarlo por ahí, sin copiarlo al 100%». Claude lo analiza, toma lo que encaja con mi estilo y lo guarda en su caja de herramientas (EFECTOS.md y CLAUDE.md). Cada vez le paso otro, y la caja crece. Así mis videos fueron mejorando sin que yo supiera nombrar cada efecto.</p>
 
 <div class="pi-lead">
-⚠️ <strong>La parte que más importa no es la herramienta:</strong> cada vez que algo no te guste, díselo y que lo anote como regla. Con el tiempo el editor aprende tu estilo. Mis primeros videos no salieron bien; ahora casi no tengo que corregir nada.
-</div>
-
-<h2>El prompt</h2>
-<div class="pi-prompt-box">
-  <button type="button" class="pi-copy-btn" id="pi-copy">
-    <span id="pi-copy-label">Copiar prompt</span>
-  </button>
-  <div class="pi-note">Pégalo en Claude Code, dentro de la carpeta de tus videos.</div>
-  <pre class="pi-prompt" id="pi-prompt">{% raw %}Quiero que seas mi editor de video.
-
-Antes de editar nada, hazme estas preguntas, una a una, y guarda mis respuestas en un archivo CLAUDE.md en esta carpeta:
-1. ¿Qué tipo de videos hago y para qué red (Reels, TikTok, Shorts, YouTube)? ¿Vertical u horizontal?
-2. ¿Qué clips grabo para cada video (hablando a cámara, voz en off, pantalla, imágenes, otros) y en qué orden van?
-3. ¿Cuánto dura más o menos cada video?
-4. ¿Qué quiero que hagas tú? (quitar retomas, acortar silencios, subtítulos, textos o animaciones, música, sonidos, cámara rápida…)
-5. ¿Cómo es mi estilo? (colores, letra, si los subtítulos van grandes o discretos, si hay música o no). Si tengo un video que me guste de referencia, te lo paso.
-
-Después arma un flujo que repitas con cada video:
-- Transcribe la voz con el tiempo de cada palabra (Whisper).
-- Si me equivoco, repito la frase: busca las frases repetidas y quédate con la última toma. Revisa con cuidado, a veces la retoma se esconde en una pausa larga.
-- Acorta los silencios largos.
-- Vuelve a transcribir el audio cortado y compáralo con el original para confirmar que no se perdió ninguna palabra.
-- Arma el video con mis clips según lo que te dije, con lo que pedí (subtítulos, textos, animaciones con Remotion, música, sonidos), sincronizado a la palabra exacta y sin taparme la cara.
-- Deja el volumen al nivel que usan las redes.
-- Antes de entregarme el video, saca cuadros del render, míralos y dime con honestidad qué no quedó bien.
-
-Reglas:
-- Si te corrijo algo, anótalo como regla en CLAUDE.md para que no se repita.
-- Nunca me cambies las palabras: si un subtítulo está mal escrito, corrige el subtítulo, no la voz.
-- Pregúntame antes de instalar algo o de gastar dinero en una API.{% endraw %}</pre>
+⚠️ <strong>Lo que más importa no es la herramienta:</strong> es corregirlo cada vez y que lo anote. Mis primeros videos no salieron bien. Ahora casi no tengo que corregir nada.
 </div>
 
 <p>Si lo pruebas, cuéntame qué tal te fue. Estoy en Instagram como <a href="https://www.instagram.com/winnercrespo/">@winnercrespo</a>.</p>
 </div>
-<script>
-(function () {
-  var btn = document.getElementById('pi-copy');
-  var label = document.getElementById('pi-copy-label');
-  var pre = document.getElementById('pi-prompt');
-  if (!btn || !pre) return;
 
-  function fallbackCopy(text) {
-    var ta = document.createElement('textarea');
-    ta.value = text;
-    ta.style.position = 'fixed';
-    ta.style.opacity = '0';
-    document.body.appendChild(ta);
-    ta.select();
-    try { document.execCommand('copy'); } catch (e) {}
-    document.body.removeChild(ta);
-  }
-
-  btn.addEventListener('click', function () {
-    var text = pre.innerText;
-    var done = function () {
-      btn.classList.add('copied');
-      label.textContent = '¡Copiado!';
-      setTimeout(function () {
-        btn.classList.remove('copied');
-        label.textContent = 'Copiar prompt';
-      }, 2000);
-    };
-    if (navigator.clipboard && navigator.clipboard.writeText) {
-      navigator.clipboard.writeText(text).then(done, function () { fallbackCopy(text); done(); });
-    } else {
-      fallbackCopy(text);
-      done();
-    }
-  });
-})();
-</script>
