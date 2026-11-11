@@ -1,0 +1,206 @@
+---
+layout: null
+sitemap: false
+---
+{% raw %}<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="referrer" content="no-referrer">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'; base-uri 'none'; form-action 'none'">
+<title>Recall</title>
+<style>
+:root{--bg:#fbfbfa;--fg:#1d1d1f;--muted:#6e6e73;--line:#e3e3e0;--accent:#2f6fde;--field:#fff;--bad:#c0392b;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--bg:#141415;--fg:#ececec;--muted:#9a9aa0;--line:#2c2c2f;--accent:#7aa7ff;--field:#1d1d1f;--bad:#ff7b6b;color-scheme:dark}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+main{max-width:680px;margin:0 auto;padding:40px 16px 72px;overflow-wrap:anywhere}
+header{margin-bottom:28px;padding-bottom:16px;border-bottom:1px solid var(--line)}
+h1{font-size:1.65rem;line-height:1.25;margin:0 0 6px;letter-spacing:-.01em}
+h2{font-size:.8rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin:36px 0 10px;font-weight:600}
+h3{font-size:1.1rem;margin:24px 0 6px}
+h4{font-size:1rem;margin:20px 0 4px}
+p{margin:0 0 10px}
+.meta{color:var(--muted);font-size:.95rem;margin:0}
+ul,ol{margin:0 0 12px;padding-left:1.3em}
+li{margin:3px 0}
+li.sub{margin-left:1.2em}
+blockquote{margin:0 0 10px;padding-left:12px;border-left:3px solid var(--line);color:var(--muted)}
+hr{border:0;border-top:1px solid var(--line);margin:20px 0}
+code{font:.9em ui-monospace,SFMono-Regular,Menlo,monospace;background:var(--line);padding:1px 4px;border-radius:4px}
+.tr p{margin:0 0 12px}
+.t{font:.8rem ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--muted);margin-right:4px;font-variant-numeric:tabular-nums}
+form{min-height:100vh;min-height:100dvh;display:flex;flex-direction:column;justify-content:center;align-items:stretch;max-width:340px;margin:0 auto;padding:16px}
+form[hidden],main[hidden]{display:none}
+label{font-size:.9rem;color:var(--muted);margin-bottom:8px}
+input{font:inherit;font-size:16px;width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:var(--field);color:var(--fg);outline:none}
+input:focus{border-color:var(--accent);box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 25%,transparent)}
+input[aria-invalid=true]{border-color:var(--bad)}
+</style>
+</head>
+<body>
+<form id="f" hidden autocomplete="off">
+<label for="k">Contraseña</label>
+<input id="k" type="password" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" enterkeyhint="go">
+</form>
+<main id="m" hidden></main>
+<div id="d" hidden data-id="a069df9473d058fe8ef10638218d90a3" data-c="yrGCTSLIIqBL8RCqWcZcHdMFhLpRlo-LH91znLH6ZOuIMdPEHCF658MEJo2yKLZdbR4ozdM_bcSX1g322AIbuQUzGvSRCGLuw4K9pTbQHcT4rYX2YoTYOvVnji3VWfI7oY8mht5kc6NKgnV_EB1QZW56DLSVviedsB0X-H4cUitUa9m5dq5MmjcrFotYVjMAVyLDO64G6xamQTySLRApxbr888HIV9r8p_CIfi55ORU59h48v5Ug7Qq2ubQCzZEV3NiVKfTvopgQ1TGy4blcvXlLPdFZXknD7pddM8TzHhI89PMRyYB01UDaGqXjgTzKb5xw_lYdQC7PNuviWSbJchHZ-sSSe3IDnFgKl7P7Gy_FjcpuHJfDfp8Rq3u3Ky-QAQvY6v-XO0_uCgv6qhR3BGRcqE8_C10EgQygO--5epm1mBSs4W5G7jUmZ3w8xNcHXOyJQgeTBmQcS-bntVWuiDdrscVXaYIWIgmMosdhAvbZYjCqoXhB50LE2oCht405kSBdfEDeJ14S4ABLn9PcpiMv_h1HDCI93U03WiVnmzd5iGjHOUPQgjCHn2PUU66cvMofCQD-jYBmKPcwo1t3IPUefA0c4ALrKYuCznJbbBiM_CsyEIE6hkrp-Nn99eDd0XrCxtOPJR_3SlGZRVGZb4MNaaIOhVLa0CQdZP-0bOBX_R1ELvA_NNJu42AJVeO1vDckhgr4Vt0nU0npFTuZZhDchUPYaPHncbolh25zqSTEsnPq1XHzEKZwgvE7g61TZupdH72_d07HTnG2tQMZkYgqd_ix89CnfsrkHKvKv5O2VI38ctA7hUP7MJdRFCwMD4Elt8dmXsC5NLj1uBdCtvZssTXK9SALv-HQ9yX4VtDehJd_atLGZuLEKnXzhvtgXcRATA9r8j_90odvLA-EuEykevtb5cEnL9VlRbqK6-avq3kW0rX9FM10tBmw7lqpafDJGFOSVU74ncuuCDutPcZaSij96M9aWgnckaPoz5OVwQIHBquf5KCfEGWX23ZmMivVHrufz8V63-vn1z7p_xBYf3fLJr2Yc6KsN0ncTdWpZk-r2Cau639LBIC_opMZkHd1nhrsztsxAOHnOQCNXHqz9IAQo4MYIoUr8h-6w3YeLotQdY34wuvAm9wD-koOPElxjVQ7I8FgipMBqBpfvBuG7RHOuuH326IRaMO9RmkmF8CyRDKxRzyoGJKulA4RvNu44-F7YwBtgkWPbPCaMOg_ZVbKgb2FCIsXxxRqZMOV-lgv-F_7JRh1KN5DNLN1i8lCLlJSFB7zRU-oJoc8iUcWJLUBHs6Iu4is6BIGyMa92gKT2caKFpT-Zm3jl_xV7-oyXSq5tuhqB3VPgMy4BFG8yVQMyr7pQ9WevYxRD_GF1wdOQvXTuCvkv1xv6jm0PZgy5dU9jqSScFrT3AlUm-m1eUYy83__wQhRynFD6r2N9gfQR96-sFZX06EZcGcuGFZpsMzhcMnhgXOypvog2zKNzFhkhBuQ--sedhYt9Vabn2RLKu4mc-M4QBHwCMXm57INssIL_D2T6BDYKzZ4DtmTckzkT3gGc38308J6DmcrxwQZkQNhYZgcTJ_w_8y-ok-BfEKY1aFvTqB6qtIIrh0Vv4ySszn5ETf2__ijlQ8MqaIU232UGcJ_pVmX9qbzaNGQYGt78Ck9AqSW0t88KfoGiCBZ9e6Cj3rJ0vxI0LzT7qE0vbqSnIYP71oFHclYzQd4dXluolTVTssGrqUfLVzaF_HlCEfGnuEQJ2mGcQifMmMz-w6ZWz4SgmgoD7lYlfr8XAlW7k7_8_d32TDnA-cwZ5ToGT2VeYNJXS7S-Q337OYIheykYK2DSc6kvI85U-zFrp585Md7zSLee6MVdZZ5MzvIwIkzNHUsPd76YDLpvMP-SCp0wa4h2agqltjBzVHBpdqTKV53P5yZxLrX6wYcL2fgmVsz-zV8dmWWF5g1MW5WEJrrK_NDXl3A8wUttfCAK7ZWSVENycbmLLmXsOnwv_hsmtGZAgUMFDWGbFBw-4Eq4p8AVMCS4msBKAblyYWK1mb9CTzS0ddlTEdnLk3fA0B4nTwrOzOB4vi_HUxOYbuLrzBmQPWi4b6s2W2eCL5OQok7MeYk7myhQszScnpA8s2nwf9v1eMBXOdMfNXZnU6FAh9Mw4x3NBRYRxexfe2vqoc7JP3QW2USwOyjs9rq0E2FX6Si6kGkzEnu0dhZ9p4R-lc6_mEFJWj9rghO09em2CGnIWPb7M3a5kq4qRwTqQ9Qp9XkejTC9XnQsFMwci-6TdgYrc3DmVKZRL_I8Z0xVrXNIUGW8DVAgcO12IU3g2cxxEbkhuDiYmFyDj7ePCADfuuPRWy5iNHJvmUoflb0KYTDD7UbFu_Jq64PZVE3RPQfHcGY-wroVmZNkBCMBu_9kUascbE9TXMt3_m0R7nspQ9fVwvycP47gNt8HfIIpRHyqNv_XZlnYh4ZQrmX1eZ5GueP4kkxwGsVxqoy0o82AkTqtoJ7qbIragw4eLP5Cvg0VwfnjIUfiK7AWblppaqpZ4isrIH5Zh0h0_kpXm2jiYy98ZM15sCzsJD3SSjAPXbm2IuK5uRAHPUfdHWo3p4ssLeq2o4WPCK_yvoWnLaPGqqeqpjMPYFebixTiMTZZgI4v9-2mMx4mw82JJv03CpIAA4x9ugOxp7_4ZegZdrKdmFCDfUiUMBbH0C6n-Zwe1rzKbnMjjgCTYjmPryJzXFrHTQwgLgcmKNhXnlHFOzZmOv_Y-PQbVfdrH6j-GosrQ3qoq-dVxkna5DVmICGr5fLIHT0VCsDPbOX_91Vc47tr2ANR-9EgrbBiK7_cHGV3rWNo1c94lChNpSJstpoUHVEBoLCim072cb2cI23EnlQcY3_VaVxMH7X3pRw7sTExK8eNV60wFA123Ro6pU7uGMRIvWumeK_osHAaGDx_Q9Cw_IaERTvJs6eaZ4qPprCG866KOZJQ5XSzAnzpkKJFk1hQRI5uoznNHv_PVbtCM7KZtdZolj6wA8GfZPoDr1MlkXCB5-xnbS98utfGjkF7oZxFSCBw9yIbo2M59cotg2_gg0ud-hmZg"></div>
+<script>
+/* Recall: script de la página compartida (va en línea dentro de la página; sin módulos ni dependencias).
+   Descifra en el navegador con WebCrypto usando la clave del #fragmento (o la que se pegue en "Contraseña")
+   y pinta el contenido. Todo texto se escapa antes de entrar al HTML. Las pruebas corren este mismo archivo
+   en Node (globalThis.crypto.subtle). Nota: sin secuencias de dos puntos-palabra-dos puntos (las
+   convertiría jemoji en el sitio Jekyll). */
+'use strict';
+var RecallPage = (function () {
+  var AAD_PREFIX = 'recall-share-v1:';
+
+  function b64uToBytes(s) {
+    s = String(s).replace(/-/g, '+').replace(/_/g, '/');
+    while (s.length % 4) s += '=';
+    var bin = atob(s);
+    var out = new Uint8Array(bin.length);
+    for (var i = 0; i < bin.length; i++) out[i] = bin.charCodeAt(i);
+    return out;
+  }
+
+  /* Acepta la clave sola o el link completo pegado (toma lo que va después de "#"). */
+  function cleanKey(input) {
+    var s = String(input == null ? '' : input).trim();
+    var h = s.indexOf('#');
+    if (h >= 0) s = s.slice(h + 1);
+    try { s = decodeURIComponent(s); } catch (e) { /* tal cual */ }
+    return /^[A-Za-z0-9_-]{43}$/.test(s) ? s : null;
+  }
+
+  async function decrypt(payload, keyInput, id) {
+    var key = cleanKey(keyInput);
+    if (!key) throw new Error('clave');
+    var raw = b64uToBytes(payload);
+    if (raw.length < 12 + 16) throw new Error('datos');
+    var k = await crypto.subtle.importKey('raw', b64uToBytes(key), { name: 'AES-GCM' }, false, ['decrypt']);
+    var pt = await crypto.subtle.decrypt(
+      { name: 'AES-GCM', iv: raw.slice(0, 12), additionalData: new TextEncoder().encode(AAD_PREFIX + id), tagLength: 128 },
+      k, raw.slice(12));
+    return JSON.parse(new TextDecoder().decode(pt));
+  }
+
+  function esc(s) {
+    return String(s == null ? '' : s)
+      .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+  }
+
+  /* En línea: escapa primero y luego solo agrega etiquetas fijas (negrita, cursiva, código). */
+  function inline(s) {
+    return esc(s)
+      .replace(/`([^`]+)`/g, '<code>$1</code>')
+      .replace(/\*\*([^*]+?)\*\*/g, '<strong>$1</strong>')
+      .replace(/(^|[\s(])\*([^*\s][^*]*?)\*(?=[\s).,;!?]|$)/g, '$1<em>$2</em>');
+  }
+
+  /* Markdown mínimo: títulos, viñetas, listas numeradas, citas, líneas horizontales y párrafos. */
+  function mdToHtml(md) {
+    var lines = String(md == null ? '' : md).split(/\r?\n/);
+    var out = [];
+    var list = null;
+    function close() { if (list) { out.push('</' + list + '>'); list = null; } }
+    function open(tag) { if (list !== tag) { close(); out.push('<' + tag + '>'); list = tag; } }
+    for (var i = 0; i < lines.length; i++) {
+      var raw = lines[i];
+      var l = raw.trim();
+      var m;
+      if (!l) { close(); continue; }
+      if ((m = /^(#{1,6})\s+(.*)$/.exec(l))) {
+        close();
+        var level = m[1].length <= 2 ? 3 : 4;
+        out.push('<h' + level + '>' + inline(m[2]) + '</h' + level + '>');
+      } else if (/^([-*_])(\s*\1){2,}$/.test(l)) {
+        close(); out.push('<hr>');
+      } else if ((m = /^[-*•+]\s+(.*)$/.exec(l))) {
+        open('ul');
+        out.push('<li' + (/^\s{2,}/.test(raw) ? ' class="sub"' : '') + '>' + inline(m[1]) + '</li>');
+      } else if ((m = /^\d+[.)]\s+(.*)$/.exec(l))) {
+        open('ol'); out.push('<li>' + inline(m[1]) + '</li>');
+      } else if ((m = /^>\s?(.*)$/.exec(l))) {
+        close(); out.push('<blockquote>' + inline(m[1]) + '</blockquote>');
+      } else {
+        close(); out.push('<p>' + inline(l) + '</p>');
+      }
+    }
+    close();
+    return out.join('\n');
+  }
+
+  function render(data) {
+    var d = data || {};
+    var parts = ['<header>', '<h1>' + esc(d.title || 'Sin título') + '</h1>'];
+    if (d.info) parts.push('<p class="meta">' + esc(d.info) + '</p>');
+    parts.push('</header>', '<section>', '<h2>Resumen</h2>', mdToHtml(d.summary), '</section>');
+    if (Array.isArray(d.transcript) && d.transcript.length) {
+      parts.push('<section class="tr">', '<h2>Transcripción</h2>');
+      for (var i = 0; i < d.transcript.length; i++) {
+        var t = d.transcript[i] || {};
+        parts.push('<p><span class="t">' + esc(t.t) + '</span> <strong>' + esc(t.who) + '</strong> ' + esc(t.text) + '</p>');
+      }
+      parts.push('</section>');
+    }
+    return parts.join('\n');
+  }
+
+  function start() {
+    var data = document.getElementById('d');
+    var payload = data.getAttribute('data-c');
+    var id = data.getAttribute('data-id');
+    var form = document.getElementById('f');
+    var input = document.getElementById('k');
+    var main = document.getElementById('m');
+    var busy = false;
+
+    function show(content) {
+      main.innerHTML = render(content); /* render() escapa todo el texto */
+      form.hidden = true;
+      main.hidden = false;
+    }
+    function ask(wrong) {
+      form.hidden = false;
+      if (wrong) input.setAttribute('aria-invalid', 'true');
+      input.focus();
+    }
+    function attempt(k) {
+      return decrypt(payload, k, id).then(function (c) { show(c); return true; }, function () { return false; });
+    }
+    function submit() {
+      if (busy) return;
+      var k = cleanKey(input.value);
+      if (!k) { ask(true); return; }
+      busy = true;
+      attempt(k).then(function (ok) {
+        busy = false;
+        if (ok) { try { history.replaceState(null, '', '#' + k); } catch (e) { /* sin historial */ } }
+        else ask(true);
+      });
+    }
+
+    form.addEventListener('submit', function (ev) { ev.preventDefault(); submit(); });
+    input.addEventListener('input', function () {
+      input.removeAttribute('aria-invalid');
+      if (cleanKey(input.value)) submit();
+    });
+
+    var h = location.hash.slice(1);
+    if (h) attempt(h).then(function (ok) { if (!ok) ask(true); });
+    else ask(false);
+  }
+
+  return { b64uToBytes: b64uToBytes, cleanKey: cleanKey, decrypt: decrypt, esc: esc, inline: inline, mdToHtml: mdToHtml, render: render, start: start };
+})();
+if (typeof document !== 'undefined') RecallPage.start();
+
+</script>
+</body>
+</html>
+{% endraw %}
