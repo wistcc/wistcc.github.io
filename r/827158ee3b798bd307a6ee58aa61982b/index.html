@@ -1,0 +1,206 @@
+---
+layout: null
+sitemap: false
+---
+{% raw %}<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="referrer" content="no-referrer">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'; base-uri 'none'; form-action 'none'">
+<title>Recall</title>
+<style>
+:root{--bg:#fbfbfa;--fg:#1d1d1f;--muted:#6e6e73;--line:#e3e3e0;--accent:#2f6fde;--field:#fff;--bad:#c0392b;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--bg:#141415;--fg:#ececec;--muted:#9a9aa0;--line:#2c2c2f;--accent:#7aa7ff;--field:#1d1d1f;--bad:#ff7b6b;color-scheme:dark}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+main{max-width:680px;margin:0 auto;padding:40px 16px 72px;overflow-wrap:anywhere}
+header{margin-bottom:28px;padding-bottom:16px;border-bottom:1px solid var(--line)}
+h1{font-size:1.65rem;line-height:1.25;margin:0 0 6px;letter-spacing:-.01em}
+h2{font-size:.8rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin:36px 0 10px;font-weight:600}
+h3{font-size:1.1rem;margin:24px 0 6px}
+h4{font-size:1rem;margin:20px 0 4px}
+p{margin:0 0 10px}
+.meta{color:var(--muted);font-size:.95rem;margin:0}
+ul,ol{margin:0 0 12px;padding-left:1.3em}
+li{margin:3px 0}
+li.sub{margin-left:1.2em}
+blockquote{margin:0 0 10px;padding-left:12px;border-left:3px solid var(--line);color:var(--muted)}
+hr{border:0;border-top:1px solid var(--line);margin:20px 0}
+code{font:.9em ui-monospace,SFMono-Regular,Menlo,monospace;background:var(--line);padding:1px 4px;border-radius:4px}
+.tr p{margin:0 0 12px}
+.t{font:.8rem ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--muted);margin-right:4px;font-variant-numeric:tabular-nums}
+form{min-height:100vh;min-height:100dvh;display:flex;flex-direction:column;justify-content:center;align-items:stretch;max-width:340px;margin:0 auto;padding:16px}
+form[hidden],main[hidden]{display:none}
+label{font-size:.9rem;color:var(--muted);margin-bottom:8px}
+input{font:inherit;font-size:16px;width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:var(--field);color:var(--fg);outline:none}
+input:focus{border-color:var(--accent);box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 25%,transparent)}
+input[aria-invalid=true]{border-color:var(--bad)}
+</style>
+</head>
+<body>
+<form id="f" hidden autocomplete="off">
+<label for="k">Contraseña</label>
+<input id="k" type="password" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" enterkeyhint="go">
+</form>
+<main id="m" hidden></main>
+<div id="d" hidden data-id="827158ee3b798bd307a6ee58aa61982b" data-c="5AvPajCASTzyw-C6nblE92-_ehQ2SNnT8H6TCgTF-nsu5xTTsSzlt7WClroSPFKyrnRjxHtAfZDCOOqePMchXKfAei_fHqaLJ7GeJL_iknk1hj3kPfzOPX7O0l36vXjh9FTvSz9JNCc1VkUXshhf4D47NqAUUY2uuGqEJRS31epyENjbUfbYWs-TzdENCZUSrqZAYzX5mNrwZXkqQvl_og03P0PfXCsJOtFrCf8EnACp22aDqBsZf_vUuZhW14KvToQgHf3HpoIcS-_Lo-qh9EBoo1ZhUD3cZ_bldTiIBa-mwx7HeHckK3w9ipkKnegrF0IiNZDn7OgPlsc7_n-Y6DgPrLpFylBCjC66jgIAGJbVaSftiXClknSRDvR_tu3oo3kMRQoCycYdDTz7v1oA8eQCxNp6dUBIHtKfRxHZm4UbLZVGWzbrMEu5kFkkz95khTgLMPh6dOeFIIr0hgf13fFjsi3nv_SGA4OvwYMGN6xgfpI8tiJEPpra_M96oS4O9iyH9oeJOYV_gEMWnuOW_2fN0euOh1CNXUUhGPSqkdeC4z8hNQ3DL0OWERJ1z9ZZkTE5frvxO0MVO4zYALGhAks0efV3P6SuAkgzprN3BzJvK_e8lgNpNVdbyYaVnzPNJTsfrou5efWOdoWaiAN1SrRIHICVhKl_pDntFdiCPwBnNATe1UevObe26j7kkWaccL6EWb8L35g1Ice7Q8DGR9So5kJ_k-8vm1Ol1xJked-jcV0hxi8gJQE7BYd0Wk88DW6AwI6fcrWFblrAhumADDcefCGa_ykkap1Lbm2VNEhr1ZSWI5j5owuAdNol8-VbYFk3c9gYyK9q4LGkXje6KvmuUN2ZzaqJ39et9UEvoyGqWNOFDMykcZrvScbvrMnsWGhTtL_9nzBO24DMA8DoxMSkayPjYW5ctlYpaB5E1IkP9qrzlchSYhz93kZRa_EA7l-0nWVFHO-gD1JReuM3DgJqkKy-DWIvyK6vy5o5RHeAy6BhrYQAOJdpKcpcK8mbZ8PaPpqtXbZzpdc9Uj9L9AwpP3-KXsF7dOtb18sjNdveks9rLiTEDlfvcKfjEgFHxmU6fS2jVrSFYIkkEHMAkuKYTQpCkjdICgnUKMAgrCPWXTiVwB9Zh2kFXtyRap86aBNvOamwBAiYFHzFsK5-bGA4Etg3Hb9h93hr8pGoISlS9xghMBnsEzgeCjHNqk1f8w_sMJlWTmbmGgettoOHJ1QYK0l77dtLjDQDcj72_5WSUgAJDyEqE450lUBC61NjezERRayKXOz4e-fVBZDkUnhNQKVdJMewDsKVpbINfnARxzkfVuDzlp4JMYoFMzXv5rXItRjNbWShJfCxa0F8RZ3PI4OvD94rtty_LqeHWT1M1Pq57kI-95960eAw50I07WFFS0-7lR-ZUoiPjh4n6mfWjhHdpUXG-6YjDhWkk8OBaQo5QLCeG42w8m9P-IiLdiBGR8C3aGQhPQc-M8x9Sv_2rm4cIMorrUvsrwEzY_53fOeDykHme809wJVH1StsSs0LJIsXN9HE7Sbq8VTTCoGdoYmpOWtSsBk4dh3uInHe6vlhNdjbyxTH7GUGw95_IkYdr8Y7AitPupzyEZnGWA2Q4kpSLtsWy-BSo1j2cDs7r3vaPtYy8Xu3TUfZ_VXAo1k47OJeZv7YUBl2qRvLzFHGXnXsTfNkcbDgBZcX68WdQT-DkSK3bvb22fCL2iIJsXzvt7PYFd_gkGhlgZfGTKO3NtETx5RBVFnpLDqg-47Uy7ToheexqdsnW8tqEwYgvcvcLTEVJ8PHnlsQ7aw3erj0wS2LTL47ivMnr3ImeafXVy8pJspjt9TqgZlta5RiR3prUr8xfkAlCY6HVfZvgqW9YFyOYxGPpPz9M0N2OcnwIcdPAjO-gSXsJPs90xtWFxucTRFnegGPBATDUSZ4UF0ia9nIras-rLvoyG7fgKiz4qE-IxxwYaZeU7NB6RhNX_8bWiMtQrLQgFBXnOKc01eMEqMOeOf9Gn36clQyyAddghtyzUFJ2rU4K1NnLIIWVMT0w9s2uLhpQ_3IgHZb5Xhxhi5u9kdJUDVYe_yhIRlOzOd5hgeYmEFzcAyAaCgQkxaHPL0HIdNfKDXjkce7GuIYrq6Flh7hNy_ydjns50G7YzCzT6ZBE9LZR9Jd5afd4INf9nyX2Nj1rD0Kf_bNSSJMzD0uio318n-1OYwqawwqDwLeKey_ZI-8-Kbjk5xcQP7fdHQznOJ9Cb7y5T9iDPlYgf4uzTL3i0U7Y1fXkKGoId7sa3bxCRZrI5drElDGu-XYL72JJq33rqNR8kmELUILlid8LfrBw6NJ_q1Ah8I1FTGaiSIeYCdDiYJKiMvMDF0eqPcVBqw1WDlDFbWdc5CN1derDd5v7kuxzrSglXOGsJLTlsHbFXFn0UDS0n3_O489bH8h2L2vgQUfEawJ_sXSci2HafCpUfgsSgLwUlH_2ma8_J4ly0intNh6x5yMMTVxCY_eS2rTVpvwJInQMyZ8LxP_BjcTq9qwHdr8m4B4U2a1cYh_a78gB6CSDMptF7JkFkFOS4L5rscOGNa9SBqF8s6IDK6x0vAiXX5DMqZo0KRcl6Tl2myXaelzc7yt5bEd-C1QFcThdz7ZKi8267Vx88jWqQ"></div>
+<script>
+/* Recall: script de la página compartida (va en línea dentro de la página; sin módulos ni dependencias).
+   Descifra en el navegador con WebCrypto usando la clave del #fragmento (o la que se pegue en "Contraseña")
+   y pinta el contenido. Todo texto se escapa antes de entrar al HTML. Las pruebas corren este mismo archivo
+   en Node (globalThis.crypto.subtle). Nota: sin secuencias de dos puntos-palabra-dos puntos (las
+   convertiría jemoji en el sitio Jekyll). */
+'use strict';
+var RecallPage = (function () {
+  var AAD_PREFIX = 'recall-share-v1:';
+
+  function b64uToBytes(s) {
+    s = String(s).replace(/-/g, '+').replace(/_/g, '/');
+    while (s.length % 4) s += '=';
+    var bin = atob(s);
+    var out = new Uint8Array(bin.length);
+    for (var i = 0; i < bin.length; i++) out[i] = bin.charCodeAt(i);
+    return out;
+  }
+
+  /* Acepta la clave sola o el link completo pegado (toma lo que va después de "#"). */
+  function cleanKey(input) {
+    var s = String(input == null ? '' : input).trim();
+    var h = s.indexOf('#');
+    if (h >= 0) s = s.slice(h + 1);
+    try { s = decodeURIComponent(s); } catch (e) { /* tal cual */ }
+    return /^[A-Za-z0-9_-]{43}$/.test(s) ? s : null;
+  }
+
+  async function decrypt(payload, keyInput, id) {
+    var key = cleanKey(keyInput);
+    if (!key) throw new Error('clave');
+    var raw = b64uToBytes(payload);
+    if (raw.length < 12 + 16) throw new Error('datos');
+    var k = await crypto.subtle.importKey('raw', b64uToBytes(key), { name: 'AES-GCM' }, false, ['decrypt']);
+    var pt = await crypto.subtle.decrypt(
+      { name: 'AES-GCM', iv: raw.slice(0, 12), additionalData: new TextEncoder().encode(AAD_PREFIX + id), tagLength: 128 },
+      k, raw.slice(12));
+    return JSON.parse(new TextDecoder().decode(pt));
+  }
+
+  function esc(s) {
+    return String(s == null ? '' : s)
+      .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+  }
+
+  /* En línea: escapa primero y luego solo agrega etiquetas fijas (negrita, cursiva, código). */
+  function inline(s) {
+    return esc(s)
+      .replace(/`([^`]+)`/g, '<code>$1</code>')
+      .replace(/\*\*([^*]+?)\*\*/g, '<strong>$1</strong>')
+      .replace(/(^|[\s(])\*([^*\s][^*]*?)\*(?=[\s).,;!?]|$)/g, '$1<em>$2</em>');
+  }
+
+  /* Markdown mínimo: títulos, viñetas, listas numeradas, citas, líneas horizontales y párrafos. */
+  function mdToHtml(md) {
+    var lines = String(md == null ? '' : md).split(/\r?\n/);
+    var out = [];
+    var list = null;
+    function close() { if (list) { out.push('</' + list + '>'); list = null; } }
+    function open(tag) { if (list !== tag) { close(); out.push('<' + tag + '>'); list = tag; } }
+    for (var i = 0; i < lines.length; i++) {
+      var raw = lines[i];
+      var l = raw.trim();
+      var m;
+      if (!l) { close(); continue; }
+      if ((m = /^(#{1,6})\s+(.*)$/.exec(l))) {
+        close();
+        var level = m[1].length <= 2 ? 3 : 4;
+        out.push('<h' + level + '>' + inline(m[2]) + '</h' + level + '>');
+      } else if (/^([-*_])(\s*\1){2,}$/.test(l)) {
+        close(); out.push('<hr>');
+      } else if ((m = /^[-*•+]\s+(.*)$/.exec(l))) {
+        open('ul');
+        out.push('<li' + (/^\s{2,}/.test(raw) ? ' class="sub"' : '') + '>' + inline(m[1]) + '</li>');
+      } else if ((m = /^\d+[.)]\s+(.*)$/.exec(l))) {
+        open('ol'); out.push('<li>' + inline(m[1]) + '</li>');
+      } else if ((m = /^>\s?(.*)$/.exec(l))) {
+        close(); out.push('<blockquote>' + inline(m[1]) + '</blockquote>');
+      } else {
+        close(); out.push('<p>' + inline(l) + '</p>');
+      }
+    }
+    close();
+    return out.join('\n');
+  }
+
+  function render(data) {
+    var d = data || {};
+    var parts = ['<header>', '<h1>' + esc(d.title || 'Sin título') + '</h1>'];
+    if (d.info) parts.push('<p class="meta">' + esc(d.info) + '</p>');
+    parts.push('</header>', '<section>', '<h2>Resumen</h2>', mdToHtml(d.summary), '</section>');
+    if (Array.isArray(d.transcript) && d.transcript.length) {
+      parts.push('<section class="tr">', '<h2>Transcripción</h2>');
+      for (var i = 0; i < d.transcript.length; i++) {
+        var t = d.transcript[i] || {};
+        parts.push('<p><span class="t">' + esc(t.t) + '</span> <strong>' + esc(t.who) + '</strong> ' + esc(t.text) + '</p>');
+      }
+      parts.push('</section>');
+    }
+    return parts.join('\n');
+  }
+
+  function start() {
+    var data = document.getElementById('d');
+    var payload = data.getAttribute('data-c');
+    var id = data.getAttribute('data-id');
+    var form = document.getElementById('f');
+    var input = document.getElementById('k');
+    var main = document.getElementById('m');
+    var busy = false;
+
+    function show(content) {
+      main.innerHTML = render(content); /* render() escapa todo el texto */
+      form.hidden = true;
+      main.hidden = false;
+    }
+    function ask(wrong) {
+      form.hidden = false;
+      if (wrong) input.setAttribute('aria-invalid', 'true');
+      input.focus();
+    }
+    function attempt(k) {
+      return decrypt(payload, k, id).then(function (c) { show(c); return true; }, function () { return false; });
+    }
+    function submit() {
+      if (busy) return;
+      var k = cleanKey(input.value);
+      if (!k) { ask(true); return; }
+      busy = true;
+      attempt(k).then(function (ok) {
+        busy = false;
+        if (ok) { try { history.replaceState(null, '', '#' + k); } catch (e) { /* sin historial */ } }
+        else ask(true);
+      });
+    }
+
+    form.addEventListener('submit', function (ev) { ev.preventDefault(); submit(); });
+    input.addEventListener('input', function () {
+      input.removeAttribute('aria-invalid');
+      if (cleanKey(input.value)) submit();
+    });
+
+    var h = location.hash.slice(1);
+    if (h) attempt(h).then(function (ok) { if (!ok) ask(true); });
+    else ask(false);
+  }
+
+  return { b64uToBytes: b64uToBytes, cleanKey: cleanKey, decrypt: decrypt, esc: esc, inline: inline, mdToHtml: mdToHtml, render: render, start: start };
+})();
+if (typeof document !== 'undefined') RecallPage.start();
+
+</script>
+</body>
+</html>
+{% endraw %}
